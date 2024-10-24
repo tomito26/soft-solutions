@@ -111,7 +111,7 @@ const Home = () => {
       </div>
       {/* what our clients are saying  */}
       <div className="px-[300px] pt-20 pb-32 bg-[#0423A0]/10 flex justify-center items-center flex-col">
-        <div className="w-6/12">
+        <div className="w-8/12">
           <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
             Testimonials
           </h2>
