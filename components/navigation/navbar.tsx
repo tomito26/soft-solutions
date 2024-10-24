@@ -2,30 +2,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
-
-interface LinkType {
-  title: string;
-  link: string;
-}
-const links: LinkType[] = [
-  {
-    title: "Home",
-    link: "/",
-  },
-  {
-    title: "About",
-    link: "/about",
-  },
-  {
-    title: "Services",
-    link: "/services",
-  },
-];
+import { links } from "@/lib/constants";
 
 const Navbar = () => {
   return (
     <nav className="flex justify-between items-center py-4 pl-[300px] pr-[300px]">
-      <div className="relative h-[84px] w-[254px]">
+      <div className="relative h-[60px] w-[180px]">
         <Image
           src="/assets/soft-solutions.svg"
           fill
