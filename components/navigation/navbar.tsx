@@ -24,13 +24,13 @@ const links: LinkType[] = [
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center py-4 pl-[280px] pr-[300px]">
-      <div className="relative h-[70px] w-[240px]">
+    <nav className="flex justify-between items-center py-4 pl-[300px] pr-[300px]">
+      <div className="relative h-[84px] w-[254px]">
         <Image
           src="/assets/soft-solutions.svg"
           fill
           alt="Soft Solutions Technologies logo"
-          className="absolute contain"
+          className="absolute object-cover"
         />
       </div>
       <ul className="block">
