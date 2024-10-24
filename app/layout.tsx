@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/navigation/navbar";
+import Footer from "@/components/navigation/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,7 +17,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Soft Solutions Technologies",
-  description: "Soft Solutions Technologies is a dynamic IT solutions company dedicated to delivering cutting-edge technology services tailored to meet the unique needs of businesses.",
+  description:
+    "Soft Solutions Technologies is a dynamic IT solutions company dedicated to delivering cutting-edge technology services tailored to meet the unique needs of businesses.",
 };
 
 export default function RootLayout({
@@ -29,8 +31,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
