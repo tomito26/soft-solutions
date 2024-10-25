@@ -12,7 +12,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className=" bg-[#0423A0] px-[300px] py-32 ">
+    <footer className=" bg-[#0423A0] md:px-[40px] xl:px-[60px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px]  py-32 ">
       <div className="grid grid-cols-12 gap-4 mb-20">
         <div className="col-span-5">
           <h2 className="text-2xl font-bold text-white mb-3">

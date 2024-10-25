@@ -6,7 +6,7 @@ import { links } from "@/lib/constants";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center py-4 pl-[300px] pr-[300px]">
+    <nav className="flex justify-between items-center py-4 md:px-[40px] lg:px-[60px] xl:px-[80px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px] ">
       <div className="relative h-[60px] w-[180px]">
         <Image
           src="/assets/soft-solutions.svg"

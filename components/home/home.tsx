@@ -23,7 +23,7 @@ const Home = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className="flex items-center px-[300px]"
+        className="flex items-center md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px]"
       >
         <div className="w-8/12">
           <h1 className="font-bold text-6xl text-white pb-6">
@@ -34,12 +34,12 @@ const Home = () => {
             meet your unique needs. Transform your operations with our expert
             software development and robust hardware systems.
           </p>
-          <Button className="hover:bg-[#0423A0]/80">Get Started</Button>
+          <Button className="hover:bg-[#0423A0]/80 ">Get Started</Button>
         </div>
       </div>
       {/* our services */}
-      <div className="px-[300px] w-full pt-12 pb-32 flex justify-center items-center flex-col">
-        <div className="w-6/12 flex justify-center flex-col items-center">
+      <div className="md:px-[40px] lg:px-[60px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px] w-full pt-12 pb-32 flex justify-center items-center flex-col">
+        <div className="md:w-7/12 4xl:w-7/12 5xl:w-6/12 flex justify-center flex-col items-center">
           <h2 className="text-sm uppercase  font-bold text-[#0423A0] text-center">
             Our Core Services
           </h2>
@@ -47,14 +47,14 @@ const Home = () => {
             We provide truly prominent digital solutions.
           </h3>
         </div>
-        <div className="grid grid-cols-4 gap-10">
+        <div className="grid grid-cols-4 md:gap-4  lg:gap-5 xl:gap-8 2xl:gap-10">
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
       </div>
       {/* who we are  */}
-      <div className="bg-[#00156B] grid grid-cols-2 gap-40 w-full px-[300px] pt-48 pb-32 ">
+      <div className="bg-[#00156B] grid grid-cols-2 gap-40 w-full md:px-[40px] xl:px-[60px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px] pt-48 pb-32 ">
         <div className="h-[483px] w-[583px] relative rounded-md">
           <Image
             src="/assets/Rectangle 10.png"
@@ -92,7 +92,7 @@ const Home = () => {
         </div>
       </div>
       {/* why choose us  */}
-      <div className="pt-24 pb-32 px-[300px] grid grid-cols-2 gap-10">
+      <div className="pt-24 pb-32 xl:px-[60px] md:px-[40px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px]  grid grid-cols-2 gap-10">
         <div className="flex items-center flex-col justify-center">
           <div className="">
             <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3">
@@ -110,7 +110,7 @@ const Home = () => {
         </div>
       </div>
       {/* what our clients are saying  */}
-      <div className="px-[300px] pt-20 pb-32 bg-[#0423A0]/10 flex justify-center items-center flex-col">
+      <div className="md:px-[40px] xl:px-[60px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px] pt-20 pb-32 bg-[#0423A0]/10 flex justify-center items-center flex-col">
         <div className="w-8/12">
           <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
             Testimonials
@@ -126,7 +126,7 @@ const Home = () => {
         </div>
       </div>
       {/* our partners */}
-      <div className="px-[300px] pt-20 pb-32 flex justify-center flex-col items-center">
+      <div className="md:px-[40px] xl:px-[60px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px]  pt-20 pb-32 flex justify-center flex-col items-center">
         <div className="w-8/12">
           <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
             Our Partners
