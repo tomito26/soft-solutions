@@ -28,7 +28,7 @@ const Footer = () => {
           <h2 className="text-xl font-bold mb-3 text-white">Important Links</h2>
           <ul>
             {links.map((link) => (
-              <li key={link.title}>
+              link.link && <li key={link.title}>
                 <Link className="text-base text-white mb-1" href={link.link}>
                   {link.title}
                 </Link>
