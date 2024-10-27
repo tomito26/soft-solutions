@@ -85,7 +85,7 @@ const Navbar = () => {
             )
           )
         )}
-        <Button className="shrink-0">Contact Us</Button>
+        <Button className="shrink-0 hover:bg-[#0423A0]/90">Contact Us</Button>
       </ul>
     </nav>
   );

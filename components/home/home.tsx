@@ -43,7 +43,7 @@ const Home = () => {
           <h2 className="text-sm uppercase  font-bold text-[#0423A0] text-center">
             Our Core Services
           </h2>
-          <h3 className="text-5xl font-bold text-center">
+          <h3 className="text-5xl text-monochrome font-bold text-center">
             We provide truly prominent digital solutions.
           </h3>
         </div>
@@ -75,7 +75,7 @@ const Home = () => {
         </div>
         <div>
           <h2 className="text-sm uppercase font-bold text-white mb-4">Who we are</h2>
-          <h3 className="text-5xl font-bold text-white mb-4">
+          <h3 className="text-5xl  font-bold text-white mb-4">
             Highly Tailored IT Design, management & Support Services.
           </h3>
           <p className="text-white mb-3">
@@ -98,7 +98,7 @@ const Home = () => {
             <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3">
               Why Choose us
             </h2>
-            <h3 className="text-5xl font-bold  text-left mb-3">
+            <h3 className="text-5xl font-bold text-monochrome  text-left mb-3">
               Innovative, Secure, and Scalable IT Services Tailored for You
             </h3>
           </div>
@@ -115,7 +115,7 @@ const Home = () => {
           <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
             Testimonials
           </h2>
-          <h3 className="text-5xl font-bold  text-center mb-3">
+          <h3 className="text-5xl font-bold text-monochrome text-center mb-3">
             Delivering innovative IT solutions that exceed expectations
           </h3>
         </div>
@@ -131,7 +131,7 @@ const Home = () => {
           <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
             Our Partners
           </h2>
-          <h3 className="text-5xl font-bold  text-center mb-3">
+          <h3 className="text-5xl font-bold text-monochrome text-center mb-3">
             Creating Value Through Meaningful Partnerships
           </h3>
         </div>
