@@ -1,70 +1,8 @@
-import React from "react";
+import { philosophies, values } from "@/lib/constants";
 import Image from "next/image";
-import { Gem, Handshake, Rocket } from "lucide-react";
 
 const About = () => {
-  const philosophies = [
-    {
-      icon: Rocket,
-      title: "Our Mission",
-      description:
-        "To deliver innovative and reliable IT solutions that drive business transformation, empower organizations to achieve their full potential, and foster growth through cutting-edge technology, collaboration, and exceptional service.",
-    },
-    {
-      icon: Gem,
-      title: "Our vision",
-      description:
-        "To be a global leader in IT solutions, recognized for our commitment to innovation, quality, and customer success, while continuously evolving to meet the changing needs of the digital world.",
-    },
-    {
-      icon: Handshake,
-      title: "Our Commitment",
-      description:
-        "We are committed to delivering excellence in every project, maintaining transparency and trust with our clients, and creating long-term partnerships that ensure sustainable success.",
-    },
-  ];
-  const values = [
-    {
-      title: "Innovation",
-      description:
-        "We embrace the ever-changing world of technology, constantly seeking creative solutions that push the boundaries of what's possible for our clients.",
-    },
-    {
-      title: "Integrity",
-      description:
-        "We uphold the highest standards of honesty and transparency in all our dealings, building long-lasting relationships based on trust.",
-    },
-    {
-      title: "Customer-Centricity",
-      description:
-        "Our clients are at the core of everything we do. We prioritize understanding their needs and delivering solutions that exceed expectations.",
-    },
-    {
-      title: "Excellence",
-      description:
-        "We strive for excellence in every aspect of our work, from the quality of our products to the professionalism of our team. We believe in delivering nothing but the best.",
-    },
-    {
-      title: "Collaboration",
-      description:
-        "We value teamwork and the power of collaboration, both within our company and with our clients, to deliver solutions that are stronger together.",
-    },
-    {
-      title: "Accountability",
-      description:
-        "We take full responsibility for the outcomes of our work, ensuring that every project is completed to the highest standard and delivers real results.",
-    },
-    {
-      title: "Accountability",
-      description:
-        "We take full responsibility for the outcomes of our work, ensuring that every project is completed to the highest standard and delivers real results.",
-    },
-    {
-      title: "Continuous Learning",
-      description:
-        "In a rapidly evolving industry, we remain committed to learning and growing, ensuring our solutions are always ahead of the curve.",
-    },
-  ];
+
   return (
     <div>
       <div
