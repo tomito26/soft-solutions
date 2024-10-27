@@ -1,8 +1,7 @@
-import { philosophies, values } from "@/lib/constants";
+import { our_partners, philosophies, values } from "@/lib/constants";
 import Image from "next/image";
 
 const About = () => {
-
   return (
     <div>
       <div
@@ -84,28 +83,21 @@ const About = () => {
       </div>
       {/* our values */}
       <div className="px-[300px] py-20 pb-32">
-        {/* <div className="h-[418px] w-[600px]  relative flex-1">
-          <Image
-            src="/assets/medium-shot-people-discussing.jpg"
-            fill
-            alt=""
-            className="absolute"
-          />
-        </div> */}
-
         <div className="flex justify-center items-center flex-col">
           <div className="w-7/12">
-            <h2 className="text-sm text-center uppercase font-bold text-[#0423A0] mb-4 ">
+            <h2 className="text-sm text-center uppercase font-bold text-[#0423A0] mb-4">
               our values
             </h2>
-            <h3 className="text-5xl font-bold text-monochrome mb-6">
+            <h3 className="text-5xl font-bold text-monochrome mb-6 text-center">
               Guiding Principles That Define Our Mission and Inspire Our Team
             </h3>
           </div>
           <div className="grid grid-cols-3 gap-10">
             {values.map((value, indx) => (
               <div key={value.title} className="flex gap-3">
-                <h3 className="text-[#0423A0] font-bold text-3xl">0{indx+1}</h3>
+                <h3 className="text-[#0423A0] font-bold text-3xl">
+                  0{indx + 1}
+                </h3>
                 <div>
                   <h3 className="text-xl font-bold text-monochrome">
                     {value.title}
@@ -117,6 +109,29 @@ const About = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+      {/* our clients / */}
+      <div className="px-[300px] py-16 pb-32">
+        <div>
+          <h2 className="text-sm text-center uppercase font-bold text-[#0423A0] mb-4">
+            our clients
+          </h2>
+          <h3 className="text-5xl font-bold text-monochrome mb-6 text-center">
+            Trusted by Industry Leaders
+          </h3>
+        </div>
+        <div className="grid grid-cols-4">
+          {our_partners.map((client) => (
+            <div key={client.id} className="h-[156px] w-[240px] relative">
+              <Image
+                src={client.logo}
+                alt={client.partner}
+                fill
+                className="absolute object-contain"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
