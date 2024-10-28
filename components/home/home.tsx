@@ -41,13 +41,13 @@ const Home = () => {
       <div className="md:px-[40px] lg:px-[60px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px] w-full pt-12 pb-32 flex justify-center items-center flex-col">
         <div className="md:w-7/12 4xl:w-7/12 5xl:w-6/12 flex justify-center flex-col items-center">
           <h2 className="text-sm uppercase  font-bold text-[#0423A0] text-center">
-            Our Core Services
+            What we offer
           </h2>
           <h3 className="text-5xl text-monochrome font-bold text-center">
             We provide truly prominent digital solutions.
           </h3>
         </div>
-        <div className="grid grid-cols-4 md:gap-4  lg:gap-5 xl:gap-8 2xl:gap-10">
+        <div className="grid grid-cols-3 md:gap-4  lg:gap-5 xl:gap-8 2xl:gap-10">
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}

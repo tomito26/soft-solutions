@@ -1,9 +1,12 @@
-import React from 'react'
+import SoftwareServices from "@/components/software-Services/software-services";
+import React from "react";
 
 const SoftwareServicespage = () => {
   return (
-    <div>SoftwareServicespage</div>
-  )
-}
+    <div>
+      <SoftwareServices />
+    </div>
+  );
+};
 
-export default SoftwareServicespage
+export default SoftwareServicespage;
