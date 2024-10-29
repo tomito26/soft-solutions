@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 const SoftwareServices = () => {
   return (
@@ -50,7 +51,7 @@ const SoftwareServices = () => {
         <div className="flex flex-row-reverse items-center gap-12">
           <div className="h-[328px] w-[500px] relative shrink-0">
             <Image
-              src="/assets/business-branding-label-chart-graphic.jpg"
+              src="/assets/system-design.jpg"
               alt=" a guy holding written design of website"
               fill
               className="absolute object-cover"
@@ -95,6 +96,96 @@ const SoftwareServices = () => {
               ensure seamless, reliable access to your data and applications.
             </p>
           </div>
+        </div>
+        <div className="flex flex-row-reverse  items-center gap-12">
+          <div className="h-[328px] w-[500px] relative shrink-0">
+            <Image
+              src="/assets/female-scientist-white.jpg"
+              alt=" a guy holding written design of website"
+              fill
+              className="absolute object-cover"
+            />
+          </div>
+          <div className="">
+            <h2 className="text-5xl font-bold text-monochrome mb-4">
+              Cybersecurity
+            </h2>
+            <p className="text-base">
+              In today&apos;s digital landscape, cybersecurity is a priority,
+              and we offer comprehensive solutions to protect your business. Our
+              services include threat assessments, firewall management, data
+              encryption, and real-time monitoring to safeguard sensitive data
+              and prevent unauthorized access. We tailor our cybersecurity
+              strategies to each client, providing proactive protection against
+              a range of cyber threats. With us, you gain a dedicated partner in
+              securing your digital assets and maintaining compliance with
+              industry standards.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-row items-center gap-12">
+          <div className="h-[328px] w-[500px] relative shrink-0">
+            <Image
+              src="/assets/young-businesswoman-working-with-statistics-charts-computer-monitor-analyzing-company-data-paperwork-using-online-information-create-research-report-before-deadline-night-after-hours.jpg"
+              alt=" a guy holding written design of website"
+              fill
+              className="absolute object-cover"
+            />
+          </div>
+          <div className="">
+            <h2 className="text-5xl font-bold text-monochrome mb-4">
+              Data Management
+            </h2>
+            <p className="text-base">
+              Our Data Management services empower you to harness the full
+              potential of your data. We offer data analytics, database
+              management, and processing solutions that convert raw data into
+              actionable insights. Our team uses advanced tools and
+              methodologies to organize, analyze, and visualize data, enabling
+              smarter decision-making and helping your business uncover hidden
+              trends. With our support, data becomes a strategic asset that
+              fuels growth and innovation.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-row-reverse items-center gap-12">
+          <div className="h-[328px] w-[500px] relative shrink-0">
+            <Image
+              src="/assets/it-specialist-looking-network-issues-affecting-rigs-performance-using-tablet.jpg"
+              alt=" a guy holding written design of website"
+              fill
+              className="absolute object-cover"
+            />
+          </div>
+          <div className="">
+            <h2 className="text-5xl font-bold text-monochrome mb-4">
+              IT Consulting
+            </h2>
+            <p className="text-base">
+              Our IT Consulting services provide businesses with expert guidance
+              on their technology strategy. We work closely with you to
+              understand your challenges, goals, and vision, offering insights
+              and solutions that future-proof your technology investments. From
+              system assessments to implementing cutting-edge tools, our
+              consultants deliver strategic advice tailored to your industry,
+              ensuring that your technology aligns with your business&apos;s
+              evolving needs and positions you for long-term success.
+            </p>
+          </div>
+        </div>
+        <div className="pt-16 pb-16 mt-16 flex justify-center items-center flex-col">
+          <div className="w-8/12">
+            <h2 className="font-bold text-5xl text-center mb-4 capitalize text-monochrome">
+              Ready to get Started?
+            </h2>
+            <p className="font-medium text-center mb-6">
+              Transform your business with cutting-edge software solutions
+              designed to fit your unique needs. From custom applications to
+              cloud services and cybersecurity, we&apos;re here to drive your
+              digital success.
+            </p>
+          </div>
+          <Button>Contact Us</Button>
         </div>
       </div>
     </div>
