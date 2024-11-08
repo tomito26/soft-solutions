@@ -4,9 +4,7 @@ import {
   Handshake,
   HardDrive,
   LayoutGrid,
-  Network,
   Rocket,
-  Server,
   Shield,
   SquarePen,
   Users,
@@ -59,13 +57,13 @@ export const services = [
       "Building modern, user-friendly web and mobile applications that deliver seamless experiences.",
     icon: LayoutGrid,
   },
-  {
-    id: 3,
-    title: "Cloud Storage & Infrastructure",
-    description:
-      "Secure, reliable cloud solutions for data storage, management, and scalability.",
-    icon: Server,
-  },
+  // {
+  //   id: 3,
+  //   title: "Cloud Storage & Infrastructure",
+  //   description:
+  //     "Secure, reliable cloud solutions for data storage, management, and scalability.",
+  //   icon: Server,
+  // },
   {
     id: 4,
     title: "IT Support & Consulting",
@@ -89,18 +87,18 @@ export const services = [
   },
   {
     id: 7,
-    title: "Hardware Installations",
+    title: "Hardware Services",
     description:
-      "Specialized hardware services including camera installations, access control systems, and other security installations.",
+      "Comprehensive hardware services including procurement, repair, and installation of computers and other electronic hardware.",
     icon: HardDrive,
   },
-  {
-    id: 8,
-    title: "Networking Solutions",
-    description:
-      "Deployment of network infrastructures for enterprises, including hybrid cloud and edge computing solutions.",
-    icon: Network,
-  },
+  // {
+  //   id: 8,
+  //   title: "Networking Solutions",
+  //   description:
+  //     "Deployment of network infrastructures for enterprises, including hybrid cloud and edge computing solutions.",
+  //   icon: Network,
+  // },
 ];
 
 export const why_choose_us = [
@@ -236,11 +234,6 @@ export const values = [
     title: "Collaboration",
     description:
       "We value teamwork and the power of collaboration, both within our company and with our clients, to deliver solutions that are stronger together.",
-  },
-  {
-    title: "Accountability",
-    description:
-      "We take full responsibility for the outcomes of our work, ensuring that every project is completed to the highest standard and delivers real results.",
   },
   {
     title: "Accountability",
