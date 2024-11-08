@@ -15,7 +15,7 @@ const SoftwareServices = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className="flex items-center md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px]"
+        className="flex items-center md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[320px]"
       >
         <div className="w-8/12">
           <h1 className="font-bold text-6xl text-white pb-6">
@@ -137,7 +137,7 @@ const SoftwareServices = () => {
               Data Management
             </h2>
             <p className="text-base">
-              Our Data Management services empower you to harness the full
+              We empower you to harness the full
               potential of your data. We offer data analytics, database
               management, and processing solutions that convert raw data into
               actionable insights. Our team uses advanced tools and
@@ -162,7 +162,7 @@ const SoftwareServices = () => {
               IT Consulting
             </h2>
             <p className="text-base">
-              Our IT Consulting services provide businesses with expert guidance
+              We provide businesses with expert guidance
               on their technology strategy. We work closely with you to
               understand your challenges, goals, and vision, offering insights
               and solutions that future-proof your technology investments. From

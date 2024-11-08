@@ -12,9 +12,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className=" bg-[#0423A0] md:px-[40px] xl:px-[60px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px]  py-32 ">
+    <footer className=" bg-[#0423A0] md:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  py-32 ">
       <div className="grid grid-cols-12 gap-4 mb-20">
-        <div className="col-span-5">
+        <div className="col-span-4">
           <h2 className="text-2xl font-bold text-white mb-3">
             Soft Solutions Technologies
           </h2>
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
         <div className="col-span-2">
           <div className="flex items-center gap-3">
-            <Phone className="h-6 w-6 stroke-white" />
+            <Phone className="h-6 w-6 stroke-white shrink-0" />
             <div>
               <h2 className="text-base font-bold text-white">
                 Main Support Line
@@ -59,7 +59,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex items-center gap-3 mt-4">
-            <Mail className="h-6 w-8 stroke-white" />
+            <Mail className="h-6 w-8 stroke-white shrink-0" />
             <div>
               <h2 className="text-base font-bold text-white">
                 General Enquiries

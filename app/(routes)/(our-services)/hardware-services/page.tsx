@@ -1,8 +1,9 @@
+import HardwareServices from '@/components/hardware-services.tsx/hardware-services'
 import React from 'react'
 
 const HardwareServicespage = () => {
   return (
-    <div>HardwareServicespage</div>
+    <div><HardwareServices/></div>
   )
 }
 
