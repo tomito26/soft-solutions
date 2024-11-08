@@ -15,7 +15,7 @@ const HardwareServices = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className="flex items-center md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[100px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]"
+        className="flex items-center md:px-[40px] lg:px-[80px]  xl:px-[100px] 2xl:px-[100px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]"
       >
         <div className="w-8/12">
           <h1 className="font-bold text-6xl text-white pb-6">
@@ -23,7 +23,7 @@ const HardwareServices = () => {
           </h1>
         </div>
       </div>
-      <div className="pt-16 pb-24 md:px-[60px] xl:px-[80px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] ">
+      <div className="pt-16 pb-24 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] ">
         <div className="flex items-center gap-12">
           <div className="h-[328px] w-[500px] relative shrink-0">
             <Image

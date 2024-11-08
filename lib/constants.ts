@@ -241,11 +241,6 @@ export const values = [
       "We take full responsibility for the outcomes of our work, ensuring that every project is completed to the highest standard and delivers real results.",
   },
   {
-    title: "Accountability",
-    description:
-      "We take full responsibility for the outcomes of our work, ensuring that every project is completed to the highest standard and delivers real results.",
-  },
-  {
     title: "Continuous Learning",
     description:
       "In a rapidly evolving industry, we remain committed to learning and growing, ensuring our solutions are always ahead of the curve.",

@@ -19,8 +19,9 @@ import {
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
+
   return (
-    <nav className="flex justify-between items-center py-4 md:px-[60px] lg:px-[60px] xl:px-[80px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
+    <nav className="flex justify-between items-center py-4 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
       <div className="relative h-[60px] w-[180px]">
         <Image
           src="/assets/soft-solutions.svg"

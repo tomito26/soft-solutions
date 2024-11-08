@@ -38,7 +38,7 @@ const Home = () => {
         </div>
       </div>
       {/* our services */}
-      <div className="md:px-[40px] lg:px-[80px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] w-full pt-12 pb-32 flex justify-center items-center flex-col">
+      <div className="md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] w-full pt-12 pb-32 flex justify-center items-center flex-col">
         <div className="md:w-7/12 4xl:w-7/12 5xl:w-7/12 flex justify-center flex-col items-center">
           <h2 className="text-sm uppercase  font-bold text-[#0423A0] text-center">
             What we offer
@@ -54,7 +54,7 @@ const Home = () => {
         </div>
       </div>
       {/* who we are  */}
-      <div className="bg-[#00156B] grid grid-cols-2 gap-64 w-full md:px-[40px] xl:px-[80px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-48 pb-32 ">
+      <div className="bg-[#00156B] grid grid-cols-2 gap-64 w-full md:px-[40px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-48 pb-32 ">
         <div className="h-[483px] w-[583px] relative rounded-md">
           <Image
             src="/assets/Rectangle 10.png"
@@ -92,7 +92,7 @@ const Home = () => {
         </div>
       </div>
       {/* why choose us  */}
-      <div className="pt-24 pb-32 xl:px-[80px] md:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  grid grid-cols-2 gap-10">
+      <div className="pt-24 pb-32 xl:px-[100px] lg:px-[80px] md:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  grid grid-cols-2 gap-10">
         <div className="flex items-center flex-col justify-center">
           <div className="">
             <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3">
@@ -110,7 +110,7 @@ const Home = () => {
         </div>
       </div>
       {/* what our clients are saying  */}
-      <div className="md:px-[60px] xl:px-[80px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 pb-32 bg-[#0423A0]/10 flex justify-center items-center flex-col">
+      <div className="md:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] lg:px-[80px] pt-20 pb-32 bg-[#0423A0]/10 flex justify-center items-center flex-col">
         <div className="w-8/12">
           <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
             Testimonials
@@ -126,7 +126,7 @@ const Home = () => {
         </div>
       </div>
       {/* our partners */}
-      <div className="md:px-[60px] xl:px-[80px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  pt-20 pb-32 flex justify-center flex-col items-center">
+      <div className="md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  pt-20 pb-32 flex justify-center flex-col items-center">
         <div className="w-8/12">
           <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
             Our Partners

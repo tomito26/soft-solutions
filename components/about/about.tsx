@@ -14,14 +14,14 @@ const About = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className="flex items-center md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[100px] 3xl:px-[120px] 4xl:px-[200px] 5xl:px-[300px]"
+        className="flex items-center md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]"
       >
         <div className="w-8/12">
           <h1 className="font-bold text-6xl text-white pb-6">About Us</h1>
         </div>
       </div>
       {/* {/* who we are */}
-      <div className="flex items-center gap-10 px-[300px] pt-12 pb-32">
+      <div className="flex items-center gap-10  md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-12 pb-32">
         <div>
           <div className="w-[600px] h-[418px] relative">
             <Image
@@ -53,7 +53,7 @@ const About = () => {
         </div>
       </div>
       {/* our philosophies  */}
-      <div className="bg-[#0423A0]/10 px-[300px] pt-16 pb-32 flex items-center justify-center flex-col">
+      <div className="bg-[#0423A0]/10 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-16 pb-32 flex items-center justify-center flex-col">
         <div className="w-8/12">
           <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-4 text-center">
             our philosophies
@@ -82,9 +82,9 @@ const About = () => {
         </div>
       </div>
       {/* our values */}
-      <div className="px-[300px] py-20 pb-32">
+      <div className="md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] py-20 pb-32">
         <div className="flex justify-center items-center flex-col">
-          <div className="w-7/12">
+          <div className="w-8/12">
             <h2 className="text-sm text-center uppercase font-bold text-[#0423A0] mb-4">
               our values
             </h2>
@@ -112,7 +112,7 @@ const About = () => {
         </div>
       </div>
       {/* our clients / */}
-      <div className="px-[300px] py-16 pb-32">
+      <div className="md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] py-16 pb-32">
         <div>
           <h2 className="text-sm text-center uppercase font-bold text-[#0423A0] mb-4">
             our clients
