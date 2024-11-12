@@ -21,7 +21,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="flex justify-between items-center flex-row h-[92px]  md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
+    <nav className="flex justify-between items-center flex-row h-[92px] px-4 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
       <div className="relative h-[60px] w-[180px]">
         <Image
           src="/assets/soft-solutions.svg"
@@ -30,7 +30,7 @@ const Navbar = () => {
           className="absolute object-cover"
         />
       </div>
-      <ul className="flex items-center justify-center flex-row space-x-10 h-full">
+      <ul className="md:flex items-center justify-center flex-row space-x-10 h-full hidden">
         {links.map(({ title, subLink, link }) =>
           link ? (
             <li key={title} className="inline-flex items-center h-full">

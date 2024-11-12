@@ -12,8 +12,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className=" bg-[#0423A0] md:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  py-32 ">
-      <div className="grid grid-cols-12 gap-4 mb-20">
+    <footer className=" bg-[#0423A0] px-4 md:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  py-32 ">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-20">
         <div className="col-span-4">
           <h2 className="text-2xl font-bold text-white mb-3">
             Soft Solutions Technologies
