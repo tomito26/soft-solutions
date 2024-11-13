@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import ServiceCard from "./lib/ui/service-card";
@@ -9,6 +10,10 @@ import {
   testimonials,
   why_choose_us,
 } from "@/lib/constants";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination, Autoplay, Navigation, EffectFade } from "swiper/modules";
 
 const Home = () => {
   return (
@@ -74,7 +79,9 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-xs md:text-sm uppercase font-bold text-white mb-4">Who we are</h2>
+          <h2 className="text-xs md:text-sm uppercase font-bold text-white mb-4">
+            Who we are
+          </h2>
           <h3 className="text-2xl md:text-5xl  font-bold text-white mb-4">
             Highly Tailored IT Design, management & Support Services.
           </h3>
@@ -126,27 +133,65 @@ const Home = () => {
         </div>
       </div>
       {/* our partners */}
-      <div className="md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  pt-20 pb-32 flex justify-center flex-col items-center">
-        <div className="w-8/12">
-          <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
+      <div className="md:px-[60px]  px-4 lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  pt-20 pb-32 flex justify-center flex-col items-center">
+        <div className="md:w-8/12">
+          <h2 className="text-xs md:text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
             Our Partners
           </h2>
-          <h3 className="text-5xl font-bold text-monochrome text-center mb-3">
+          <h3 className="text-2xl md:text-5xl font-bold text-monochrome text-center mb-3">
             Creating Value Through Meaningful Partnerships
           </h3>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
-          {our_partners.map((partner) => (
-            <div className="h-[156px] w-[240px]  relative" key={partner.id}>
-              <Image
-                src={partner.logo}
-                fill
-                alt={partner.partner}
-                className="absolute object-contain"
-              />
-            </div>
+        <div className="flex justify-center items-center w-full">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay, EffectFade]}
+          slidesPerView={1}
+          centeredSlides={true}
+          spaceBetween={20}
+          pagination={{ clickable: true }}
+          loop={true}
+          autoplay={{ delay: 5000 }}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            1300: {
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
+            1536: {
+              slidesPerView: 3,
+              spaceBetween: 60,
+            },
+          }}
+          className="flex justify-center items-center flex-row w-8/12"
+        >
+          {[...our_partners,...our_partners].map((partner, index) => (
+            <SwiperSlide key={index}>
+              <div className="pt-6 pb-10">
+                <div className="h-[80px] w-[240px] relative rounded-lg">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.partner}
+                    fill
+                    className="absolute object-contain rounded-lg"
+                    priority
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
+      </div>
       </div>
     </div>
   );
