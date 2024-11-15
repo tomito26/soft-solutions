@@ -60,7 +60,7 @@ const Home = () => {
       </div>
       {/* who we are  */}
       <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 md:gap-64 w-full md:px-[40px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
-        <div className="md:h-[483px] h-[240px] w-full md:w-[583px] order-last md:order-1 relative rounded-md">
+        <div className="md:h-[483px] h-[240px] w-full md:w-[583px] order-last md:order-first relative rounded-md">
           <Image
             src="/assets/Rectangle 10.png"
             alt=""
@@ -118,7 +118,7 @@ const Home = () => {
       </div>
       {/* what our clients are saying  */}
       <div className="px-4 md:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] lg:px-[80px] pt-20 pb-32 bg-[#0423A0]/10 flex justify-center items-center flex-col">
-        <div className="md:w-8/12">
+        <div className="md:w-10/12 4xl:w-8/12">
           <h2 className="md:text-sm text-xs uppercase font-bold text-[#0423A0] mb-3 text-center">
             Testimonials
           </h2>
@@ -216,11 +216,11 @@ const Home = () => {
                 spaceBetween: 60,
               },
             }}
-            className="flex justify-center items-center flex-row w-8/12"
+            className="flex justify-center items-center flex-row w-full"
           >
             {[...our_partners, ...our_partners].map((partner, index) => (
               <SwiperSlide key={index}>
-                <div className="pt-6 pb-10">
+                <div className="flex justify-center items-center pt-6 pb-10">
                   <div className="h-[80px] w-[240px] relative rounded-lg">
                     <Image
                       src={partner.logo}
