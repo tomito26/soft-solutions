@@ -60,14 +60,14 @@ const Home = () => {
       </div>
       {/* who we are  */}
       <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 md:gap-64 w-full md:px-[40px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
-        <div className="md:h-[483px] h-[360px] w-full md:w-[583px] order-last md:order-1 relative rounded-md">
+        <div className="md:h-[483px] h-[240px] w-full md:w-[583px] order-last md:order-1 relative rounded-md">
           <Image
             src="/assets/Rectangle 10.png"
             alt=""
             fill
             className="absolute cover rounded-md"
           />
-          <div className="absolute -top-28 -right-20 hidden">
+          <div className="absolute -top-28 -right-20 hidden md:block">
             <div className="h-[262px] md:w-[349px] w-full relative">
               <Image
                 src="/assets/Rectangle 11.png"
@@ -92,7 +92,7 @@ const Home = () => {
             securely manage your data in the cloud, our team of experts is here
             to help.
           </p>
-          <p className="text-white">
+          <p className="text-white text-sm md:text-base">
             With years of experience and a passion for innovation, we bring your
             vision to life through technology.
           </p>
@@ -119,17 +119,60 @@ const Home = () => {
       {/* what our clients are saying  */}
       <div className="px-4 md:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] lg:px-[80px] pt-20 pb-32 bg-[#0423A0]/10 flex justify-center items-center flex-col">
         <div className="md:w-8/12">
-          <h2 className="text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
+          <h2 className="md:text-sm text-xs uppercase font-bold text-[#0423A0] mb-3 text-center">
             Testimonials
           </h2>
           <h3 className="text-2xl md:text-5xl font-bold text-monochrome text-center mb-3">
             Delivering innovative IT solutions that exceed expectations
           </h3>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mt-10 pl-[50px]">
-          {testimonials.map((testimony) => (
-            <Testimonial key={testimony.id} testimony={testimony} />
-          ))}
+        <div className="flex justify-center items-center w-full">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay, EffectFade]}
+            slidesPerView={1}
+            centeredSlides={true}
+            spaceBetween={20}
+            pagination={{ clickable: true }}
+            loop={true}
+            autoplay={{ delay: 5000 }}
+            observeParents={true}
+            observer={true}
+            breakpoints={{
+              480: {
+                slidesPerView: 1,
+                spaceBetween: 80,
+              },
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 240,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 80,
+              },
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 80,
+              },
+              1300: {
+                slidesPerView: 2,
+                spaceBetween: 120,
+              },
+              1536: {
+                slidesPerView: 2,
+                spaceBetween: 120,
+              },
+            }}
+            className="flex justify-center items-center flex-row w-full"
+          >
+            {[...testimonials, ...testimonials].map((testimony, index) => (
+              <SwiperSlide key={index}>
+                <div className="pt-10 pb-14">
+                  <Testimonial key={testimony.id} testimony={testimony} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
       {/* our partners */}
@@ -143,55 +186,55 @@ const Home = () => {
           </h3>
         </div>
         <div className="flex justify-center items-center w-full">
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay, EffectFade]}
-          slidesPerView={1}
-          centeredSlides={true}
-          spaceBetween={20}
-          pagination={{ clickable: true }}
-          loop={true}
-          autoplay={{ delay: 5000 }}
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 40,
-            },
-            1300: {
-              slidesPerView: 3,
-              spaceBetween: 50,
-            },
-            1536: {
-              slidesPerView: 3,
-              spaceBetween: 60,
-            },
-          }}
-          className="flex justify-center items-center flex-row w-8/12"
-        >
-          {[...our_partners,...our_partners].map((partner, index) => (
-            <SwiperSlide key={index}>
-              <div className="pt-6 pb-10">
-                <div className="h-[80px] w-[240px] relative rounded-lg">
-                  <Image
-                    src={partner.logo}
-                    alt={partner.partner}
-                    fill
-                    className="absolute object-contain rounded-lg"
-                    priority
-                  />
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay, EffectFade]}
+            slidesPerView={1}
+            centeredSlides={true}
+            spaceBetween={20}
+            pagination={{ clickable: true }}
+            loop={true}
+            autoplay={{ delay: 5000 }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+              1300: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+              1536: {
+                slidesPerView: 3,
+                spaceBetween: 60,
+              },
+            }}
+            className="flex justify-center items-center flex-row w-8/12"
+          >
+            {[...our_partners, ...our_partners].map((partner, index) => (
+              <SwiperSlide key={index}>
+                <div className="pt-6 pb-10">
+                  <div className="h-[80px] w-[240px] relative rounded-lg">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.partner}
+                      fill
+                      className="absolute object-contain rounded-lg"
+                      priority
+                    />
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </div>
   );
