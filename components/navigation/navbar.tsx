@@ -21,7 +21,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="flex justify-between items-center py-4 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
+    <nav className="flex justify-between items-center flex-row h-[92px] px-4 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
       <div className="relative h-[60px] w-[180px]">
         <Image
           src="/assets/soft-solutions.svg"
@@ -30,10 +30,10 @@ const Navbar = () => {
           className="absolute object-cover"
         />
       </div>
-      <ul className="flex items-center space-x-10">
+      <ul className="md:flex items-center justify-center flex-row space-x-10 h-full hidden">
         {links.map(({ title, subLink, link }) =>
           link ? (
-            <li key={title} className="inline-block">
+            <li key={title} className="inline-flex items-center h-full">
               <Link
                 href={link}
                 className="text-base font-medium text-[#0423A0]"
@@ -51,13 +51,13 @@ const Navbar = () => {
               >
                 <DropdownMenuTrigger
                   className={cn(
-                    "cursor-pointer p-0 border-none outline-none w-full relative flex items-center justify-center transition-all",
+                    "cursor-pointer p-0 border-none outline-none w-full relative flex items-center justify-center transition-all h-full",
                   )}
                   aria-haspopup="true"
                   aria-expanded={menuOpen}
                 >
-                  <div className="flex items-center gap-x-2">
-                    <span className="text-base font-medium text-[#0423A0]">{title}</span>
+                  <div className="flex items-center justify-center flex-row gap-x-2 h-full">
+                    <span className="text-base font-medium text-[#0423A0] inline-flex items-center h-full">{title}</span>
                     <ChevronDown
                       className={cn(
                         "transition-transform duration-200 stroke-[#0423A0]",
@@ -66,7 +66,7 @@ const Navbar = () => {
                     />
                   </div>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[180px] rounded-t-none -mt-1 left-0 -bottom-11">
+                <DropdownMenuContent className="w-[180px] rounded-t-none -mt-1 left-0 -bottom-32">
                   {subLink.map((item) =>
                     item.link ? ( // Check if item.link exists
                       <DropdownMenuGroup key={item.title}>

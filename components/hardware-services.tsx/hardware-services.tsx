@@ -15,17 +15,17 @@ const HardwareServices = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className="flex items-center md:px-[40px] lg:px-[80px]  xl:px-[100px] 2xl:px-[100px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]"
+        className="flex items-center md:px-[40px] lg:px-[80px]  xl:px-[100px] px-4 2xl:px-[100px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]"
       >
-        <div className="w-8/12">
-          <h1 className="font-bold text-6xl text-white pb-6">
+        <div className="md:w-8/12">
+          <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
             Hardware Services
           </h1>
         </div>
       </div>
-      <div className="pt-16 pb-24 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] ">
-        <div className="flex items-center gap-12">
-          <div className="h-[328px] w-[500px] relative shrink-0">
+      <div className="pt-10 md:pt-16 pb-24 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] px-4 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] ">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-4 md:gap-12">
+          <div className="md:h-[328px] h-[240px] w-full md:w-[500px] relative shrink-0">
             <Image
               src="/assets/portrait-male-engineer-working-field-engineers-day-celebration.jpg"
               alt=" a guy holding written design of website"
@@ -33,11 +33,11 @@ const HardwareServices = () => {
               className="absolute object-cover"
             />
           </div>
-          <div className="">
-            <h2 className="text-5xl font-bold text-monochrome mb-4">
+          <div className="mt-6 md:mt-0">
+            <h2 className="md:text-5xl text-2xl font-bold text-monochrome mb-4">
               Network Setup and Management
             </h2>
-            <p className="text-base ">
+            <p className="text-sm md:text-base ">
               Our Network Setup and Management services lay the foundation for
               strong, secure, and reliable connectivity within your
               organization. We design and install network infrastructures that
@@ -48,8 +48,8 @@ const HardwareServices = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row-reverse items-center gap-12">
-          <div className="h-[328px] w-[500px] relative shrink-0">
+        <div className="flex flex-col-reverse md:flex-row-reverse items-center gap-4 md:gap-12">
+          <div className="md:h-[328px] h-[240px] w-full md:w-[500px] relative shrink-0">
             <Image
               src="/assets/system-design.jpg"
               alt=" a guy holding written design of website"
@@ -57,8 +57,8 @@ const HardwareServices = () => {
               className="absolute object-cover"
             />
           </div>
-          <div className="">
-            <h2 className="text-5xl font-bold text-monochrome mb-4">
+          <div className="mt-6 md:mt-0">
+            <h2 className="text-2xl md:text-5xl font-bold text-monochrome mb-4">
               Hardware Installation & Support
             </h2>
             <p className="text-base ">
@@ -72,8 +72,8 @@ const HardwareServices = () => {
             </p>
           </div>
         </div>
-        <div className="flex  items-center gap-12">
-          <div className="h-[328px] w-[500px] relative shrink-0">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-4 md:gap-12">
+          <div className="h-[240px] md:h-[328px] w-full md:w-[500px] relative shrink-0">
             <Image
               src="/assets/male-entrepreneur-analyzing-stock-products-orders-doing-inventory-laptop-warehouse-young-man-using-logistics-financial-planning-send-merchandise-development-handheld-shot.jpg"
               alt=" a guy holding written design of website"
@@ -81,8 +81,8 @@ const HardwareServices = () => {
               className="absolute object-cover"
             />
           </div>
-          <div className="">
-            <h2 className="text-5xl font-bold text-monochrome mb-4">
+          <div className="mt-6 md:mt-0">
+            <h2 className="text-2xl md:text-5xl font-bold text-monochrome mb-4">
               Device Procurement and Setup
             </h2>
             <p className="text-base">
@@ -96,8 +96,8 @@ const HardwareServices = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row-reverse  items-center gap-12">
-          <div className="h-[328px] w-[500px] relative shrink-0">
+        <div className="flex flex-col-reverse md:flex-row-reverse  items-center gap-4 md:gap-12">
+          <div className="md:h-[328px] h-[240px] w-full md:w-[500px] relative shrink-0">
             <Image
               src="/assets/professional-looking-freon-levels.jpg"
               alt=" a guy holding written design of website"
@@ -105,11 +105,11 @@ const HardwareServices = () => {
               className="absolute object-cover"
             />
           </div>
-          <div className="">
-            <h2 className="text-5xl font-bold text-monochrome mb-4">
+          <div className="mt-6 md:mt-0">
+            <h2 className="md:text-5xl text-2xl font-bold text-monochrome mb-4">
               Maintenance and Repairs
             </h2>
-            <p className="text-base">
+            <p className="text-sm md:text-base">
               We provide essential support to
               keep your IT hardware running smoothly. We conduct regular
               maintenance checks, troubleshoot issues, and perform necessary
@@ -120,8 +120,8 @@ const HardwareServices = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row items-center gap-12">
-          <div className="h-[328px] w-[500px] relative shrink-0">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-4 md:gap-12">
+          <div className="md:h-[328px] h-[240px] w-full md:w-[500px] relative shrink-0">
             <Image
               src="/assets/technician-walking-through-server-rigs.jpg"
               alt=" a guy holding written design of website"
@@ -129,11 +129,11 @@ const HardwareServices = () => {
               className="absolute object-cover"
             />
           </div>
-          <div className="">
-            <h2 className="text-5xl font-bold text-monochrome mb-4">
+          <div className="mt-6 md:mt-0">
+            <h2 className="text-2xl md:text-5xl font-bold text-monochrome mb-4">
               On-Site IT Support
             </h2>
-            <p className="text-base">
+            <p className="text-sm md:text-base">
               We offer reliable on-site IT support to assist with day-to-day
               hardware issues and emergencies. Our team is ready to handle
               troubleshooting, repairs, and routine maintenance directly at your
@@ -144,8 +144,8 @@ const HardwareServices = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row-reverse items-center gap-12">
-          <div className="h-[328px] w-[500px] relative shrink-0">
+        <div className="flex flex-col-reverse md:flex-row-reverse items-center gap-4 md:gap-12">
+          <div className="md:h-[328px] h-[240px] w-full md:w-[500px] relative shrink-0">
             <Image
               src="/assets/it-specialist-looking-network-issues-affecting-rigs-performance-using-tablet.jpg"
               alt=" a guy holding written design of website"
@@ -153,11 +153,11 @@ const HardwareServices = () => {
               className="absolute object-cover"
             />
           </div>
-          <div className="">
-            <h2 className="text-5xl font-bold text-monochrome mb-4">
+          <div className="mt-6 md:mt-0">
+            <h2 className="text-2xl md:text-5xl font-bold text-monochrome mb-4">
               IT Consulting
             </h2>
-            <p className="text-base">
+            <p className="text-base md:text-base">
               We provide businesses with expert guidance on their technology
               strategy. We work closely with you to understand your challenges,
               goals, and vision, offering insights and solutions that
@@ -169,12 +169,12 @@ const HardwareServices = () => {
             </p>
           </div>
         </div>
-        <div className="pt-16 pb-16 mt-16 flex justify-center items-center flex-col">
-          <div className="w-8/12">
-            <h2 className="font-bold text-5xl text-center mb-4 capitalize text-monochrome">
+        <div className="pt-12 md:pt-16 pb-16 mt-16 flex justify-center items-center flex-col">
+          <div className="md:w-8/12">
+            <h2 className="font-bold text-2xl md:text-5xl text-center mb-4 capitalize text-monochrome">
               Ready to get Started?
             </h2>
-            <p className="font-medium text-center mb-6">
+            <p className="font-medium text-sm md:text-base text-center mb-6">
               Transform your business with cutting-edge software solutions
               designed to fit your unique needs. From custom applications to
               cloud services and cybersecurity, we&apos;re here to drive your
