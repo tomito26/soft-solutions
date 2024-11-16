@@ -66,7 +66,7 @@ const Navbar = () => {
                     />
                   </div>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[180px] rounded-t-none -mt-1 left-0 -bottom-32">
+                <DropdownMenuContent className="w-[200px] rounded-t-none -mt-1 left-0 -bottom-32">
                   {subLink.map((item) =>
                     item.link ? ( // Check if item.link exists
                       <DropdownMenuGroup key={item.title}>

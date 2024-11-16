@@ -1,19 +1,20 @@
 "use client";
-import Image from "next/image";
-import { Button } from "../ui/button";
-import ServiceCard from "./lib/ui/service-card";
-import Testimonial from "./lib/ui/testimonial";
-import WhyChooseUsCard from "./lib/ui/why-choose-us-card";
 import {
   our_partners,
   services,
   testimonials,
   why_choose_us,
 } from "@/lib/constants";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { BadgeCheck, BriefcaseBusiness, Users } from "lucide-react";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination, Autoplay, Navigation, EffectFade } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Button } from "../ui/button";
+import ServiceCard from "./lib/ui/service-card";
+import Testimonial from "./lib/ui/testimonial";
+import WhyChooseUsCard from "./lib/ui/why-choose-us-card";
 
 const Home = () => {
   return (
@@ -116,6 +117,41 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      <div
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(4, 35,160, 0.8), rgba(4,35,160, 0.8)), url('/assets/medium-shot-colleagues-working-office.jpg')",
+          height: "40vh",
+          width: "100%",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+        className="flex justify-evenly items-center px-4 md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]"
+      >
+        <div className="flex items-center  gap-2">
+          <BadgeCheck className="stroke-white h-10 w-10" />
+          <div className="flex flex-col">
+            <p className="font-bold text-6xl text-white">20</p>
+            <p className="text-lg font-medium text-white">Years Experience</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <Users className="stroke-white h-10 w-10" />
+          <div className="flex items-center flex-col">
+            <p className="font-bold text-6xl text-white">1000+</p>
+            <p className="text-lg font-medium text-white">Happy Clients</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+        <BriefcaseBusiness className="stroke-white h-10 w-10"/>
+          <div className="flex  items-center flex-col">
+            <p className="font-bold text-6xl text-white">2000+</p>
+            <p className="text-lg font-medium text-white">Completed Projects</p>
+          </div>
+        </div>
+      </div>
       {/* what our clients are saying  */}
       <div className="px-4 md:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] lg:px-[80px] pt-20 pb-32 bg-[#0423A0]/10 flex justify-center items-center flex-col">
         <div className="md:w-10/12 4xl:w-8/12">
@@ -160,7 +196,7 @@ const Home = () => {
               },
               1536: {
                 slidesPerView: 2,
-                spaceBetween: 120,
+                spaceBetween: 180,
               },
             }}
             className="flex justify-center items-center flex-row w-full"
