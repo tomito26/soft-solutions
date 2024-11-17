@@ -1,6 +1,7 @@
 "use client";
 import {
   our_partners,
+  our_services,
   services,
   testimonials,
   why_choose_us,
@@ -45,14 +46,6 @@ const Home = () => {
       </div>
       {/* our services */}
       <div className="px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] w-full pt-12 pb-32 flex justify-center items-center flex-col">
-        <div className="md:w-7/12 4xl:w-7/12 5xl:w-7/12 flex justify-center flex-col items-center">
-          <h2 className="text-xs md:text-sm uppercase  font-bold text-[#0423A0] text-center">
-            What we offer
-          </h2>
-          <h3 className="text-2xl md:text-5xl text-monochrome font-bold text-center">
-            We provide truly prominent digital solutions.
-          </h3>
-        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4  lg:gap-5 xl:gap-8 2xl:gap-10">
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
@@ -61,9 +54,9 @@ const Home = () => {
       </div>
       {/* who we are  */}
       <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 md:gap-64 w-full md:px-[40px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
-        <div className="md:h-[483px] h-[240px] w-full md:w-[583px] order-last md:order-first relative rounded-md">
+        <div className="md:h-[400px] h-[240px] w-full md:w-[583px] order-last md:order-first relative rounded-md">
           <Image
-            src="/assets/Rectangle 10.png"
+            src="/assets/people-office-work-day (1).jpg"
             alt=""
             fill
             className="absolute cover rounded-md"
@@ -71,7 +64,7 @@ const Home = () => {
           <div className="absolute -top-28 -right-20 hidden md:block">
             <div className="h-[262px] md:w-[349px] w-full relative">
               <Image
-                src="/assets/Rectangle 11.png"
+                src="/assets/three-happy-businesspeople-using-gadgets-office.jpg"
                 alt=""
                 fill
                 className="absolute object-cover rounded-md"
@@ -99,37 +92,54 @@ const Home = () => {
           </p>
         </div>
       </div>
-      {/* why choose us  */}
-      <div className="pt-24 pb-32 px-4 xl:px-[100px] lg:px-[80px] md:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="flex items-center flex-col justify-center">
-          <div className="">
-            <h2 className="text-xs md:text-sm uppercase font-bold text-[#0423A0] mb-3">
-              Why Choose us
-            </h2>
-            <h3 className="text-2xl md:text-5xl font-bold text-monochrome  text-left mb-3">
-              Innovative, Secure, and Scalable IT Services Tailored for You
-            </h3>
-          </div>
+      {/* {our services} */}
+      <div className="px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] w-full pt-12 pb-32 flex justify-center items-center flex-col">
+        <div className="md:w-7/12 4xl:w-7/12 5xl:w-7/12 flex justify-center flex-col items-center">
+          <h2 className="text-xs md:text-sm uppercase  font-bold text-[#0423A0] text-center">
+            What we offer
+          </h2>
+          <h3 className="text-2xl md:text-5xl text-monochrome font-bold text-center">
+            We provide truly prominent digital solutions.
+          </h3>
         </div>
-        <div>
-          {why_choose_us.map((item) => (
-            <WhyChooseUsCard key={item.id} item={item} />
+        <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4  lg:gap-5 xl:gap-8 2xl:gap-10">
+          {our_services.map((service) => (
+            <div key={service.id} className="rounded-2xl  pt-5 mt-10">
+              <div className="bg-[#0423A0]/10 hover:bg-[#0423A0] group cursor-pointer border h-[240px] rounded-xl  rounded-t-2xl px-3 py-4 shadow-md">
+                <div className="h-16 w-16 relative  justify-self-center">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="absolute object-cover"
+                  />
+                </div>
+                <h3 className="text-sm group-hover:text-white md:text-base text-center mt-4 text-monochrome font-semibold mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-sm md:text-base group-hover:text-white font-normal">
+                  {service.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
 
+      {/* {core metrics} */}
       <div
         style={{
           backgroundImage:
-            "linear-gradient(rgba(4, 35,160, 0.8), rgba(4,35,160, 0.8)), url('/assets/medium-shot-colleagues-working-office.jpg')",
-          height: "40vh",
+            "linear-gradient(rgba(4, 35,160, 0.8), rgba(4,35,160, 0.8)), url('/assets/people-office.jpg')",
+          height: "100%",
           width: "100%",
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className="flex justify-evenly items-center px-4 md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]"
+        className="flex  flex-col gap-12 md:flex-row justify-evenly items-center py-24 px-4 md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]"
       >
+
         <div className="flex items-center  gap-2">
           <BadgeCheck className="stroke-white h-10 w-10" />
           <div className="flex flex-col">
@@ -139,16 +149,45 @@ const Home = () => {
         </div>
         <div className="flex items-center gap-2">
           <Users className="stroke-white h-10 w-10" />
-          <div className="flex items-center flex-col">
+          <div className="flex flex-col">
             <p className="font-bold text-6xl text-white">1000+</p>
             <p className="text-lg font-medium text-white">Happy Clients</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
-        <BriefcaseBusiness className="stroke-white h-10 w-10"/>
-          <div className="flex  items-center flex-col">
+          <BriefcaseBusiness className="stroke-white h-10 w-10" />
+          <div className="flex   flex-col">
             <p className="font-bold text-6xl text-white">2000+</p>
             <p className="text-lg font-medium text-white">Completed Projects</p>
+          </div>
+        </div>
+      </div>
+      {/* why choose us  */}
+      <div className="flex flex-col md:flex-row w-full">
+        <div className="md:flex-1 w-full md:w-1/2 shrink-0 relative h-[360px] md:h-auto">
+          <Image
+            src="/assets/medium-shot-colleagues-working-office.jpg"
+            className="object-cover absolute shrink-0"
+            fill
+            alt="Team  discussing performance"
+          />
+        </div>
+        <div className="flex-1 md:w-1/2 pl-16 py-12 ">
+          <div className="flex items-center flex-col justify-center">
+            <div className="2xl:pr-[120px] 3xl:pr-[180px] 4xl:pr-[300px]">
+              <h2 className="text-xs md:text-sm uppercase font-bold text-[#0423A0] mb-3">
+                Why Choose us
+              </h2>
+              <h3 className="text-2xl md:text-5xl font-bold text-monochrome  text-left mb-3">
+                Innovative, Secure, and Scalable IT Services Tailored for You
+              </h3>
+              <p className="text-sm md:text-base mb-4">At Soft Solutions Technologies, we combine innovation, expertise, and customer-centric approaches to deliver exceptional IT solutions.</p>
+            </div>
+          </div>
+          <div className="md:pr-[80px] 2xl:pr-[120px] 3xl:pr-[180px] 4xl:pr-[300px]">
+            {why_choose_us.map((item) => (
+              <WhyChooseUsCard key={item.id} item={item} />
+            ))}
           </div>
         </div>
       </div>
