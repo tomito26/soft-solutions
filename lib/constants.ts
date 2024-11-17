@@ -31,12 +31,12 @@ export const links: NavLinkType[] = [
     title: "Services",
     subLink: [
       {
-        title: "Software Developement",
+        title: "Software Development",
         link: "/software-development",
       },
       {
         title: "Networking",
-        link: "/Networking",
+        link: "/networking",
       },
       {
         title: "Cyber Security",
@@ -44,7 +44,7 @@ export const links: NavLinkType[] = [
       },
       {
         title: "Cloud Services",
-        link: "cloud-serrvices",
+        link: "cloud-services",
       },
     ],
   },
