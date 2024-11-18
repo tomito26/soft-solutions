@@ -1,26 +1,27 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
 
 const SoftwareDevelopment = () => {
   return (
     <div>
-      <div
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(4, 35,160, 0.66), rgba(4,35,160, 0.66)), url('/assets/programer-sitting-desk-with-multiple-screens-running-code-talking-with-colleague-about-artificial-intelligence-algorithm-software-developers-doing-innovative-artificial-intelligence-project (1).jpg')",
-          height: "40vh",
-          width: "100%",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-        className="flex items-center px-4 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]"
-      >
-        <div className="md:w-8/12">
-          <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
-            Software Devevelopment
-          </h1>
+      <div className="flex relative h-[60vh] w-full items-center">
+        <Image
+          src="/assets/programer-sitting-desk-with-multiple-screens-running-code-talking-with-colleague-about-artificial-intelligence-algorithm-software-developers-doing-innovative-artificial-intelligence-project (1).jpg"
+          alt="collegues smiling"
+          fill
+          className="absolute object-cover object-center"
+        />
+        <div className="w-full flex  items-center z-10 h-full bg-[#0423A0]/75  px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
+          <div className="w-8/12">
+            <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
+              Software Devevelopment
+            </h1>
+            <p className="md:text-base text-sm flex items-center text-white">
+              Home <ChevronRight className="h-6 w-6 stroke-white" />  Software Development
+            </p>
+          </div>
         </div>
       </div>
       <div className="px-4 pt-10 md:pt-16 pb-24 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
