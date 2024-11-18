@@ -20,28 +20,25 @@ import WhyChooseUsCard from "./lib/ui/why-choose-us-card";
 const Home = () => {
   return (
     <div>
-      <div
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(4, 35,160, 0.66), rgba(4,35,160, 0.66)), url('/assets/Rectangle 2.png')",
-          height: "80vh",
-          width: "100%",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-        className="flex items-center px-4 md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]"
-      >
-        <div className="md:w-8/12">
-          <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
-            Empowering Your Business with Cutting-Edge IT Solutions
-          </h1>
-          <p className="text-white text-sm md:text-base font-medium pb-8 md:w-10/12">
-            We deliver innovative and reliable technology solutions tailored to
-            meet your unique needs. Transform your operations with our expert
-            software development and robust hardware systems.
-          </p>
-          <Button className="hover:bg-[#0423A0]/80 ">Get Started</Button>
+      <div className="flex relative h-[80vh] w-full items-center p">
+        <Image
+          className="absolute object-cover object-center"
+          src="/assets/Rectangle 2.png"
+          fill
+          alt="people reading"
+        />
+        <div className="px-4 h-full w-full flex items-center bg-[#0423A0]/75 md:px-[40px] lg:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] z-10">
+          <div className="md:w-8/12">
+            <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
+              Empowering Your Business with Cutting-Edge IT Solutions
+            </h1>
+            <p className="text-white text-sm md:text-base font-medium pb-8 md:w-10/12">
+              We deliver innovative and reliable technology solutions tailored
+              to meet your unique needs. Transform your operations with our
+              expert software development and robust hardware systems.
+            </p>
+            <Button className="hover:bg-[#00156B]/80 ">Get Started</Button>
+          </div>
         </div>
       </div>
       {/* our services */}
@@ -56,7 +53,7 @@ const Home = () => {
       <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 md:gap-64 w-full md:px-[40px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
         <div className="md:h-[400px] h-[240px] w-full md:w-[583px] order-last md:order-first relative rounded-md">
           <Image
-            src="/assets/people-office-work-day (1).jpg"
+            src="/assets/professionals-explaining-corporate-software-details.jpg"
             alt=""
             fill
             className="absolute cover rounded-md"
@@ -127,38 +124,36 @@ const Home = () => {
       </div>
 
       {/* {core metrics} */}
-      <div
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(4, 35,160, 0.8), rgba(4,35,160, 0.8)), url('/assets/people-office.jpg')",
-          height: "100%",
-          width: "100%",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-        className="flex  flex-col gap-12 md:flex-row justify-evenly items-center py-24 px-4 md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]"
-      >
-
-        <div className="flex items-center  gap-2">
-          <BadgeCheck className="stroke-white h-10 w-10" />
-          <div className="flex flex-col">
-            <p className="font-bold text-6xl text-white">20</p>
-            <p className="text-lg font-medium text-white">Years Experience</p>
+      <div className="flex h-full w-full relative  justify-evenly items-center">
+        <Image
+          src="/assets/people-office.jpg"
+          fill
+          alt=""
+          className="absolute object-cover"
+        />
+        <div className="h-full w-full z-10 flex justify-evenly flex-col gap-12 md:flex-row bg-[#0423A0]/80 py-24 px-4 md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
+          <div className="flex items-center  gap-2">
+            <BadgeCheck className="stroke-white h-10 w-10" />
+            <div className="flex flex-col">
+              <p className="font-bold text-6xl text-white">20</p>
+              <p className="text-lg font-medium text-white">Years Experience</p>
+            </div>
           </div>
-        </div>
-        <div className="flex items-center gap-2">
-          <Users className="stroke-white h-10 w-10" />
-          <div className="flex flex-col">
-            <p className="font-bold text-6xl text-white">1000+</p>
-            <p className="text-lg font-medium text-white">Happy Clients</p>
+          <div className="flex items-center gap-2">
+            <Users className="stroke-white h-10 w-10" />
+            <div className="flex flex-col">
+              <p className="font-bold text-6xl text-white">1000+</p>
+              <p className="text-lg font-medium text-white">Happy Clients</p>
+            </div>
           </div>
-        </div>
-        <div className="flex items-center gap-2">
-          <BriefcaseBusiness className="stroke-white h-10 w-10" />
-          <div className="flex   flex-col">
-            <p className="font-bold text-6xl text-white">2000+</p>
-            <p className="text-lg font-medium text-white">Completed Projects</p>
+          <div className="flex items-center gap-2">
+            <BriefcaseBusiness className="stroke-white h-10 w-10" />
+            <div className="flex   flex-col">
+              <p className="font-bold text-6xl text-white">2000+</p>
+              <p className="text-lg font-medium text-white">
+                Completed Projects
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -181,7 +176,11 @@ const Home = () => {
               <h3 className="text-2xl md:text-5xl font-bold text-monochrome  text-left mb-3">
                 Innovative, Secure, and Scalable IT Services Tailored for You
               </h3>
-              <p className="text-sm md:text-base mb-4">At Soft Solutions Technologies, we combine innovation, expertise, and customer-centric approaches to deliver exceptional IT solutions.</p>
+              <p className="text-sm md:text-base mb-4">
+                At Soft Solutions Technologies, we combine innovation,
+                expertise, and customer-centric approaches to deliver
+                exceptional IT solutions.
+              </p>
             </div>
           </div>
           <div className="md:pr-[80px] 2xl:pr-[120px] 3xl:pr-[180px] 4xl:pr-[300px]">
