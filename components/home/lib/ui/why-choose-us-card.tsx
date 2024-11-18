@@ -1,3 +1,4 @@
+import { CircleCheck } from "lucide-react";
 import React from "react";
 
 const WhyChooseUsCard = ({
@@ -6,11 +7,15 @@ const WhyChooseUsCard = ({
   item: { title: string; description: string; id: number };
 }) => {
   return (
-    <div className="flex md:items-center gap-5 mb-5">
-      <h2 className="text-2xl md:text-5xl text-[#0423A0] font-bold">0{item.id}</h2>
+    <div className="mb-2">
       <div>
-        <h3 className="text-lg md:text-xl text-monochrome font-bold">{item.title}</h3>
-        <p className="text-sm md:text-base font-normal">{item.description}</p>
+        <div className="flex items-center gap-2">
+          <CircleCheck className="h-5 w-5 stroke-[#0423A0] shrink-0" />
+          <h3 className="text-base md:text-lg text-monochrome font-bold">
+            {item.title}
+          </h3>
+        </div>
+        <p className="text-sm md:text-base font-normal ml-7">{item.description}</p>
       </div>
     </div>
   );
