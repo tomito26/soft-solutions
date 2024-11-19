@@ -2,7 +2,7 @@
 
 import { links } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -15,22 +15,50 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+// import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = React.useState<boolean>(false);
 
+  // const pathname = usePathname();
+
+  // const handleDropdownToggle = (linkName: string) => {
+  //   setOpenMenu(openMenu === linkName ? null : linkName);
+  // };
+
+  // const handleLinkClick = () => {
+  //   setOpenMenu(null);
+  //   setMobileMenuOpen(false);
+  // };
+
+  const handleMobileMenuToggle = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
-    <nav className="flex justify-between items-center flex-row h-[92px] px-4 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
-      <div className="relative h-[60px] w-[180px]">
-        <Image
-          src="/assets/soft-solutions.svg"
-          fill
-          alt="Soft Solutions Technologies logo"
-          className="absolute object-cover"
-        />
+    <nav className="flex justify-between items-center  flex-col md:flex-row  h-[92px] px-4 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
+      <div className="flex justify-between h-full w-full items-center">
+        <div className="relative h-[50px] w-[160px] md:h-[60px] md:w-[180px]">
+          <Image
+            src="/assets/soft-solutions.svg"
+            fill
+            alt="Soft Solutions Technologies logo"
+            className="absolute object-cover"
+          />
+        </div>
+        <button
+            className="md:hidden block mr-4"
+            onClick={handleMobileMenuToggle}
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6 text-body-gray" />
+            ) : (
+              <Menu className="w-6 h-6 text-body-gray" />
+            )}
+          </button>
       </div>
-      <ul className="md:flex items-center justify-center flex-row space-x-10 h-full hidden">
+      <ul className={cn(isMobileMenuOpen ? "flex items-center justify-center flex-col absolute md:relative top-[92px] md:top-0  space-y-10 md:space-y-0" :  "hidden md:flex"," items-center justify-center  md:space-x-10  md:relative md:flex-row  pb-4 md:pb-0 md:h-full z-50 bg-white w-full")}>
         {links.map(({ title, subLink, link }) =>
           link ? (
             <li key={title} className="inline-flex items-center h-full">
@@ -51,13 +79,15 @@ const Navbar = () => {
               >
                 <DropdownMenuTrigger
                   className={cn(
-                    "cursor-pointer p-0 border-none outline-none w-full relative flex items-center justify-center transition-all h-full",
+                    "cursor-pointer p-0 border-none outline-none   relative flex items-center justify-center transition-all h-full"
                   )}
                   aria-haspopup="true"
                   aria-expanded={menuOpen}
                 >
                   <div className="flex items-center justify-center flex-row gap-x-2 h-full">
-                    <span className="text-base font-medium text-[#0423A0] inline-flex items-center h-full">{title}</span>
+                    <span className="text-base font-medium text-[#0423A0] inline-flex items-center h-full">
+                      {title}
+                    </span>
                     <ChevronDown
                       className={cn(
                         "transition-transform duration-200 stroke-[#0423A0]",
@@ -86,7 +116,9 @@ const Navbar = () => {
             )
           )
         )}
-        <Button className="shrink-0 bg-[#00156B]  hover:bg-[#00156B]/90">Contact Us</Button>
+        <Button className="shrink-0 bg-[#00156B]  hover:bg-[#00156B]/90">
+          Contact Us
+        </Button>
       </ul>
     </nav>
   );
