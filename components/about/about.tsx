@@ -2,6 +2,8 @@
 import { our_partners, philosophies, values } from "@/lib/constants";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import "swiper/css";
+import "swiper/css/pagination";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,7 +18,7 @@ const About = () => {
           className="absolute object-cover object-center"
         />
         <div className="w-full flex  items-center z-10 h-full bg-[#0423A0]/75  px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
-          <div className="w-8/12">
+          <div className="w-full md:w-8/12">
             <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
               About Us
             </h1>
@@ -60,7 +62,7 @@ const About = () => {
       </div>
       {/* our philosophies  */}
       <div className="bg-[#0423A0]/10 md:px-[40px] px-4 lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-16 pb-32 flex items-center justify-center flex-col">
-        <div className="w-8/12">
+        <div className="w-full md:w-8/12">
           <h2 className="md:text-sm text-xs uppercase font-bold text-[#0423A0] mb-4 text-center">
             our philosophies
           </h2>
@@ -90,7 +92,7 @@ const About = () => {
       {/* our values */}
       <div className="md:px-[40px] lg:px-[80px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] py-20 pb-32">
         <div className="flex justify-center items-center flex-col">
-          <div className="md:w-8/12">
+          <div className="w-full md:w-8/12">
             <h2 className="text-xs md:text-sm text-center uppercase font-bold text-[#0423A0] mb-4">
               our values
             </h2>

@@ -140,14 +140,14 @@ const Home = () => {
       </div>
 
       {/* {core metrics} */}
-      <div className="flex h-full w-full relative  justify-evenly items-center">
+      <div className="flex h-full w-full relative justify-center flex-col md:flex-row  md:justify-evenly items-center">
         <Image
           src="/assets/people-office.jpg"
           fill
           alt=""
           className="absolute object-cover"
         />
-        <div className="h-full w-full z-10 flex justify-evenly flex-col gap-12 md:flex-row bg-[#0423A0]/80 py-24 px-4 md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
+        <div className="h-full w-full z-10 flex justify-evenly items-center flex-col gap-12 md:flex-row bg-[#0423A0]/80 py-24 px-4 md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
           <div className="flex items-center  gap-2">
             <BadgeCheck className="stroke-white h-10 w-10" />
             <div className="flex flex-col">
@@ -183,7 +183,7 @@ const Home = () => {
             alt="Team  discussing performance"
           />
         </div>
-        <div className="flex-1 md:w-1/2 pl-16 py-12 ">
+        <div className="flex-1 md:w-1/2 px-4 md:pl-16 py-12 ">
           <div className="flex items-center flex-col justify-center">
             <div className="2xl:pr-[120px] 3xl:pr-[180px] 4xl:pr-[300px]">
               <h2 className="text-xs md:text-sm uppercase font-bold text-[#0423A0] mb-3">

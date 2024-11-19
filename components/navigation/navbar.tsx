@@ -27,10 +27,10 @@ const Navbar = () => {
   //   setOpenMenu(openMenu === linkName ? null : linkName);
   // };
 
-  // const handleLinkClick = () => {
-  //   setOpenMenu(null);
-  //   setMobileMenuOpen(false);
-  // };
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+    setMobileMenuOpen(false);
+  };
 
   const handleMobileMenuToggle = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -65,6 +65,7 @@ const Navbar = () => {
               <Link
                 href={link}
                 className="text-base font-medium text-[#0423A0]"
+                onClick={() => handleLinkClick()}
               >
                 {title}
               </Link>
@@ -100,7 +101,7 @@ const Navbar = () => {
                   {subLink.map((item) =>
                     item.link ? ( // Check if item.link exists
                       <DropdownMenuGroup key={item.title}>
-                        <Link href={item.link} className="w-full">
+                        <Link href={item.link} className="w-full" onClick={() =>handleLinkClick()}>
                           <DropdownMenuItem className="cursor-pointer group">
                             <span className="text-[14px] font-[500] text-[#0423A0] ">
                               {item.title}
