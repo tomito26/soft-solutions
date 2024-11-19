@@ -121,7 +121,7 @@ const About = () => {
         </div>
       </div>
       {/* our clients / */}
-      <div className="md:px-[60px]  px-4 lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  pt-20 pb-32 flex justify-center flex-col items-center">
+      <div className="md:px-[60px]  px-4 lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]   pb-32 flex justify-center flex-col items-center">
         <div className="md:w-8/12">
           <h2 className="text-xs md:text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
             our clients
@@ -182,7 +182,7 @@ const About = () => {
         </div>
       </div>
       {/* { contact us } */}
-      <div className="px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] w-full pt-12 pb-32 flex items-center gap-12 md:flex-row flex-col">
+      <div className="px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] w-full  pb-32 flex  gap-12 md:flex-row flex-col">
         <div className="w-full flex-1">
           <ContactUsForm />
         </div>
@@ -202,8 +202,8 @@ const About = () => {
           </p>
           <div>
             <div className="mt-6 flex items-center gap-6">
-              <div className="bg-[#0423A0] rounded-sm flex justify-center items-center flex-col h-20 w-20">
-                <Phone className="h-10 w-10 stroke-white" />
+              <div className="bg-[#0423A0] rounded-sm flex justify-center items-center flex-col h-16 w-16">
+                <Phone className="h-8 w-8 stroke-white" />
               </div>
               <div>
                 <p className="text-sm md:text-base font-bold mb-4">
@@ -215,25 +215,25 @@ const About = () => {
               </div>
             </div>
             <div className="mt-6 flex items-center gap-6">
-              <div className="bg-[#0423A0] rounded-sm flex justify-center items-center flex-col h-20 w-20">
-                <Mail className="h-10 w-10 stroke-white" />
+              <div className="bg-[#0423A0] rounded-sm flex justify-center items-center flex-col h-16 w-16">
+                <Mail className="h-8 w-8 stroke-white" />
               </div>
               <div>
                 <p className="text-sm md:text-base font-bold mb-4">
-                Write email
+                  Write email
                 </p>
                 <p className="text-sm md:text-base font-normal">
-                 info@softsolutions.com
+                  info@softsolutions.com
                 </p>
               </div>
             </div>
             <div className="mt-6 flex items-center gap-6">
-              <div className="bg-[#0423A0] rounded-sm flex justify-center items-center flex-col h-20 w-20">
-                <MapPin className="h-10 w-10 stroke-white" />
+              <div className="bg-[#0423A0] rounded-sm flex justify-center items-center flex-col h-16 w-16">
+                <MapPin className="h-8 w-8 stroke-white" />
               </div>
               <div>
                 <p className="text-sm md:text-base font-bold mb-4">
-                Visit anytime
+                  Visit anytime
                 </p>
                 <p className="text-sm md:text-base font-normal">
                   westlands, Nairobi
