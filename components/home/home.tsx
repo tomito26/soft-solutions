@@ -16,8 +16,11 @@ import { Button } from "../ui/button";
 import ServiceCard from "./lib/ui/service-card";
 import Testimonial from "./lib/ui/testimonial";
 import WhyChooseUsCard from "./lib/ui/why-choose-us-card";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Home = () => {
+  const router = useRouter();
   return (
     <div>
       <div className="flex relative h-[80vh] w-full items-center p">
@@ -37,7 +40,18 @@ const Home = () => {
               to meet your unique needs. Transform your operations with our
               expert software development and robust hardware systems.
             </p>
-            <Button className="hover:bg-[#00156B]/80 ">Get Started</Button>
+            <div className="flex items-center  gap-4">
+              <Button
+                size="default"
+                className="bg-[#00156B] hover:bg-[#00156B]/80"
+                onClick={() => router.push("/about")}
+              >
+                Get Started
+              </Button>
+              <Button className="border border-input bg-transparent hover:bg-accent hover:text-accent-foreground">
+                Contact Us
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -101,24 +115,26 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4  lg:gap-5 xl:gap-8 2xl:gap-10">
           {our_services.map((service) => (
-            <div key={service.id} className="rounded-2xl  pt-5 mt-10">
-              <div className="bg-[#0423A0]/10 hover:bg-[#0423A0] group cursor-pointer border h-[240px] rounded-xl  rounded-t-2xl px-3 py-4 shadow-md">
-                <div className="h-16 w-16 relative  justify-self-center">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="absolute object-cover"
-                  />
+            <Link href={service.link} key={service.id}>
+              <div key={service.id} className="rounded-2xl  pt-5 mt-10">
+                <div className="bg-[#0423A0]/10 hover:bg-[#0423A0] group cursor-pointer border h-[240px] rounded-xl  rounded-t-2xl px-3 py-4 shadow-md">
+                  <div className="h-16 w-16 relative  justify-self-center">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="absolute object-cover"
+                    />
+                  </div>
+                  <h3 className="text-sm group-hover:text-white md:text-base text-center mt-4 text-monochrome font-semibold mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm md:text-base group-hover:text-white font-normal">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-sm group-hover:text-white md:text-base text-center mt-4 text-monochrome font-semibold mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-sm md:text-base group-hover:text-white font-normal">
-                  {service.description}
-                </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

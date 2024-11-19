@@ -8,7 +8,7 @@ const CloudServices = () => {
     <div>
     <div className="flex relative h-[60vh] w-full items-center">
         <Image
-          src="/assets/professionals-explaining-corporate-software-details.jpg"
+          src="/assets/saas-concept-collage.jpg"
           alt="collegues smiling"
           fill
           className="absolute object-cover object-center"
@@ -18,7 +18,7 @@ const CloudServices = () => {
             <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
               Cloud Services
             </h1>
-            <p className="md:text-base text-sm flex items-center text-white">Home <ChevronRight className="h-6 w-6 stroke-white" /> Cloud Services</p>
+            <p className="md:text-base text-sm flex items-center text-white">Home <ChevronRight className="h-6 w-6 stroke-white" /> <span className="text-[#f4f4f4]">Cloud Services</span></p>
           </div>
         </div>
       </div>
