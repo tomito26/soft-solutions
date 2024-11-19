@@ -10,15 +10,8 @@ import {
   Users,
 } from "lucide-react";
 
-interface NavLinkType {
-  title: string;
-  link?: string;
-  subLink?: {
-    title: string;
-    link: string;
-  }[];
-}
-export const links: NavLinkType[] = [
+
+export const links= [
   {
     title: "Home",
     link: "/",

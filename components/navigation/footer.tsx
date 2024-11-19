@@ -27,25 +27,36 @@ const Footer = () => {
         <div className="col-span-2">
           <h2 className="text-xl font-bold mb-3 text-white">Important Links</h2>
           <ul>
-            {links.map((link) => (
-              link.link && <li key={link.title}>
-                <Link className="text-base text-white mb-1" href={link.link}>
-                  {link.title}
-                </Link>
-              </li>
-            ))}
+            {links.map(
+              (link) =>
+                link.link && (
+                  <li key={link.title}>
+                    <Link
+                      className="text-base text-white mb-1"
+                      href={link.link}
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                )
+            )}
           </ul>
         </div>
         <div className="col-span-3">
           <h2 className="text-xl font-bold text-white">Our Services</h2>
           <ul>
-            <li className="text-white text-base font-normal">
-              Software Solutions
-            </li>
-            <li className="text-white text-base font-normal">
-              Hardware Installation & Equiptments
-            </li>
-            <li className="text-white text-base font-normal"></li>
+            {links
+              .filter((link) => link.subLink && link?.subLink.length > 0)[0]
+              .subLink?.map((link, index) => (
+                <li key={index}>
+                   <Link
+                      className="text-base text-white mb-1"
+                      href={link.link}
+                    >
+                      {link.title}
+                    </Link>
+                </li>
+              ))}
           </ul>
         </div>
         <div className="col-span-2">
