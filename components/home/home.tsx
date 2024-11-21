@@ -30,7 +30,7 @@ const Home = () => {
           fill
           alt="people reading"
         />
-        <div className="px-4 h-full w-full flex items-center bg-[#0423A0]/70 md:px-[40px] lg:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] z-10">
+        <div className="px-4 h-full w-full flex items-center bg-[#0423A0]/75 md:px-[40px] lg:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] z-10">
           <div className="md:w-8/12">
             <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
               Empowering Your Business with Cutting-Edge IT Solutions
@@ -41,14 +41,16 @@ const Home = () => {
               expert software development and robust hardware systems.
             </p>
             <div className="flex items-center  gap-4">
-              <Button
-                size="default"
-                className="bg-[#00156B] hover:bg-[#00156B]/80"
-                onClick={() => router.push("/about")}
-              >
-                Get Started
-              </Button>
-              <Button className="border border-input bg-transparent hover:bg-accent hover:text-accent-foreground">
+              <Link href={"/about"}>
+                <Button
+                  size="default"
+                  className="bg-[#00156B] hover:bg-[#00156B]/80"
+                  onClick={() => router.push("/about")}
+                >
+                  Get Started
+                </Button>
+              </Link>
+              <Button className="border border-input bg-transparent hover:bg-accent hover:text-[#00156B]">
                 Contact Us
               </Button>
             </div>
