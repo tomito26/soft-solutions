@@ -16,6 +16,7 @@ import "swiper/css/pagination";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ContactUsForm } from "../forms/contact-us-form";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -32,8 +33,8 @@ const About = () => {
             <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
               About Us
             </h1>
-            <p className="md:text-base text-sm flex items-center text-white">
-              Home <ChevronRight className="h-6 w-6 stroke-white" /> About
+            <p className="md:text-base text-sm flex items-center font-medium text-white">
+              <Link href="/" className="text-white hover:text-[#00156B]">Home</Link> <ChevronRight className="h-6 w-6 stroke-white" /> About
             </p>
           </div>
         </div>
@@ -103,7 +104,7 @@ const About = () => {
       <div className="flex flex-col md:flex-row w-full">
         <div className="md:flex-1 w-full md:w-1/2 shrink-0 relative h-[360px] md:h-auto">
           <Image
-            src="/assets/medium-shot-colleagues-working-office.jpg"
+            src="/assets/authentic-small-youthful-marketing-agency (1).jpg"
             className="object-cover absolute shrink-0"
             fill
             alt="Team  discussing performance"
@@ -240,7 +241,7 @@ const About = () => {
         </div>
       </div>
       {/* { contact us } */}
-      <div className="px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] w-full  pb-32 flex  gap-12 md:flex-row flex-col">
+      <div className="px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] w-full  pb-32 flex  gap-12 md:gap-20 md:flex-row flex-col">
         <div className="w-full flex-1">
           <ContactUsForm />
         </div>

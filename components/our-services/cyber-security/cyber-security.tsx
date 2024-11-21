@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "../../ui/button";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const CyberSecurity = () => {
   return (
@@ -18,7 +19,13 @@ const CyberSecurity = () => {
             <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
               Cyber Security
             </h1>
-            <p className="md:text-base text-sm flex items-center text-white">Home <ChevronRight className="h-6 w-6 stroke-white" /> Cyber Security</p>
+
+            <p className="md:text-base text-sm flex items-center text-white">
+              <Link href="/" className="text-white hover:text-[#00156B]">
+                Home
+              </Link>{" "}
+              <ChevronRight className="h-6 w-6 stroke-white" /> Cyber Security
+            </p>
           </div>
         </div>
       </div>

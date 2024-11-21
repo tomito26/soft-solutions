@@ -2,11 +2,12 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "../../ui/button";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const CloudServices = () => {
   return (
     <div>
-    <div className="flex relative h-[60vh] w-full items-center">
+      <div className="flex relative h-[60vh] w-full items-center">
         <Image
           src="/assets/saas-concept-collage.jpg"
           alt="collegues smiling"
@@ -18,7 +19,12 @@ const CloudServices = () => {
             <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
               Cloud Services
             </h1>
-            <p className="md:text-base text-sm flex items-center text-white">Home <ChevronRight className="h-6 w-6 stroke-white" /> <span className="text-[#f4f4f4]">Cloud Services</span></p>
+            <p className="md:text-base text-sm flex items-center text-white">
+              <Link href="/" className="text-white hover:text-[#00156B]">
+                Home
+              </Link>{" "}
+              <ChevronRight className="h-6 w-6 stroke-white" /> Cloud Services
+            </p>
           </div>
         </div>
       </div>
