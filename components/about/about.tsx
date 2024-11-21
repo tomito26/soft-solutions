@@ -1,6 +1,15 @@
 "use client";
 import { our_partners, philosophies, values } from "@/lib/constants";
-import { ChevronRight, Mail, MapPin, Phone } from "lucide-react";
+import {
+  BadgeCheck,
+  BriefcaseBusiness,
+  ChevronRight,
+  CircleCheck,
+  Mail,
+  MapPin,
+  Phone,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -91,27 +100,42 @@ const About = () => {
         </div>
       </div>
       {/* our values */}
-      <div className="md:px-[40px] lg:px-[80px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] py-20 pb-32">
-        <div className="flex justify-center items-center flex-col">
-          <div className="w-full md:w-8/12">
-            <h2 className="text-xs md:text-sm text-center uppercase font-bold text-[#0423A0] mb-4">
-              our values
-            </h2>
-            <h3 className="text-2xl md:text-5xl font-bold text-monochrome mb-6 text-center">
-              Guiding Principles That Define Our Mission and Inspire Our Team
-            </h3>
+      <div className="flex flex-col md:flex-row w-full">
+        <div className="md:flex-1 w-full md:w-1/2 shrink-0 relative h-[360px] md:h-auto">
+          <Image
+            src="/assets/medium-shot-colleagues-working-office.jpg"
+            className="object-cover absolute shrink-0"
+            fill
+            alt="Team  discussing performance"
+          />
+        </div>
+        <div className="flex-1 md:w-1/2 px-4 md:pl-10 py-12 ">
+          <div className="flex items-center flex-col justify-center">
+            <div className="lg:pr-[80px] xl:pr-[100px] 2xl:pr-[160px] 3xl:pr-[240px] 4xl:pr-[300px]">
+              <h2 className="text-xs md:text-sm uppercase font-bold text-[#0423A0] mb-3">
+                our values
+              </h2>
+              <h3 className="text-2xl md:text-5xl font-bold text-monochrome  text-left mb-3">
+                Guiding Principles That Define Our Mission and Inspire Our Team
+              </h3>
+              <p className="text-sm md:text-base mb-4">
+                Our values define who we are, guide our decisions, and shape our
+                commitment to excellence. These principles reflect our
+                dedication to delivering innovative IT solutions while fostering
+                trust, collaboration, and long-term success for our clients and
+                partners
+              </p>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {values.map((value, indx) => (
-              <div key={value.title} className="flex  gap-3">
-                <h3 className="text-[#0423A0] font-bold text-base md:text-3xl">
-                  0{indx + 1}
-                </h3>
+          <div className="md:pr-[80px] xl:pr-[100px] 2xl:pr-[120px] 3xl:pr-[180px] 4xl:pr-[300px]">
+            {values.map((value) => (
+              <div key={value.title} className="mb-4">
                 <div>
-                  <h3 className="md:text-xl text-lg font-bold text-monochrome">
-                    {value.title}
+                  <h3 className="md:text-xl text-lg flex items-center gap-2 font-bold text-monochrome">
+                    <CircleCheck className="h-5 w-5 stroke-[#0423A0] shrink-0 " />{" "}
+                    <span>{value.title}</span>
                   </h3>
-                  <p className="text-tundora font-normal text-sm  md:text-base">
+                  <p className="text-tundora font-normal ml-7 text-sm  md:text-base">
                     {value.description}
                   </p>
                 </div>
@@ -120,8 +144,42 @@ const About = () => {
           </div>
         </div>
       </div>
+      {/* {core metrics} */}
+      <div className="flex h-full w-full relative justify-center flex-col md:flex-row  md:justify-evenly items-center">
+        <Image
+          src="/assets/people-office.jpg"
+          fill
+          alt=""
+          className="absolute object-cover"
+        />
+        <div className="h-full w-full z-10 flex justify-evenly items-center flex-col gap-12 md:flex-row bg-[#0423A0]/80 py-24 px-4 md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
+          <div className="flex items-center  gap-2">
+            <BadgeCheck className="stroke-white h-10 w-10" />
+            <div className="flex flex-col">
+              <p className="font-bold text-6xl text-white">20</p>
+              <p className="text-lg font-medium text-white">Years Experience</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <Users className="stroke-white h-10 w-10" />
+            <div className="flex flex-col">
+              <p className="font-bold text-6xl text-white">1000+</p>
+              <p className="text-lg font-medium text-white">Happy Clients</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <BriefcaseBusiness className="stroke-white h-10 w-10" />
+            <div className="flex   flex-col">
+              <p className="font-bold text-6xl text-white">2000+</p>
+              <p className="text-lg font-medium text-white">
+                Completed Projects
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* our clients / */}
-      <div className="md:px-[60px]  px-4 lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]   pb-32 flex justify-center flex-col items-center">
+      <div className="md:px-[60px]  px-4 lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  mt-10 pb-32 flex justify-center flex-col items-center">
         <div className="md:w-8/12">
           <h2 className="text-xs md:text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
             our clients

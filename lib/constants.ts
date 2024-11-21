@@ -10,8 +10,7 @@ import {
   Users,
 } from "lucide-react";
 
-
-export const links= [
+export const links = [
   {
     title: "Home",
     link: "/",
@@ -141,8 +140,7 @@ export const why_choose_us = [
   {
     id: 2,
     title: "Tailored Solutions",
-    description:
-      "We design services that meet your unique business needs.",
+    description: "We design services that meet your unique business needs.",
   },
   {
     id: 3,
@@ -153,8 +151,7 @@ export const why_choose_us = [
   {
     id: 4,
     title: "Cutting-Edge Technology:",
-    description:
-      "We leverage the latest tools and trends to keep you ahead.",
+    description: "We leverage the latest tools and trends to keep you ahead.",
   },
 
   {
@@ -238,36 +235,21 @@ export const values = [
   {
     title: "Innovation",
     description:
-      "We embrace the ever-changing world of technology, constantly seeking creative solutions that push the boundaries of what's possible for our clients.",
+      "We drive creativity and leverage the latest technologies to deliver cutting-edge solutions that meet evolving client needs.",
   },
   {
     title: "Integrity",
     description:
-      "We uphold the highest standards of honesty and transparency in all our dealings, building long-lasting relationships based on trust.",
+      "We uphold honesty and transparency, building trust through consistent and ethical practices in everything we do.",
   },
   {
     title: "Customer-Centricity",
     description:
-      "Our clients are at the core of everything we do. We prioritize understanding their needs and delivering solutions that exceed expectations.",
+      "We prioritize our clients, tailoring solutions to their needs and ensuring their success is at the heart of everything we do.",
   },
   {
     title: "Excellence",
     description:
-      "We strive for excellence in every aspect of our work, from the quality of our products to the professionalism of our team. We believe in delivering nothing but the best.",
-  },
-  {
-    title: "Collaboration",
-    description:
-      "We value teamwork and the power of collaboration, both within our company and with our clients, to deliver solutions that are stronger together.",
-  },
-  {
-    title: "Accountability",
-    description:
-      "We take full responsibility for the outcomes of our work, ensuring that every project is completed to the highest standard and delivers real results.",
-  },
-  {
-    title: "Continuous Learning",
-    description:
-      "In a rapidly evolving industry, we remain committed to learning and growing, ensuring our solutions are always ahead of the curve.",
+      "We strive for the highest standards in every project, delivering exceptional quality and unmatched expertise.",
   },
 ];
