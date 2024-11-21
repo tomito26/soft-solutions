@@ -28,7 +28,7 @@ const About = () => {
           fill
           className="absolute object-cover object-center"
         />
-        <div className="w-full flex  items-center z-10 h-full bg-[#0423A0]/70  px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
+        <div className="w-full flex  items-center z-10 h-full bg-[#0423A0]/75  px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
           <div className="w-full md:w-8/12">
             <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
               About Us

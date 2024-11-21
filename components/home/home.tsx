@@ -66,16 +66,16 @@ const Home = () => {
         </div>
       </div>
       {/* who we are  */}
-      <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 md:gap-72 w-full md:px-[40px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
-        <div className="md:h-[400px] h-[240px] w-full md:w-[583px] order-last md:order-first relative rounded-md">
+      <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 lg:gap-28 2xl:gap-20 3xl:gap-56 4xl:gap-64 w-full md:px-[40px] lg:px-[80px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
+        <div className="md:h-[380px] 3xl:h-[400px] h-[240px] w-full md:w-[480px] 3xl:w-[540px] 4xl:w-[583px] order-last md:order-first relative rounded-md">
           <Image
             src="/assets/businesswoman-engaging-planning-session-with-realtor-contractor.jpg"
             alt=""
             fill
-            className="absolute cover rounded-md"
+            className="absolute object-cover rounded-md"
           />
-          <div className="absolute -top-28 -right-24 hidden md:block">
-            <div className="h-[262px] md:w-[349px] w-full relative">
+          <div className="absolute -top-32 -right-24 hidden md:block">
+            <div className="md:h-[240px] 3xl:h-[262px] md:w-[320px] 3xl:w-[349px] w-full relative">
               <Image
                 src="/assets/three-happy-businesspeople-using-gadgets-office.jpg"
                 alt=""
@@ -185,9 +185,9 @@ const Home = () => {
             alt="Team  discussing performance"
           />
         </div>
-        <div className="flex-1 md:w-1/2 px-4 md:pl-16 py-12 ">
+        <div className="flex-1 md:w-1/2 px-4 md:pl-10 py-12 ">
           <div className="flex items-center flex-col justify-center">
-            <div className="2xl:pr-[120px] 3xl:pr-[180px] 4xl:pr-[300px]">
+            <div className="lg:pr-[80px] xl:pr-[100px] 2xl:pr-[160px] 3xl:pr-[240px] 4xl:pr-[300px]">
               <h2 className="text-xs md:text-sm uppercase font-bold text-[#0423A0] mb-3">
                 Why Choose us
               </h2>
