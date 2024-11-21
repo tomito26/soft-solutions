@@ -30,7 +30,7 @@ const Home = () => {
           fill
           alt="people reading"
         />
-        <div className="px-4 h-full w-full flex items-center bg-[#0423A0]/75 md:px-[40px] lg:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] z-10">
+        <div className="px-4 h-full w-full flex items-center bg-[#0423A0]/70 md:px-[40px] lg:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] z-10">
           <div className="md:w-8/12">
             <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
               Empowering Your Business with Cutting-Edge IT Solutions
@@ -64,15 +64,15 @@ const Home = () => {
         </div>
       </div>
       {/* who we are  */}
-      <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 md:gap-64 w-full md:px-[40px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
+      <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 md:gap-72 w-full md:px-[40px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
         <div className="md:h-[400px] h-[240px] w-full md:w-[583px] order-last md:order-first relative rounded-md">
           <Image
-            src="/assets/professionals-explaining-corporate-software-details.jpg"
+            src="/assets/businesswoman-engaging-planning-session-with-realtor-contractor.jpg"
             alt=""
             fill
             className="absolute cover rounded-md"
           />
-          <div className="absolute -top-28 -right-20 hidden md:block">
+          <div className="absolute -top-28 -right-24 hidden md:block">
             <div className="h-[262px] md:w-[349px] w-full relative">
               <Image
                 src="/assets/three-happy-businesspeople-using-gadgets-office.jpg"
