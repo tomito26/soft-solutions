@@ -92,7 +92,7 @@ const Home = () => {
                 height: "200px",
                 width: "200px"
             }}
-            className="absolute bottom-0 -right-28 "
+            className="absolute bottom-0 -right-28 hidden md:block"
           ></div>
         </div>
         <div>
