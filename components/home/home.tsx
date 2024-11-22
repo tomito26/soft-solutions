@@ -67,14 +67,14 @@ const Home = () => {
       </div>
       {/* who we are  */}
       <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 lg:gap-28 2xl:gap-20 3xl:gap-56 4xl:gap-64 w-full md:px-[40px] lg:px-[80px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
-        <div className="md:h-[380px] 3xl:h-[400px] h-[240px] w-full md:w-[480px] 3xl:w-[540px] 4xl:w-[583px] order-last md:order-first relative rounded-md">
+        <div className="md:h-[380px] 3xl:h-[400px] z-10 h-[240px] w-full md:w-[480px] 3xl:w-[540px] 4xl:w-[583px] order-last md:order-first relative rounded-md">
           <Image
             src="/assets/businesswoman-engaging-planning-session-with-realtor-contractor.jpg"
             alt=""
             fill
-            className="absolute object-cover rounded-md"
+            className="absolute object-cover rounded-md z-10"
           />
-          <div className="absolute -top-32 -right-24 hidden md:block">
+          <div className="absolute -top-32 -right-24 hidden z-20 md:block">
             <div className="md:h-[240px] 3xl:h-[262px] md:w-[320px] 3xl:w-[349px] w-full relative">
               <Image
                 src="/assets/three-happy-businesspeople-using-gadgets-office.jpg"
@@ -84,6 +84,16 @@ const Home = () => {
               />
             </div>
           </div>
+          <div
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+                backgroundSize: "20px 20px",
+                height: "200px",
+                width: "200px"
+            }}
+            className="absolute bottom-0 -right-28 "
+          ></div>
         </div>
         <div>
           <h2 className="text-xs md:text-sm uppercase font-bold text-white mb-4">
