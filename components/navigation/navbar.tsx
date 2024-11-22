@@ -15,13 +15,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-// import { usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = React.useState<boolean>(false);
 
-  // const pathname = usePathname();
+  const pathname = usePathname();
 
   // const handleDropdownToggle = (linkName: string) => {
   //   setOpenMenu(openMenu === linkName ? null : linkName);
@@ -64,7 +64,7 @@ const Navbar = () => {
             <li key={title} className="inline-flex items-center h-full">
               <Link
                 href={link}
-                className="text-base font-medium text-[#0423A0]"
+                className={cn("text-base font-medium text-[#0423A0] hover:border-b-2 border-[#0423A0] px-1", pathname === link && "border-b-2")}
                 onClick={() => handleLinkClick()}
               >
                 {title}
@@ -85,8 +85,8 @@ const Navbar = () => {
                   aria-haspopup="true"
                   aria-expanded={menuOpen}
                 >
-                  <div className="flex items-center justify-center flex-row gap-x-2 h-full">
-                    <span className="text-base font-medium text-[#0423A0] inline-flex items-center h-full">
+                  <div className="flex items-center justify-center flex-row gap-x-2 hover:border-b-2 border-[#0423A0] px-1">
+                    <span className="text-base font-medium text-[#0423A0] inline-flex items-center">
                       {title}
                     </span>
                     <ChevronDown
