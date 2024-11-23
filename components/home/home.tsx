@@ -66,8 +66,8 @@ const Home = () => {
         </div>
       </div>
       {/* who we are  */}
-      <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 lg:gap-28 2xl:gap-20 3xl:gap-56 4xl:gap-64 w-full md:px-[40px] lg:px-[80px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
-        <div className="md:h-[380px] 3xl:h-[400px] z-10 h-[240px] w-full md:w-[480px] 3xl:w-[540px] 4xl:w-[583px] order-last md:order-first relative rounded-md">
+      <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 lg:gap-32 2xl:gap-32 3xl:gap-48 4xl:gap-64 w-full md:px-[40px] lg:px-[80px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
+        <div className="md:h-[380px] 3xl:h-[400px] z-10 h-[240px] w-full md:w-[480px] 3xl:w-[500px] 4xl:w-[560px] order-last md:order-first relative rounded-md">
           <Image
             src="/assets/businesswoman-engaging-planning-session-with-realtor-contractor.jpg"
             alt=""
