@@ -129,7 +129,7 @@ const Home = () => {
           {our_services.map((service) => (
             <Link href={service.link} key={service.id}>
               <div key={service.id} className="rounded-2xl  pt-5 mt-10">
-                <div className="bg-[#0423A0]/10 hover:bg-[#0423A0] group cursor-pointer border h-[240px] rounded-xl  rounded-t-2xl px-3 py-4 shadow-md">
+                <div className="bg-[#0423A0]/10 hover:bg-[#0423A0] group cursor-pointer border h-[240px] rounded-xl  rounded-t-2xl px-3 md:py-4 py-6 shadow-md">
                   <div className="h-16 w-16 relative  justify-self-center">
                     <Image
                       src={service.image}
@@ -138,7 +138,7 @@ const Home = () => {
                       className="absolute object-cover"
                     />
                   </div>
-                  <h3 className="text-sm group-hover:text-white md:text-base text-center mt-4 text-monochrome font-semibold mb-2">
+                  <h3 className="text-base  group-hover:text-white md:text-base text-center mt-4 text-monochrome font-semibold mb-2">
                     {service.title}
                   </h3>
                   <p className="text-sm md:text-base group-hover:text-white font-normal">
@@ -195,7 +195,7 @@ const Home = () => {
             alt="Team  discussing performance"
           />
         </div>
-        <div className="flex-1 md:w-1/2 px-4 md:pl-10 py-12 ">
+        <div className="flex-1 md:w-1/2 px-4 md:pl-10 py-16 ">
           <div className="flex items-center flex-col justify-center">
             <div className="lg:pr-[80px] xl:pr-[100px] 2xl:pr-[160px] 3xl:pr-[240px] 4xl:pr-[300px]">
               <h2 className="text-xs md:text-sm uppercase font-bold text-[#0423A0] mb-3">
@@ -232,7 +232,6 @@ const Home = () => {
           <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectFade]}
             slidesPerView={1}
-            centeredSlides={true}
             spaceBetween={20}
             pagination={{ clickable: true }}
             loop={true}
@@ -243,6 +242,7 @@ const Home = () => {
               480: {
                 slidesPerView: 1,
                 spaceBetween: 80,
+                centeredSlides: true
               },
               640: {
                 slidesPerView: 1,
@@ -258,18 +258,18 @@ const Home = () => {
               },
               1300: {
                 slidesPerView: 2,
-                spaceBetween: 120,
+                spaceBetween: 80,
               },
               1536: {
                 slidesPerView: 2,
-                spaceBetween: 180,
+                spaceBetween: 100,
               },
             }}
             className="flex justify-center items-center flex-row w-full"
           >
             {[...testimonials, ...testimonials].map((testimony, index) => (
-              <SwiperSlide key={index}>
-                <div className="pt-10 pb-14">
+              <SwiperSlide key={index} className="">
+                <div className="pt-20 pb-16">
                   <Testimonial key={testimony.id} testimony={testimony} />
                 </div>
               </SwiperSlide>
@@ -291,7 +291,6 @@ const Home = () => {
           <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectFade]}
             slidesPerView={1}
-            centeredSlides={true}
             spaceBetween={20}
             pagination={{ clickable: true }}
             loop={true}
@@ -322,7 +321,7 @@ const Home = () => {
           >
             {[...our_partners, ...our_partners].map((partner, index) => (
               <SwiperSlide key={index}>
-                <div className="flex justify-center items-center pt-6 pb-10">
+                <div className="flex justify-center items-center pt-6 pb-16">
                   <div className="h-[80px] w-[240px] relative rounded-lg">
                     <Image
                       src={partner.logo}
