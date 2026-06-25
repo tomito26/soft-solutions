@@ -17,10 +17,8 @@ import ServiceCard from "./lib/ui/service-card";
 import Testimonial from "./lib/ui/testimonial";
 import WhyChooseUsCard from "./lib/ui/why-choose-us-card";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const Home = () => {
-  const router = useRouter();
   return (
     <div>
       <div className="flex relative h-[80vh] w-full items-center p">
@@ -41,18 +39,19 @@ const Home = () => {
               expert software development and robust hardware systems.
             </p>
             <div className="flex items-center  gap-4">
-              <Link href={"/about"}>
+              <Link href="/about">
                 <Button
                   size="default"
                   className="bg-[#00156B] hover:bg-[#00156B]/80"
-                  onClick={() => router.push("/about")}
                 >
                   Get Started
                 </Button>
               </Link>
-              <Button className="border border-input bg-transparent hover:bg-accent hover:text-[#00156B]">
-                Contact Us
-              </Button>
+              <Link href="/about#contact">
+                <Button className="border border-input bg-transparent hover:bg-accent hover:text-[#00156B]">
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -36,7 +36,7 @@ export const links = [
       },
       {
         title: "Cloud Services",
-        link: "cloud-services",
+        link: "/cloud-services",
       },
     ],
   },
@@ -130,7 +130,7 @@ export const our_services = [
     id: 4,
     title: "Networking",
     description:
-      "We design, install, and maintain secure and efficient networks tailored to your organization's",
+      "We design, install, and maintain secure and efficient networks tailored to your organization's unique requirements.",
     image: "/assets/local-area.png",
     link: "/networking",
   },
@@ -150,7 +150,7 @@ export const why_choose_us = [
   },
   {
     id: 4,
-    title: "Cutting-Edge Technology:",
+    title: "Cutting-Edge Technology",
     description: "We leverage the latest tools and trends to keep you ahead.",
   },
 
@@ -176,7 +176,7 @@ export const testimonials = [
     },
   },
   {
-    id: 1,
+    id: 2,
     testimony:
       "Soft Solutions Technologies has been an exceptional partner in our IT journey. Their expertise in cloud storage and software development transformed the way we manage our data and applications",
     client: {

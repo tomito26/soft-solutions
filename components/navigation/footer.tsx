@@ -105,7 +105,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-base text-white">
-        Copyright © 2024 Soft Solutions Technologies® | All rights reserved
+        Copyright © {new Date().getFullYear()} Soft Solutions Technologies® | All rights reserved
       </p>
     </footer>
   );

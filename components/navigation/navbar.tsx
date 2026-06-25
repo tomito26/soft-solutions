@@ -44,7 +44,7 @@ const Navbar = () => {
             src="/assets/soft-solutions.svg"
             fill
             alt="Soft Solutions Technologies logo"
-            className="absolute object-cover"
+            className="absolute object-contain"
           />
         </div>
         <button
@@ -117,9 +117,11 @@ const Navbar = () => {
             )
           )
         )}
-        <Button className="shrink-0 bg-[#00156B]  hover:bg-[#00156B]/90">
-          Contact Us
-        </Button>
+        <Link href="/about#contact">
+          <Button className="shrink-0 bg-[#00156B]  hover:bg-[#00156B]/90">
+            Contact Us
+          </Button>
+        </Link>
       </ul>
     </nav>
   );
