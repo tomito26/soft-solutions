@@ -6,6 +6,7 @@ import {
   process,
   sectionHeaders,
   values,
+  whoWeArePhotos,
 } from "@/lib/constants";
 import { ArrowRight, ChevronRight, CircleCheck } from "lucide-react";
 import Image from "next/image";
@@ -56,14 +57,21 @@ const About = () => {
       <section className="section">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 lg:gap-16">
           <Reveal className="relative order-last md:order-first">
-            <div className="relative h-[280px] w-full overflow-hidden rounded-2xl md:h-[420px]">
-              <Image
-                src="/assets/people-office-work-day (1).jpg"
-                alt="The Soft Solutions team collaborating in the office"
-                fill
-                sizes="(max-width: 768px) 100vw, 45vw"
-                className="object-cover"
-              />
+            <div className="grid h-[320px] grid-cols-2 grid-rows-2 gap-3 md:h-[440px] md:gap-4">
+              {whoWeArePhotos.map((photo) => (
+                <div
+                  key={photo.src}
+                  className="relative overflow-hidden rounded-xl md:rounded-2xl"
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 22vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
             </div>
           </Reveal>
 
