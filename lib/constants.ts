@@ -1,4 +1,6 @@
 import {
+  BadgeCheck,
+  BriefcaseBusiness,
   Database,
   Gem,
   Handshake,
@@ -36,9 +38,50 @@ export const links = [
       },
       {
         title: "Cloud Services",
-        link: "cloud-services",
+        link: "/cloud-services",
       },
     ],
+  },
+];
+
+// Reusable eyebrow + heading copy for section headers
+export const sectionHeaders = {
+  capabilities: {
+    eyebrow: "Our Capabilities",
+    title: "End-to-end IT expertise, under one roof",
+    subtitle:
+      "From architecture to security, we cover the full technology stack so you can focus on your business.",
+  },
+  offer: {
+    eyebrow: "What we offer",
+    title: "We provide truly prominent digital solutions.",
+  },
+  why: {
+    eyebrow: "Why choose us",
+    title: "Innovative, Secure, and Scalable IT Services Tailored for You",
+    subtitle:
+      "At Soft Solutions Technologies, we combine innovation, expertise, and a customer-centric approach to deliver exceptional IT solutions.",
+  },
+  testimonials: {
+    eyebrow: "Testimonials",
+    title: "Delivering innovative IT solutions that exceed expectations",
+  },
+  partners: {
+    eyebrow: "Our Partners",
+    title: "Creating Value Through Meaningful Partnerships",
+  },
+} as const;
+
+// Headline metrics. TODO(client): confirm real figures before launch.
+export const metrics = [
+  { id: 1, icon: BadgeCheck, value: 10, suffix: "+", label: "Years Experience" },
+  { id: 2, icon: Users, value: 150, suffix: "+", label: "Happy Clients" },
+  {
+    id: 3,
+    icon: BriefcaseBusiness,
+    value: 500,
+    suffix: "+",
+    label: "Projects Delivered",
   },
 ];
 
@@ -176,7 +219,7 @@ export const testimonials = [
     },
   },
   {
-    id: 1,
+    id: 2,
     testimony:
       "Soft Solutions Technologies has been an exceptional partner in our IT journey. Their expertise in cloud storage and software development transformed the way we manage our data and applications",
     client: {
@@ -188,6 +231,8 @@ export const testimonials = [
     },
   },
 ];
+// Real partner logos only. TODO(client): add NCBA + other logos when supplied
+// (the previous `Rectangle 35/36.png` entries were unfinished placeholders).
 export const our_partners = [
   {
     id: 1,
@@ -196,16 +241,6 @@ export const our_partners = [
   },
   {
     id: 2,
-    logo: "/assets/Rectangle 35.png",
-    partner: "NCBA Bank",
-  },
-  {
-    id: 3,
-    logo: "/assets/Rectangle 36.png",
-    partner: "NCBA Bank",
-  },
-  {
-    id: 4,
     logo: "/assets/safaricom.png",
     partner: "Safaricom",
   },

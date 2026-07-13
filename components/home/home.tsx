@@ -1,342 +1,267 @@
-"use client";
 import {
   our_partners,
   our_services,
+  metrics,
+  sectionHeaders,
   services,
   testimonials,
   why_choose_us,
 } from "@/lib/constants";
-import { BadgeCheck, BriefcaseBusiness, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
 import { Button } from "../ui/button";
 import ServiceCard from "./lib/ui/service-card";
 import Testimonial from "./lib/ui/testimonial";
 import WhyChooseUsCard from "./lib/ui/why-choose-us-card";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import SectionHeader from "./lib/ui/section-header";
+import Reveal from "./lib/ui/reveal";
+import Stat from "./lib/ui/stat";
+import CtaBand from "./lib/ui/cta-band";
 
 const Home = () => {
-  const router = useRouter();
   return (
     <div>
-      <div className="flex relative h-[80vh] w-full items-center p">
+      {/* ---------- Hero ---------- */}
+      <section className="relative flex h-[86vh] min-h-[560px] w-full items-center">
         <Image
-          className="absolute object-cover object-center"
+          className="object-cover object-center"
           src="/assets/Rectangle 2.png"
           fill
-          alt="people reading"
+          priority
+          sizes="100vw"
+          alt="Team collaborating in a modern office"
         />
-        <div className="px-4 h-full w-full flex items-center bg-[#0423A0]/75 md:px-[40px] lg:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] z-10">
-          <div className="md:w-8/12">
-            <h1 className="font-bold text-3xl md:text-6xl text-white pb-6">
+        {/* navy gradient keeps the photo readable while grounding the copy */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/30" />
+        <div className="container-x relative z-10 w-full">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-6xl font-bold text-white">
               Empowering Your Business with Cutting-Edge IT Solutions
             </h1>
-            <p className="text-white text-sm md:text-base font-medium pb-8 md:w-10/12">
-              We deliver innovative and reliable technology solutions tailored
-              to meet your unique needs. Transform your operations with our
-              expert software development and robust hardware systems.
+            <p className="mt-6 max-w-xl text-sm md:text-lg text-white/80">
+              We deliver innovative, reliable technology solutions tailored to
+              your needs — from expert software development to secure, scalable
+              infrastructure.
             </p>
-            <div className="flex items-center  gap-4">
-              <Link href={"/about"}>
-                <Button
-                  size="default"
-                  className="bg-[#00156B] hover:bg-[#00156B]/80"
-                  onClick={() => router.push("/about")}
-                >
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <Link href="/contact-us">
+                <Button size="lg" variant="gold">
                   Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Button className="border border-input bg-transparent hover:bg-accent hover:text-[#00156B]">
-                Contact Us
-              </Button>
+              <Link href="#capabilities">
+                <Button size="lg" variant="heroOutline">
+                  Explore Services
+                </Button>
+              </Link>
             </div>
+            <p className="mt-10 text-xs md:text-sm uppercase tracking-[0.15em] text-white/60">
+              Trusted by Safaricom, Cisco &amp; leading enterprises
+            </p>
           </div>
         </div>
-      </div>
-      {/* our services */}
-      <div className="px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] w-full pt-12 pb-32 flex justify-center items-center flex-col">
-        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4  lg:gap-5 xl:gap-8 2xl:gap-10">
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+      </section>
+
+      {/* ---------- Capabilities (icon grid) ---------- */}
+      <section id="capabilities" className="section">
+        <SectionHeader
+          eyebrow={sectionHeaders.capabilities.eyebrow}
+          title={sectionHeaders.capabilities.title}
+          subtitle={sectionHeaders.capabilities.subtitle}
+        />
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, i) => (
+            <Reveal key={service.id} delay={i * 60} className="h-full">
+              <ServiceCard service={service} />
+            </Reveal>
           ))}
         </div>
-      </div>
-      {/* who we are  */}
-      <div className="bg-[#00156B] grid md:grid-cols-2 grid-cols-1 gap-10 lg:gap-32 2xl:gap-32 3xl:gap-48 4xl:gap-64 w-full md:px-[40px] lg:px-[80px] px-4 xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] pt-20 md:pt-48 pb-32 ">
-        <div className="md:h-[380px] 3xl:h-[400px] z-10 h-[240px] w-full md:w-[480px] 3xl:w-[500px] 4xl:w-[560px] order-last md:order-first relative rounded-md">
-          <Image
-            src="/assets/businesswoman-engaging-planning-session-with-realtor-contractor.jpg"
-            alt=""
-            fill
-            className="absolute object-cover rounded-md z-10"
-          />
-          <div className="absolute -top-32 -right-24 hidden z-20 md:block">
-            <div className="md:h-[240px] 3xl:h-[262px] md:w-[320px] 3xl:w-[349px] w-full relative">
+      </section>
+
+      {/* ---------- Who we are ---------- */}
+      <section className="bg-navy container-x py-20 md:py-28">
+        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20">
+          <Reveal className="relative order-last md:order-first">
+            <div className="relative h-[280px] w-full overflow-hidden rounded-2xl md:h-[420px] md:w-[90%]">
               <Image
-                src="/assets/three-happy-businesspeople-using-gadgets-office.jpg"
-                alt=""
+                src="/assets/businesswoman-engaging-planning-session-with-realtor-contractor.jpg"
+                alt="Consultants in a planning session"
                 fill
-                className="absolute object-cover rounded-md"
+                sizes="(max-width: 768px) 100vw, 45vw"
+                className="object-cover"
               />
             </div>
-          </div>
-          <div
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-                backgroundSize: "20px 20px",
-                height: "200px",
-                width: "200px"
-            }}
-            className="absolute bottom-0 -right-28 hidden md:block"
-          ></div>
+            <div className="absolute -top-8 -right-2 hidden h-[200px] w-[280px] overflow-hidden rounded-2xl border-4 border-navy shadow-xl md:block">
+              <Image
+                src="/assets/three-happy-businesspeople-using-gadgets-office.jpg"
+                alt="Team using devices in the office"
+                fill
+                sizes="280px"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <p className="mb-3 text-xs md:text-sm uppercase font-bold tracking-[0.18em] text-gold">
+              Who we are
+            </p>
+            <h2 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold text-white">
+              Highly Tailored IT Design, Management &amp; Support Services
+            </h2>
+            <p className="mb-4 text-sm md:text-base text-white/80">
+              We specialize in delivering comprehensive IT solutions tailored to
+              your business needs. Whether you&apos;re streamlining operations
+              with custom software, building a responsive web presence, or
+              securely managing your data in the cloud, our team of experts is
+              here to help.
+            </p>
+            <p className="mb-8 text-sm md:text-base text-white/80">
+              With years of experience and a passion for innovation, we bring
+              your vision to life through technology.
+            </p>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 font-semibold text-gold hover:gap-3 transition-all"
+            >
+              More about us
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
         </div>
-        <div>
-          <h2 className="text-xs md:text-sm uppercase font-bold text-white mb-4">
-            Who we are
-          </h2>
-          <h3 className="text-2xl md:text-5xl  font-bold text-white mb-4">
-            Highly Tailored IT Design, management & Support Services.
-          </h3>
-          <p className="text-white text-sm  md:text-base mb-3">
-            We specialize in delivering comprehensive IT solutions tailored to
-            your business needs. Whether you&apos;re looking to streamline
-            operations with custom software, build a responsive web presence, or
-            securely manage your data in the cloud, our team of experts is here
-            to help.
-          </p>
-          <p className="text-white text-sm md:text-base">
-            With years of experience and a passion for innovation, we bring your
-            vision to life through technology.
-          </p>
-        </div>
-      </div>
-      {/* {our services} */}
-      <div className="px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] w-full pt-12 pb-32 flex justify-center items-center flex-col">
-        <div className="md:w-7/12 4xl:w-7/12 5xl:w-7/12 flex justify-center flex-col items-center">
-          <h2 className="text-xs md:text-sm uppercase  font-bold text-[#0423A0] text-center">
-            What we offer
-          </h2>
-          <h3 className="text-2xl md:text-5xl text-monochrome font-bold text-center">
-            We provide truly prominent digital solutions.
-          </h3>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4  lg:gap-5 xl:gap-8 2xl:gap-10">
-          {our_services.map((service) => (
-            <Link href={service.link} key={service.id}>
-              <div key={service.id} className="rounded-2xl  pt-5 mt-10">
-                <div className="bg-[#0423A0]/10 hover:bg-[#0423A0] group cursor-pointer border h-[240px] rounded-xl  rounded-t-2xl px-3 md:py-4 py-6 shadow-md">
-                  <div className="h-16 w-16 relative  justify-self-center">
+      </section>
+
+      {/* ---------- What we offer (service pages) ---------- */}
+      <section className="section">
+        <SectionHeader
+          eyebrow={sectionHeaders.offer.eyebrow}
+          title={sectionHeaders.offer.title}
+        />
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {our_services.map((service, i) => (
+            <Reveal key={service.id} delay={i * 60} className="h-full">
+              <Link href={service.link} className="group block h-full">
+                <div className="flex h-full flex-col rounded-2xl border border-line bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-royal/40 hover:shadow-lg">
+                  <div className="relative mx-auto mb-4 h-16 w-16">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="absolute object-cover"
+                      sizes="64px"
+                      className="object-contain"
                     />
                   </div>
-                  <h3 className="text-base  group-hover:text-white md:text-base text-center mt-4 text-monochrome font-semibold mb-2">
+                  <h3 className="mb-2 text-base md:text-lg font-semibold text-navy">
                     {service.title}
                   </h3>
-                  <p className="text-sm md:text-base group-hover:text-white font-normal">
+                  <p className="text-sm text-brand-slate">
                     {service.description}
                   </p>
+                  <span className="mt-4 inline-flex items-center justify-center gap-1 text-sm font-semibold text-royal">
+                    Learn more
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </Reveal>
           ))}
         </div>
-      </div>
+      </section>
 
-      {/* {core metrics} */}
-      <div className="flex h-full w-full relative justify-center flex-col md:flex-row  md:justify-evenly items-center">
+      {/* ---------- Metrics band ---------- */}
+      <section className="relative flex w-full items-center justify-center">
         <Image
           src="/assets/people-office.jpg"
           fill
           alt=""
-          className="absolute object-cover"
+          sizes="100vw"
+          className="object-cover"
         />
-        <div className="h-full w-full z-10 flex justify-evenly items-center flex-col gap-12 md:flex-row bg-[#0423A0]/80 py-24 px-4 md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
-          <div className="flex items-center  gap-2">
-            <BadgeCheck className="stroke-white h-10 w-10" />
-            <div className="flex flex-col">
-              <p className="font-bold text-6xl text-white">20</p>
-              <p className="text-lg font-medium text-white">Years Experience</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <Users className="stroke-white h-10 w-10" />
-            <div className="flex flex-col">
-              <p className="font-bold text-6xl text-white">1000+</p>
-              <p className="text-lg font-medium text-white">Happy Clients</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <BriefcaseBusiness className="stroke-white h-10 w-10" />
-            <div className="flex   flex-col">
-              <p className="font-bold text-6xl text-white">2000+</p>
-              <p className="text-lg font-medium text-white">
-                Completed Projects
-              </p>
-            </div>
-          </div>
+        <div className="absolute inset-0 bg-navy/85" />
+        <div className="container-x relative z-10 flex w-full flex-col items-center justify-between gap-12 py-20 md:flex-row md:py-24">
+          {metrics.map((metric) => (
+            <Stat
+              key={metric.id}
+              icon={<metric.icon className="stroke-gold h-9 w-9 shrink-0" />}
+              value={metric.value}
+              suffix={metric.suffix}
+              label={metric.label}
+            />
+          ))}
         </div>
-      </div>
-      {/* why choose us  */}
-      <div className="flex flex-col md:flex-row w-full">
-        <div className="md:flex-1 w-full md:w-1/2 shrink-0 relative h-[360px] md:h-auto">
+      </section>
+
+      {/* ---------- Why choose us ---------- */}
+      <section className="flex w-full flex-col md:flex-row">
+        <div className="relative h-[320px] w-full shrink-0 md:h-auto md:w-1/2">
           <Image
             src="/assets/medium-shot-colleagues-working-office.jpg"
-            className="object-cover absolute shrink-0"
+            className="object-cover"
             fill
-            alt="Team  discussing performance"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="Team discussing performance"
           />
         </div>
-        <div className="flex-1 md:w-1/2 px-4 md:pl-10 py-16 ">
-          <div className="flex items-center flex-col justify-center">
-            <div className="lg:pr-[80px] xl:pr-[100px] 2xl:pr-[160px] 3xl:pr-[240px] 4xl:pr-[300px]">
-              <h2 className="text-xs md:text-sm uppercase font-bold text-[#0423A0] mb-3">
-                Why Choose us
-              </h2>
-              <h3 className="text-2xl md:text-5xl font-bold text-monochrome  text-left mb-3">
-                Innovative, Secure, and Scalable IT Services Tailored for You
-              </h3>
-              <p className="text-sm md:text-base mb-4">
-                At Soft Solutions Technologies, we combine innovation,
-                expertise, and customer-centric approaches to deliver
-                exceptional IT solutions.
-              </p>
+        <div className="w-full px-4 py-16 md:w-1/2 md:py-24 md:pl-12 lg:pr-[80px] xl:pr-[100px] 2xl:pr-[160px]">
+          <SectionHeader
+            eyebrow={sectionHeaders.why.eyebrow}
+            title={sectionHeaders.why.title}
+            subtitle={sectionHeaders.why.subtitle}
+            align="left"
+          />
+          <div className="mt-10">
+            {why_choose_us.map((item, i) => (
+              <Reveal key={item.id} delay={i * 60}>
+                <WhyChooseUsCard item={item} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- Testimonials ---------- */}
+      <section className="section bg-mist">
+        <SectionHeader
+          eyebrow={sectionHeaders.testimonials.eyebrow}
+          title={sectionHeaders.testimonials.title}
+        />
+        <div className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
+          {testimonials.map((testimony, i) => (
+            <Reveal key={testimony.id} delay={i * 80} className="h-full">
+              <Testimonial testimony={testimony} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ---------- Partners ---------- */}
+      <section className="section">
+        <SectionHeader
+          eyebrow={sectionHeaders.partners.eyebrow}
+          title={sectionHeaders.partners.title}
+        />
+        <div className="mt-14 flex flex-wrap items-center justify-center gap-x-16 gap-y-10">
+          {our_partners.map((partner) => (
+            <div
+              key={partner.id}
+              className="relative h-[60px] w-[180px] opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+            >
+              <Image
+                src={partner.logo}
+                alt={partner.partner}
+                fill
+                sizes="180px"
+                className="object-contain"
+              />
             </div>
-          </div>
-          <div className="md:pr-[80px] 2xl:pr-[120px] 3xl:pr-[180px] 4xl:pr-[300px]">
-            {why_choose_us.map((item) => (
-              <WhyChooseUsCard key={item.id} item={item} />
-            ))}
-          </div>
+          ))}
         </div>
-      </div>
-      {/* what our clients are saying  */}
-      <div className="px-4 md:px-[60px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] lg:px-[80px] pt-20 pb-32 bg-[#0423A0]/10 flex justify-center items-center flex-col">
-        <div className="md:w-10/12 4xl:w-8/12">
-          <h2 className="md:text-sm text-xs uppercase font-bold text-[#0423A0] mb-3 text-center">
-            Testimonials
-          </h2>
-          <h3 className="text-2xl md:text-5xl font-bold text-monochrome text-center mb-3">
-            Delivering innovative IT solutions that exceed expectations
-          </h3>
-        </div>
-        <div className="flex justify-center items-center w-full">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay, EffectFade]}
-            slidesPerView={1}
-            spaceBetween={20}
-            pagination={{ clickable: true }}
-            loop={true}
-            autoplay={{ delay: 5000 }}
-            observeParents={true}
-            observer={true}
-            breakpoints={{
-              480: {
-                slidesPerView: 1,
-                spaceBetween: 80,
-                centeredSlides: true
-              },
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 240,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 80,
-              },
-              1024: {
-                slidesPerView: 2,
-                spaceBetween: 80,
-              },
-              1300: {
-                slidesPerView: 2,
-                spaceBetween: 80,
-              },
-              1536: {
-                slidesPerView: 2,
-                spaceBetween: 100,
-              },
-            }}
-            className="flex justify-center items-center flex-row w-full"
-          >
-            {[...testimonials, ...testimonials].map((testimony, index) => (
-              <SwiperSlide key={index} className="">
-                <div className="pt-20 pb-16">
-                  <Testimonial key={testimony.id} testimony={testimony} />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
-      {/* our partners */}
-      <div className="md:px-[60px]  px-4 lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]  pt-20 pb-32 flex justify-center flex-col items-center">
-        <div className="md:w-8/12">
-          <h2 className="text-xs md:text-sm uppercase font-bold text-[#0423A0] mb-3 text-center">
-            Our Partners
-          </h2>
-          <h3 className="text-2xl md:text-5xl font-bold text-monochrome text-center mb-3">
-            Creating Value Through Meaningful Partnerships
-          </h3>
-        </div>
-        <div className="flex justify-center items-center w-full">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay, EffectFade]}
-            slidesPerView={1}
-            spaceBetween={20}
-            pagination={{ clickable: true }}
-            loop={true}
-            autoplay={{ delay: 5000 }}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-              1300: {
-                slidesPerView: 3,
-                spaceBetween: 50,
-              },
-              1536: {
-                slidesPerView: 3,
-                spaceBetween: 60,
-              },
-            }}
-            className="flex justify-center items-center flex-row w-full"
-          >
-            {[...our_partners, ...our_partners].map((partner, index) => (
-              <SwiperSlide key={index}>
-                <div className="flex justify-center items-center pt-6 pb-16">
-                  <div className="h-[80px] w-[240px] relative rounded-lg">
-                    <Image
-                      src={partner.logo}
-                      alt={partner.partner}
-                      fill
-                      className="absolute object-contain rounded-lg"
-                      priority
-                    />
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
+      </section>
+
+      {/* ---------- Closing CTA ---------- */}
+      <CtaBand />
     </div>
   );
 };

@@ -79,10 +79,29 @@ body {
 
 @layer base {
   * {
-    @apply border-border text-tundora;
+    @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-ink antialiased;
+  }
+  /* Editorial type scale — tighter tracking/leading on large headings */
+  h1 {
+    @apply font-bold tracking-tight leading-[1.05];
+  }
+  h2,
+  h3 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  /* Shared horizontal gutter — replaces the repeated 2xl…5xl px chain */
+  .container-x {
+    @apply px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px];
+  }
+  /* Consistent vertical rhythm + gutter for a full-bleed section */
+  .section {
+    @apply px-4 md:px-[40px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px] py-20 md:py-28;
   }
 }
 
