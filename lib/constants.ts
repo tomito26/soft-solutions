@@ -1,15 +1,19 @@
 import {
   BadgeCheck,
   BriefcaseBusiness,
+  Compass,
   Database,
   Gem,
   Handshake,
   LayoutGrid,
+  LifeBuoy,
   Network,
+  PencilRuler,
   Rocket,
   Shield,
   SquarePen,
   Users,
+  Wrench,
 } from "lucide-react";
 
 export const links = [
@@ -70,6 +74,30 @@ export const sectionHeaders = {
     eyebrow: "Our Partners",
     title: "Creating Value Through Meaningful Partnerships",
   },
+  // About page
+  philosophies: {
+    eyebrow: "Our Philosophy",
+    title: "Commitment to Innovation, Quality, and Collaboration",
+  },
+  values: {
+    eyebrow: "Our Values",
+    title: "The principles that guide every project",
+    subtitle:
+      "These values define who we are, shape our decisions, and anchor the long-term partnerships we build with our clients.",
+  },
+  approach: {
+    eyebrow: "How We Work",
+    title: "A clear, collaborative path from idea to impact",
+    subtitle:
+      "Every engagement follows a proven process designed to reduce risk and keep you in control.",
+  },
+} as const;
+
+export const aboutHero = {
+  eyebrow: "About Us",
+  title: "Empowering Businesses Through Innovative Solutions",
+  subtitle:
+    "A dynamic team of IT professionals delivering technology that helps businesses thrive in a fast-paced digital world.",
 } as const;
 
 // Headline metrics. TODO(client): confirm real figures before launch.
@@ -286,5 +314,37 @@ export const values = [
     title: "Excellence",
     description:
       "We strive for the highest standards in every project, delivering exceptional quality and unmatched expertise.",
+  },
+];
+
+// How-we-work process steps shown on the About page.
+export const process = [
+  {
+    step: "01",
+    icon: Compass,
+    title: "Discover",
+    description:
+      "We start by understanding your goals, constraints, and existing systems to define the right problem to solve.",
+  },
+  {
+    step: "02",
+    icon: PencilRuler,
+    title: "Design",
+    description:
+      "We architect a tailored solution and map a clear roadmap, so you know exactly what we're building and why.",
+  },
+  {
+    step: "03",
+    icon: Wrench,
+    title: "Build",
+    description:
+      "Our engineers deliver in focused iterations, keeping you involved and the work transparent at every stage.",
+  },
+  {
+    step: "04",
+    icon: LifeBuoy,
+    title: "Support",
+    description:
+      "We don't disappear at launch — we monitor, maintain, and evolve your solution as your business grows.",
   },
 ];
