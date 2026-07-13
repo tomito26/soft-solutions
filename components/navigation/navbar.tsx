@@ -20,8 +20,16 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = React.useState<boolean>(false);
+  const [scrolled, setScrolled] = React.useState(false);
 
   const pathname = usePathname();
+
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // const handleDropdownToggle = (linkName: string) => {
   //   setOpenMenu(openMenu === linkName ? null : linkName);
@@ -37,7 +45,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center  flex-col md:flex-row  h-[92px] px-4 md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[160px] 3xl:px-[200px] 4xl:px-[240px] 5xl:px-[320px]">
+    <nav
+      className={cn(
+        "sticky top-0 z-50 flex justify-between items-center flex-col md:flex-row h-[92px] bg-white transition-shadow container-x",
+        scrolled && "shadow-md"
+      )}
+    >
       <div className="flex justify-between h-full w-full items-center">
         <div className="relative h-[50px] w-[160px] md:h-[60px] md:w-[180px]">
           <Image
@@ -64,7 +77,7 @@ const Navbar = () => {
             <li key={title} className="inline-flex items-center h-full">
               <Link
                 href={link}
-                className={cn("text-base font-medium text-[#0423A0] hover:border-b-2 border-[#0423A0] px-1", pathname === link && "border-b-2")}
+                className={cn("text-base font-medium text-navy hover:border-b-2 border-gold px-1 pb-1", pathname === link && "border-b-2")}
                 onClick={() => handleLinkClick()}
               >
                 {title}
@@ -85,13 +98,13 @@ const Navbar = () => {
                   aria-haspopup="true"
                   aria-expanded={menuOpen}
                 >
-                  <div className="flex items-center justify-center flex-row gap-x-2 hover:border-b-2 border-[#0423A0] px-1">
-                    <span className="text-base font-medium text-[#0423A0] inline-flex items-center">
+                  <div className="flex items-center justify-center flex-row gap-x-2 hover:border-b-2 border-gold px-1 pb-1">
+                    <span className="text-base font-medium text-navy inline-flex items-center">
                       {title}
                     </span>
                     <ChevronDown
                       className={cn(
-                        "transition-transform duration-200 stroke-[#0423A0]",
+                        "transition-transform duration-200 stroke-navy",
                         menuOpen ? "rotate-180" : "rotate-0"
                       )}
                     />
@@ -103,7 +116,7 @@ const Navbar = () => {
                       <DropdownMenuGroup key={item.title}>
                         <Link href={item.link} className="w-full" onClick={() =>handleLinkClick()}>
                           <DropdownMenuItem className="cursor-pointer group">
-                            <span className="text-[14px] font-[500] text-[#0423A0] ">
+                            <span className="text-[14px] font-[500] text-navy ">
                               {item.title}
                             </span>
                           </DropdownMenuItem>
@@ -117,9 +130,11 @@ const Navbar = () => {
             )
           )
         )}
-        <Button className="shrink-0 bg-[#00156B]  hover:bg-[#00156B]/90">
-          Contact Us
-        </Button>
+        <Link href="/contact-us" onClick={() => handleLinkClick()}>
+          <Button variant="primary" className="shrink-0">
+            Contact Us
+          </Button>
+        </Link>
       </ul>
     </nav>
   );
