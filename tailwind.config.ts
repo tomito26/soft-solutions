@@ -89,6 +89,20 @@ module.exports = {
         "warning-dark": "#E89806",
         "seasoned-blue":"#85C0FD",
         "blaze-orange": "#FD5B08",
+        // Brand palette — refined navy + single accent (design system)
+        navy: {
+          DEFAULT: "#00156B",
+          950: "#000B3D",
+        },
+        royal: "#0423A0",
+        gold: {
+          DEFAULT: "#F5B301",
+          soft: "#FDE9BE",
+        },
+        ink: "#0F1729",
+        "brand-slate": "#5B6474",
+        mist: "#F5F7FB",
+        line: "#E6E9F0",
       },
       borderRadius: {
         lg: "var(--radius)",
