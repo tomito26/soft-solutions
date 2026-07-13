@@ -1,20 +1,34 @@
 import {
+  ArrowRightLeft,
   BadgeCheck,
   BriefcaseBusiness,
+  Cloud,
+  Code2,
   Compass,
   Database,
+  Gauge,
   Gem,
   Handshake,
   LayoutGrid,
   LifeBuoy,
+  Lock,
   Network,
   PencilRuler,
   Rocket,
+  ScanSearch,
+  Server,
   Shield,
+  ShieldCheck,
+  Siren,
+  Smartphone,
+  Sparkles,
   SquarePen,
   Users,
+  Webhook,
+  Wifi,
   Wrench,
 } from "lucide-react";
+import { ServicePageContent } from "@/types/types";
 
 export const links = [
   {
@@ -348,3 +362,402 @@ export const process = [
       "We don't disappear at launch — we monitor, maintain, and evolve your solution as your business grows.",
   },
 ];
+
+// ---------------------------------------------------------------------------
+// Service page content — one ServicePageContent per /(our-services) route.
+// Feature rows drive the alternating image/text sections; `included` drives the
+// scannable capability grid; `cta` feeds the closing CtaBand.
+// ---------------------------------------------------------------------------
+
+export const softwareDevelopmentPage: ServicePageContent = {
+  hero: {
+    image:
+      "/assets/programer-sitting-desk-with-multiple-screens-running-code-talking-with-colleague-about-artificial-intelligence-algorithm-software-developers-doing-innovative-artificial-intelligence-project (1).jpg",
+    imageAlt:
+      "Software developers collaborating on code across multiple screens",
+    eyebrow: "Software Development",
+    title: "Software Development",
+    breadcrumb: "Software Development",
+    intro:
+      "Custom software, web, and mobile solutions engineered around your business — from first idea to ongoing support.",
+  },
+  features: [
+    {
+      title: "Custom Software Development",
+      description:
+        "We understand that every business is unique, which is why we offer custom software development tailored specifically to your goals. Whether you're looking to streamline internal processes, build a new product, or solve a specific challenge, we deliver software that fits your exact requirements — from small tools to large-scale enterprise applications.",
+      image: "/assets/system-design.jpg",
+      imageAlt: "Developer sketching a custom system design on paper",
+    },
+    {
+      title: "Web Development",
+      description:
+        "In today's digital age, a strong online presence is critical. We build websites and web applications that are fast, responsive, and user-friendly. Whether it's a dynamic, content-driven site or a complex web app, our team uses cutting-edge technologies like React, Next.js, and Node.js to deliver an exceptional experience across all devices.",
+      image: "/assets/website-development.jpg",
+      imageAlt: "Web developer building a responsive website on a laptop",
+    },
+    {
+      title: "Mobile App Development",
+      description:
+        "Want to reach your customers on the go? Our mobile app development services create seamless, intuitive, and engaging apps for both iOS and Android. Whether you need a mobile version of your web application, an e-commerce app, or a service-based app, we ensure it delivers an excellent user experience and maximizes engagement.",
+      image: "/assets/smartphone-with-user-interface-concept.jpg",
+      imageAlt: "Smartphone displaying a mobile app user interface",
+    },
+    {
+      title: "Software Maintenance & Support",
+      description:
+        "After your software is up and running, we provide ongoing maintenance and support to keep everything working smoothly. This includes updates, bug fixes, performance improvements, and adding new features as your business evolves — so your systems stay current and perform at their best.",
+      image: "/assets/6664783.jpg",
+      imageAlt: "Illustration of engineers maintaining and supporting software",
+    },
+    {
+      title: "API Development & Integration",
+      description:
+        "To maximize the power of your software, robust API development and integration is crucial. We build secure, scalable APIs that let your systems communicate with other services — from third-party integrations like payment gateways and social media to internal system connections — keeping your processes efficient, automated, and future-ready.",
+      image: "/assets/7090333.jpg",
+      imageAlt: "Illustration of connected systems integrating through APIs",
+    },
+    {
+      title: "UI/UX Design",
+      description:
+        "Great design is essential to software that not only works but delights users. Our UI/UX team crafts visually stunning, user-friendly interfaces that make your software easy to navigate and enjoyable to use. We work with you to understand your users and design experiences that drive engagement and satisfaction.",
+      image: "/assets/ui-ux-representations-with-laptop.jpg",
+      imageAlt: "UI/UX design wireframes laid out beside a laptop",
+    },
+    {
+      title: "AI & Machine Learning Solutions",
+      description:
+        "Transform your business with the power of AI and machine learning. We integrate predictive analytics, natural language processing, and machine learning algorithms into your software to help you make data-driven decisions, automate tasks, and unlock valuable insights — from chatbots to recommendation engines and advanced analytics platforms.",
+      image: "/assets/engineers-brainstorming-ways-use-ai.jpg",
+      imageAlt:
+        "Engineers brainstorming machine learning solutions at a whiteboard",
+    },
+  ],
+  included: {
+    eyebrow: "What's included",
+    title: "Everything you need to ship great software",
+    subtitle:
+      "One partner across the full delivery lifecycle — from design to launch and beyond.",
+    items: [
+      {
+        id: 1,
+        title: "Custom-built software",
+        description:
+          "Solutions engineered around your exact workflows, not off-the-shelf compromises.",
+        icon: Code2,
+      },
+      {
+        id: 2,
+        title: "Web & mobile apps",
+        description:
+          "Fast, responsive experiences across every device and platform.",
+        icon: Smartphone,
+      },
+      {
+        id: 3,
+        title: "APIs & integrations",
+        description:
+          "Secure connections to payment, messaging, and third-party services.",
+        icon: Webhook,
+      },
+      {
+        id: 4,
+        title: "AI & automation",
+        description:
+          "Predictive analytics and intelligent features that cut manual work.",
+        icon: Sparkles,
+      },
+    ],
+  },
+  cta: {
+    title: "Ready to get started?",
+    subtitle:
+      "With Soft Solutions Technologies you get more than software — a reliable, forward-thinking partner. Reach out today to see how we can transform your business with tailored software solutions.",
+  },
+};
+
+export const cloudServicesPage: ServicePageContent = {
+  hero: {
+    image: "/assets/saas-concept-collage.jpg",
+    imageAlt: "Cloud and SaaS technology concept collage",
+    eyebrow: "Cloud Services",
+    title: "Cloud Services",
+    breadcrumb: "Cloud Services",
+    intro:
+      "Scalable, secure cloud solutions — from infrastructure and migration to backup, security, and fully managed operations.",
+  },
+  features: [
+    {
+      title: "Cloud Infrastructure Setup",
+      description:
+        "Our Cloud Infrastructure Setup service helps you establish a robust, scalable foundation for your cloud environment. We design and deploy customized solutions tailored to your business needs, ensuring optimal performance, cost-efficiency, and security from day one.",
+      image: "/assets/37655.jpg",
+      imageAlt: "Illustration of scalable cloud infrastructure",
+    },
+    {
+      title: "Cloud Migration Services",
+      description:
+        "Our Cloud Migration Services ensure a smooth transition from on-premise systems to cloud platforms. We perform comprehensive assessments, create detailed migration plans, and execute with minimal downtime, ensuring your data and applications are transferred securely.",
+      image: "/assets/6551283.jpg",
+      imageAlt: "Illustration of data migrating to the cloud",
+    },
+    {
+      title: "Cloud Backup and Disaster Recovery",
+      description:
+        "Protect your business from data loss with automated cloud backups and a tested disaster-recovery plan. We replicate critical data across regions and define clear recovery objectives, so you can restore operations quickly after any outage or incident.",
+      image:
+        "/assets/1902.i039.011.P.m004.c30.cloud services isometric icons-02.jpg",
+      imageAlt: "Isometric illustration of cloud backup and recovery services",
+    },
+    {
+      title: "Cloud Security",
+      description:
+        "As businesses migrate to the cloud, securing cloud-based infrastructure is paramount. We provide cloud security services to protect your applications, platforms, and data from unauthorized access, cyber threats, and breaches, ensuring compliance with industry regulations.",
+      image: "/assets/20945823.jpg",
+      imageAlt: "Illustration of a secured cloud platform",
+    },
+    {
+      title: "Managed Cloud Services",
+      description:
+        "Outsource the management of your cloud infrastructure so you can focus on your core business. Our team handles updates, performance tuning, and round-the-clock monitoring to keep your cloud environment running smoothly.",
+      image: "/assets/20945284.jpg",
+      imageAlt: "Illustration of a managed, monitored cloud environment",
+    },
+  ],
+  included: {
+    eyebrow: "What's included",
+    title: "End-to-end cloud, handled for you",
+    subtitle:
+      "From first setup to day-two operations, we cover the whole cloud lifecycle.",
+    items: [
+      {
+        id: 1,
+        title: "Scalable infrastructure",
+        description: "Right-sized cloud foundations that grow with your demand.",
+        icon: Cloud,
+      },
+      {
+        id: 2,
+        title: "Seamless migration",
+        description:
+          "Move workloads to the cloud with minimal downtime and risk.",
+        icon: ArrowRightLeft,
+      },
+      {
+        id: 3,
+        title: "Built-in security",
+        description:
+          "Encryption, access controls, and audits keep your data safe.",
+        icon: ShieldCheck,
+      },
+      {
+        id: 4,
+        title: "Managed & monitored",
+        description:
+          "Round-the-clock monitoring and tuning so you can focus on business.",
+        icon: Server,
+      },
+    ],
+  },
+  cta: {
+    title: "Ready to move to the cloud?",
+    subtitle:
+      "From backup and disaster recovery to migration and security, we provide end-to-end cloud solutions tailored to your business. Let's build your cloud roadmap together.",
+  },
+};
+
+export const cyberSecurityPage: ServicePageContent = {
+  hero: {
+    image: "/assets/business-corporate-protection-safety-security-concept.jpg",
+    imageAlt: "Corporate cyber security and data protection concept",
+    eyebrow: "Cyber Security",
+    title: "Cyber Security",
+    breadcrumb: "Cyber Security",
+    intro:
+      "Advanced protection that safeguards your business from data breaches, ransomware, and evolving cyber threats — across every layer.",
+  },
+  features: [
+    {
+      title: "Network Security",
+      description:
+        "We protect your network perimeter and internal traffic with layered defenses — firewalls, intrusion detection and prevention, network segmentation, and continuous traffic inspection — to keep threats out and your sensitive data in.",
+      image: "/assets/7088664.jpg",
+      imageAlt: "Illustration of a protected, monitored corporate network",
+    },
+    {
+      title: "Endpoint Protection",
+      description:
+        "With the growing number of remote workers and mobile devices, protecting endpoints is crucial. We provide endpoint protection — antivirus, device encryption, and threat detection — to secure every device that connects to your network, including laptops, smartphones, and tablets.",
+      image: "/assets/4022190.jpg",
+      imageAlt: "Illustration of secured laptops and mobile devices",
+    },
+    {
+      title: "Application Security",
+      description:
+        "We secure your software applications by identifying and addressing security flaws throughout the development lifecycle. From code review to deployment, we integrate secure coding practices and automated testing to prevent vulnerabilities such as SQL injection and cross-site scripting (XSS).",
+      image: "/assets/Data_security_27.jpg",
+      imageAlt: "Secure application code shown on a screen",
+    },
+    {
+      title: "Cloud Security",
+      description:
+        "As businesses migrate to the cloud, securing cloud-based infrastructure is paramount. We provide cloud security services to protect your applications, platforms, and data from unauthorized access, cyber threats, and breaches, ensuring compliance with industry regulations.",
+      image: "/assets/20945823.jpg",
+      imageAlt: "Illustration of a secured cloud environment",
+    },
+    {
+      title: "Vulnerability Assessment & Penetration Testing",
+      description:
+        "Our vulnerability assessments and penetration testing identify weaknesses in your systems before hackers can exploit them. We simulate real-world cyberattacks and provide clear recommendations to address vulnerabilities, ensuring your network, applications, and infrastructure stay secure.",
+      image: "/assets/20945584.jpg",
+      imageAlt:
+        "Illustration of a penetration tester probing for vulnerabilities",
+    },
+    {
+      title: "Incident Response and Recovery",
+      description:
+        "In the event of a cyberattack or data breach, our incident response team acts swiftly to contain the threat and minimize damage. We develop disaster recovery plans so your business can recover quickly — minimizing downtime and restoring systems to normal operation.",
+      image: "/assets/2953966.jpg",
+      imageAlt: "Illustration of an incident response and recovery workflow",
+    },
+  ],
+  included: {
+    eyebrow: "What's included",
+    title: "Defense in depth, end to end",
+    subtitle:
+      "Protection across every layer, backed by proactive testing and rapid response.",
+    items: [
+      {
+        id: 1,
+        title: "Layered protection",
+        description:
+          "Defense across network, endpoints, applications, and the cloud.",
+        icon: ShieldCheck,
+      },
+      {
+        id: 2,
+        title: "Proactive testing",
+        description:
+          "Vulnerability assessments and penetration testing before attackers strike.",
+        icon: ScanSearch,
+      },
+      {
+        id: 3,
+        title: "Data & endpoint security",
+        description:
+          "Encryption and threat detection for every device on your network.",
+        icon: Lock,
+      },
+      {
+        id: 4,
+        title: "Rapid incident response",
+        description:
+          "Swift containment and recovery to minimize downtime and damage.",
+        icon: Siren,
+      },
+    ],
+  },
+  cta: {
+    title: "Ready to strengthen your defenses?",
+    subtitle:
+      "From threat detection and penetration testing to incident response, we help you protect your business against evolving cyber threats. Talk to our security team today.",
+  },
+};
+
+export const networkingPage: ServicePageContent = {
+  hero: {
+    image: "/assets/young-network-engineer-looking-ethernet-switches.jpg",
+    imageAlt: "Network engineer inspecting Ethernet switches",
+    eyebrow: "Networking Services",
+    title: "Networking Services",
+    breadcrumb: "Networking",
+    intro:
+      "Secure, efficient networks designed, deployed, and maintained to keep your business connected and running at full speed.",
+  },
+  features: [
+    {
+      title: "Network Design and Architecture",
+      description:
+        "We provide network design and architecture services to create efficient, scalable, and secure networks tailored to your business. This includes designing the layout of your infrastructure, ensuring optimal performance, and planning for bandwidth, security, and future scalability.",
+      image: "/assets/networking-architecture.png",
+      imageAlt: "Diagram of a structured enterprise network architecture",
+    },
+    {
+      title: "Network Installation and Configuration",
+      description:
+        "Our team handles the installation and configuration of your networking hardware and software, ensuring your routers, switches, firewalls, and other equipment are properly set up to communicate seamlessly — so your network operates efficiently right from the start.",
+      image: "/assets/7088664.jpg",
+      imageAlt: "Illustration of configured network routers and switches",
+    },
+    {
+      title: "Network Monitoring and Maintenance",
+      description:
+        "With our network monitoring and maintenance services, we keep your network operating smoothly and efficiently. Continuous monitoring helps us detect and resolve potential issues before they affect operations, while regular maintenance ensures optimal performance.",
+      image:
+        "/assets/portrait-male-engineer-working-field-engineers-day-celebration.jpg",
+      imageAlt: "Network engineer monitoring infrastructure on site",
+    },
+    {
+      title: "Network Optimization and Troubleshooting",
+      description:
+        "To keep your network running at its peak, we provide optimization and troubleshooting services. This includes analyzing traffic patterns, eliminating bottlenecks, and resolving any performance issues that may disrupt your operations.",
+      image: "/assets/technician-walking-through-server-rigs.jpg",
+      imageAlt: "Technician inspecting server racks in a data center",
+    },
+    {
+      title: "Wireless Networking",
+      description:
+        "We provide comprehensive wireless networking solutions that ensure fast, reliable, and secure Wi-Fi connectivity throughout your office or business premises. Our services include planning, installation, and ongoing management to optimize wireless performance.",
+      image: "/assets/tablet-with-wifi-symbol.jpg",
+      imageAlt: "Tablet showing a Wi-Fi signal symbol",
+    },
+    {
+      title: "Network Consultancy and Auditing",
+      description:
+        "Our network consultancy services offer expert advice on improving your existing infrastructure. We conduct network audits to evaluate your current setup, identify vulnerabilities, and recommend ways to enhance performance, scalability, and security.",
+      image:
+        "/assets/supervisor-server-farm-overseeing-engineer-fixing-network-issues.jpg",
+      imageAlt: "Supervisor and engineer auditing a server farm",
+    },
+  ],
+  included: {
+    eyebrow: "What's included",
+    title: "Connectivity you can count on",
+    subtitle:
+      "Networks built for performance, reliability, and security at every layer.",
+    items: [
+      {
+        id: 1,
+        title: "Designed to scale",
+        description:
+          "Network architecture planned for performance and future growth.",
+        icon: Network,
+      },
+      {
+        id: 2,
+        title: "Reliable wireless",
+        description: "Fast, secure Wi-Fi coverage across your premises.",
+        icon: Wifi,
+      },
+      {
+        id: 3,
+        title: "Always optimized",
+        description:
+          "Continuous monitoring removes bottlenecks before they bite.",
+        icon: Gauge,
+      },
+      {
+        id: 4,
+        title: "Secure by design",
+        description:
+          "Firewalls, segmentation, and audits baked into every build.",
+        icon: ShieldCheck,
+      },
+    ],
+  },
+  cta: {
+    title: "Ready to connect your business?",
+    subtitle:
+      "Seamless connectivity is the backbone of modern business. We design, implement, and maintain robust networks tailored to your needs. Contact us to keep your business connected, secure, and efficient.",
+  },
+};
