@@ -114,6 +114,26 @@ export const aboutHero = {
     "A dynamic team of IT professionals delivering technology that helps businesses thrive in a fast-paced digital world.",
 } as const;
 
+// 2x2 photo grid for the About "Who we are" section.
+export const whoWeArePhotos = [
+  {
+    src: "/assets/people-office-work-day (1).jpg",
+    alt: "The Soft Solutions team collaborating at their desks",
+  },
+  {
+    src: "/assets/medium-shot-colleagues-working-office.jpg",
+    alt: "Colleagues working together in the office",
+  },
+  {
+    src: "/assets/three-happy-businesspeople-using-gadgets-office.jpg",
+    alt: "Team members reviewing work on their devices",
+  },
+  {
+    src: "/assets/businesswoman-engaging-planning-session-with-realtor-contractor.jpg",
+    alt: "Consultants in a client planning session",
+  },
+];
+
 // Headline metrics. TODO(client): confirm real figures before launch.
 export const metrics = [
   { id: 1, icon: BadgeCheck, value: 10, suffix: "+", label: "Years Experience" },
