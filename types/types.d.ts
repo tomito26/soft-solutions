@@ -5,6 +5,21 @@ export interface ServiceType {
   icon: LucideIcon;
 }
 
+// A sub-link inside a nav dropdown (e.g. the Services menu).
+export interface NavSubLink {
+  title: string;
+  link: string;
+  icon: LucideIcon;
+  description: string;
+}
+
+// A top-level nav entry: either a direct link or a dropdown with sub-links.
+export interface NavLink {
+  title: string;
+  link?: string;
+  subLink?: NavSubLink[];
+}
+
 // One alternating image/text row on a service page.
 export interface ServiceFeature {
   title: string;
