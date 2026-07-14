@@ -12,108 +12,153 @@ import {
 import FormFieldWithIcon from "@/components/ui/form-field-with-icon";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Asterisk, Mail } from "lucide-react";
+import { CheckCircle2, Loader2, Mail, MessageSquare, User } from "lucide-react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import validator from "validator";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-
 const ContactFormSchema = z.object({
-  name: z.string(),
-  email:z.string().refine(validator.isEmail),
-  message: z.string()
-})
+  name: z.string().min(2, "Please enter your name"),
+  email: z
+    .string()
+    .min(1, "Email is required")
+    .refine(validator.isEmail, "Enter a valid email address"),
+  message: z.string().min(10, "Tell us a little more (at least 10 characters)"),
+});
+
+type ContactFormValues = z.infer<typeof ContactFormSchema>;
+
+const inputClasses =
+  "h-11 pl-11 text-sm focus-visible:ring-royal/40 focus-visible:ring-offset-0";
 
 export const ContactUsForm = () => {
-  const form = useForm<z.infer<typeof ContactFormSchema>>({
+  const [submitted, setSubmitted] = useState(false);
+  const form = useForm<ContactFormValues>({
     resolver: zodResolver(ContactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
+    defaultValues: { name: "", email: "", message: "" },
   });
 
-  const handleSendMessage = (data: z.infer<typeof ContactFormSchema>) => {
-    console.log(data)
-  }
-  return (
-        <div className="shrink-0 mt-">
-          <h2  className="text-xs md:text-sm uppercase  font-bold text-[#0423A0] mb-2">Send us an email</h2>
-          <h3 className="text-monochrome text-2xl md:text-5xl font-bold mb-3">
-          Feel free to write
-          </h3>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(handleSendMessage)} className="lg:w-full w-full">
-              <div>
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem className="w-full mt-4">
-                      <FormLabel className="text-sm font-medium">
-                        Name
-                      </FormLabel>
-                      <FormControl className="w-full">
-                        <Input
-                          placeholder="Name"
-                          {...field}
-                          className="text-[14px] w-full"
-                        />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem className="mt-4">
-                      <FormLabel className="flex items-start text-sm font-medium gap-x-1">
-                        Email
-                        <Asterisk className="w-3 h-3 stroke-app-destructive" />
-                      </FormLabel>
-                      <FormFieldWithIcon FieldIcon={Mail}>
-                        <FormControl>
-                          <Input
-                            placeholder="Enter Email"
-                            type="email"
-                            {...field}
-                            className="auth-form_input-field pl-[42px] pr-[14px] focus-visible:outline-none focus-visible:ring-2 h-9 text-[14px]"
-                          />
-                        </FormControl>
-                      </FormFieldWithIcon>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+  const handleSendMessage = async (data: ContactFormValues) => {
+    // TODO(client): wire up a real email service (e.g. Formspree / API route).
+    await new Promise((resolve) => setTimeout(resolve, 900));
+    console.log(data);
+    setSubmitted(true);
+  };
 
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem className="mt-4">
-                      <FormLabel className="text-sm font-medium">
-                        Message
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Message"
-                          {...field}
-                          className="text-[14px] h-[120px] resize-none"
-                        />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <Button className="bg-monochrome hover:bg-monochrome/90 w-full mt-8">Send Message</Button>
-            </form>
-          </Form>
+  if (submitted) {
+    return (
+      <div className="flex flex-col items-center justify-center py-10 text-center">
+        <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-success-light">
+          <CheckCircle2 className="h-8 w-8 stroke-success" />
         </div>
+        <h3 className="mb-2 text-xl font-bold text-navy">Message sent</h3>
+        <p className="mb-6 max-w-sm text-sm text-brand-slate">
+          Thanks for reaching out — we&apos;ve received your message and will get
+          back to you within one business day.
+        </p>
+        <Button
+          variant="outline"
+          onClick={() => {
+            form.reset();
+            setSubmitted(false);
+          }}
+        >
+          Send another message
+        </Button>
+      </div>
+    );
+  }
+
+  const isSubmitting = form.formState.isSubmitting;
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(handleSendMessage)} className="w-full">
+        <div className="space-y-5">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-sm font-medium text-navy">
+                  Name
+                </FormLabel>
+                <FormFieldWithIcon FieldIcon={User}>
+                  <FormControl>
+                    <Input placeholder="Your name" className={inputClasses} {...field} />
+                  </FormControl>
+                </FormFieldWithIcon>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-sm font-medium text-navy">
+                  Email
+                </FormLabel>
+                <FormFieldWithIcon FieldIcon={Mail}>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="you@company.com"
+                      className={inputClasses}
+                      {...field}
+                    />
+                  </FormControl>
+                </FormFieldWithIcon>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-sm font-medium text-navy">
+                  Message
+                </FormLabel>
+                <div className="relative">
+                  <MessageSquare className="absolute left-[14px] top-[14px] h-5 w-5 stroke-body-gray" />
+                  <FormControl>
+                    <Textarea
+                      placeholder="How can we help?"
+                      className="min-h-[140px] resize-y pl-11 text-sm focus-visible:ring-royal/40 focus-visible:ring-offset-0"
+                      {...field}
+                    />
+                  </FormControl>
+                </div>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <Button
+          type="submit"
+          variant="gold"
+          size="lg"
+          disabled={isSubmitting}
+          className="mt-7 w-full"
+        >
+          {isSubmitting ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Sending…
+            </>
+          ) : (
+            "Send Message"
+          )}
+        </Button>
+      </form>
+    </Form>
   );
 };
-
-
-
