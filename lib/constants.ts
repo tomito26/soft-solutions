@@ -134,6 +134,29 @@ export const whoWeArePhotos = [
   },
 ];
 
+// ---- Contact page content ----
+export const contactHero = {
+  image: "/assets/professionals-explaining-corporate-software-details.jpg",
+  imageAlt: "Soft Solutions consultants talking with a client",
+  eyebrow: "Contact Us",
+  title: "Get in touch with us",
+  intro:
+    "Questions, ideas, or a project in mind? Our team is ready to help — reach out and we'll get back to you within one business day.",
+  breadcrumb: "Contact",
+} as const;
+
+// TODO(client): confirm the correct phone number (the old About block used
+// +254 796 108 651) and the exact street address.
+export const contactDetails = {
+  phone: { label: "Main Support Line", value: "+254 712 070 289", href: "tel:+254712070289" },
+  email: { label: "General Enquiries", value: "info@softsolutions.com", href: "mailto:info@softsolutions.com" },
+  office: { label: "Office", value: "Westlands, Nairobi, Kenya" },
+  hours: { label: "Working Hours", value: "Mon – Fri, 8:00 AM – 5:00 PM EAT" },
+  // Keyless Google Maps embed query (no API key required).
+  mapQuery: "Westlands, Nairobi, Kenya",
+  replyNote: "We typically reply within 24 hours.",
+} as const;
+
 // Headline metrics. TODO(client): confirm real figures before launch.
 export const metrics = [
   { id: 1, icon: BadgeCheck, value: 10, suffix: "+", label: "Years Experience" },
