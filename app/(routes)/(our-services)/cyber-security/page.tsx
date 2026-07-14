@@ -3,8 +3,9 @@ import CyberSecurity from "@/components/our-services/cyber-security/cyber-securi
 import JsonLd from "@/components/seo/json-ld";
 import { faqSchema, serviceBreadcrumb, serviceMetadata, serviceSchema } from "@/lib/seo";
 import { serviceFaqs } from "@/lib/constants";
+import type { ServiceRoute } from "@/types/types";
 
-const ROUTE = "/cyber-security";
+const ROUTE: ServiceRoute = "/cyber-security";
 
 export const metadata: Metadata = serviceMetadata(ROUTE);
 

@@ -1,12 +1,12 @@
 import type { MetadataRoute } from "next";
-import { absoluteUrl, servicePagesSeo } from "@/lib/seo";
+import { absoluteUrl, servicePagesSeo, type ServiceRoute } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   // Service routes are derived from the SEO config so the sitemap can't drift
   // from the navigation.
-  const servicePaths = Object.keys(servicePagesSeo);
+  const servicePaths = Object.keys(servicePagesSeo) as ServiceRoute[];
 
   const entries: {
     path: string;

@@ -3,8 +3,9 @@ import Networking from "@/components/our-services/networking-services/networking
 import JsonLd from "@/components/seo/json-ld";
 import { faqSchema, serviceBreadcrumb, serviceMetadata, serviceSchema } from "@/lib/seo";
 import { serviceFaqs } from "@/lib/constants";
+import type { ServiceRoute } from "@/types/types";
 
-const ROUTE = "/networking";
+const ROUTE: ServiceRoute = "/networking";
 
 export const metadata: Metadata = serviceMetadata(ROUTE);
 

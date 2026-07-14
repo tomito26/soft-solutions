@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { contactDetails } from "@/lib/constants";
-import type { FaqItem } from "@/types/types";
+import type { FaqItem, ServiceRoute } from "@/types/types";
+
+export type { ServiceRoute };
 
 /**
  * Single source of truth for site-wide SEO/metadata values.
@@ -16,8 +18,6 @@ export const siteConfig = {
   description:
     "Soft Solutions Technologies is a Nairobi-based IT company delivering software development, cloud, cyber security, and networking solutions tailored to your business.",
   locale: "en_KE",
-  // TODO(client): replace with the real X/Twitter handle once available.
-  twitter: "@softsolutions",
   logo: "/assets/soft-solutions.svg",
   keywords: [
     "IT solutions Kenya",
@@ -108,9 +108,10 @@ export const servicePagesSeo = {
     description:
       "Secure, efficient networks designed, deployed, and maintained to keep your business connected and running at full speed — enterprise networking across Kenya.",
   },
-} as const;
-
-export type ServiceRoute = keyof typeof servicePagesSeo;
+} as const satisfies Record<
+  ServiceRoute,
+  { name: string; serviceType: string; title: string; description: string }
+>;
 
 // ---------------------------------------------------------------------------
 // Structured data (Schema.org JSON-LD) builders. Each returns a plain object
@@ -123,7 +124,7 @@ const ORGANIZATION_ID = `${siteConfig.url}/#organization`;
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     "@id": ORGANIZATION_ID,
     name: siteConfig.name,
     url: siteConfig.url,
@@ -140,6 +141,12 @@ export function organizationSchema() {
       addressCountry: "KE",
     },
     areaServed: { "@type": "Country", name: "Kenya" },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
     contactPoint: {
       "@type": "ContactPoint",
       telephone: contactDetails.phone.value,
@@ -201,11 +208,11 @@ export function serviceSchema(route: ServiceRoute) {
 }
 
 /** FAQPage schema — feeds answer engines direct question/answer pairs. */
-export function faqSchema(items: FaqItem[]) {
+export function faqSchema(items?: FaqItem[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
+    mainEntity: (items ?? []).map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {

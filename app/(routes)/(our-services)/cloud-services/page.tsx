@@ -3,8 +3,9 @@ import CloudServices from "@/components/our-services/cloud-services/cloud-servic
 import JsonLd from "@/components/seo/json-ld";
 import { faqSchema, serviceBreadcrumb, serviceMetadata, serviceSchema } from "@/lib/seo";
 import { serviceFaqs } from "@/lib/constants";
+import type { ServiceRoute } from "@/types/types";
 
-const ROUTE = "/cloud-services";
+const ROUTE: ServiceRoute = "/cloud-services";
 
 export const metadata: Metadata = serviceMetadata(ROUTE);
 

@@ -28,7 +28,7 @@ import {
   Wifi,
   Wrench,
 } from "lucide-react";
-import { FaqItem, NavLink, ServicePageContent } from "@/types/types";
+import { FaqItem, NavLink, ServicePageContent, ServiceRoute } from "@/types/types";
 
 export const links: NavLink[] = [
   {
@@ -844,7 +844,7 @@ export const homeFaqs: FaqItem[] = [
 ];
 
 // Keyed by service route so the FAQ source of truth matches the nav and sitemap.
-export const serviceFaqs: Record<string, FaqItem[]> = {
+export const serviceFaqs: Record<ServiceRoute, FaqItem[]> = {
   "/software-development": [
     {
       question: "What software development services do you offer?",

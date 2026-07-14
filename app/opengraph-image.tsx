@@ -1,6 +1,6 @@
 import { ogAlt, ogContentType, ogImage, ogSize } from "@/lib/og-image";
 
-export const alt = ogAlt("IT Solutions in Nairobi, Kenya");
+export const alt = ogAlt("IT Solutions for Modern Business");
 export const size = ogSize;
 export const contentType = ogContentType;
 
