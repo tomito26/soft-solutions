@@ -3,8 +3,9 @@ import SoftwareDevelopment from "@/components/our-services/software-Services/sof
 import JsonLd from "@/components/seo/json-ld";
 import { faqSchema, serviceBreadcrumb, serviceMetadata, serviceSchema } from "@/lib/seo";
 import { serviceFaqs } from "@/lib/constants";
+import type { ServiceRoute } from "@/types/types";
 
-const ROUTE = "/software-development";
+const ROUTE: ServiceRoute = "/software-development";
 
 export const metadata: Metadata = serviceMetadata(ROUTE);
 

@@ -17,10 +17,12 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const homeTitle = `${siteConfig.name} — IT Solutions in Nairobi, Kenya`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — IT Solutions in Nairobi, Kenya`,
+    default: homeTitle,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -31,13 +33,13 @@ export const metadata: Metadata = {
     type: "website",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — IT Solutions in Nairobi, Kenya`,
+    title: homeTitle,
     description: siteConfig.description,
     locale: siteConfig.locale,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — IT Solutions in Nairobi, Kenya`,
+    title: homeTitle,
     description: siteConfig.description,
   },
   robots: {

@@ -26,6 +26,15 @@ export interface FaqItem {
   answer: string;
 }
 
+// The four service routes — the single source of truth for service page keys
+// (SEO copy, FAQs, sitemap). Keeping this as one union lets the compiler catch
+// a missing or misspelled route across the config.
+export type ServiceRoute =
+  | "/software-development"
+  | "/cloud-services"
+  | "/cyber-security"
+  | "/networking";
+
 // One alternating image/text row on a service page.
 export interface ServiceFeature {
   title: string;

@@ -12,6 +12,11 @@ export const ogAlt = (title: string) => `${title} — ${siteConfig.name}`;
  * Renders a branded 1200×630 Open Graph / Twitter share image with the page
  * title baked in. Reused by every `opengraph-image.tsx` route so each of those
  * files stays a few lines.
+ *
+ * NOTE: Satori renders with its built-in sans-serif and no bundled font, so
+ * `title`/`subtitle` must use Latin-1 glyphs only (ASCII plus the `·`, `—`
+ * etc. we already use). Non-Latin characters render as blank tofu — bundle a
+ * font via ImageResponse `fonts` before adding any.
  */
 export function ogImage(title: string, subtitle?: string) {
   return new ImageResponse(
