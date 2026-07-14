@@ -5,25 +5,24 @@ import { cn } from "@/lib/utils";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import { Button } from "../ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { usePathname } from "next/navigation";
+
+const servicesLink = links.find((l) => l.subLink);
+const serviceItems = servicesLink?.subLink ?? [];
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = React.useState(false);
-  const [isMobileMenuOpen, setMobileMenuOpen] = React.useState<boolean>(false);
-  const [scrolled, setScrolled] = React.useState(false);
-
   const pathname = usePathname();
+  const [scrolled, setScrolled] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [servicesOpen, setServicesOpen] = React.useState(false); // desktop hover
+  const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
 
+  const isActive = (link: string) => pathname === link;
+  const isServicesActive = serviceItems.some((s) => s.link === pathname);
+
+  // shadow once scrolled
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -31,111 +30,245 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // const handleDropdownToggle = (linkName: string) => {
-  //   setOpenMenu(openMenu === linkName ? null : linkName);
-  // };
+  // lock body scroll while the mobile drawer is open
+  React.useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
-  const handleLinkClick = () => {
-    setMenuOpen(false);
-    setMobileMenuOpen(false);
-  };
+  // close the drawer on route change
+  React.useEffect(() => {
+    setMobileOpen(false);
+    setMobileServicesOpen(false);
+  }, [pathname]);
 
-  const handleMobileMenuToggle = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-  };
+  // close the drawer on Escape
+  React.useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMobileOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobileOpen]);
+
+  const underline =
+    "border-b-2 border-transparent pb-1 text-base font-medium text-navy transition-colors hover:border-gold";
 
   return (
     <nav
       className={cn(
-        "sticky top-0 z-50 flex justify-between items-center flex-col md:flex-row h-[92px] bg-white transition-shadow container-x",
+        "sticky top-0 z-50 bg-white transition-shadow",
         scrolled && "shadow-md"
       )}
     >
-      <div className="flex justify-between h-full w-full items-center">
-        <div className="relative h-[50px] w-[160px] md:h-[60px] md:w-[180px]">
-          <Image
-            src="/assets/soft-solutions.svg"
-            fill
-            alt="Soft Solutions Technologies logo"
-            className="absolute object-cover"
-          />
-        </div>
-        <button
-            className="md:hidden block mr-4"
-            onClick={handleMobileMenuToggle}
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-body-gray" />
-            ) : (
-              <Menu className="w-6 h-6 text-body-gray" />
-            )}
-          </button>
-      </div>
-      <ul className={cn(isMobileMenuOpen ? "flex items-center justify-center flex-col absolute md:relative top-[92px] md:top-0  space-y-10 md:space-y-0" :  "hidden md:flex"," items-center justify-center  md:space-x-10  md:relative md:flex-row  pb-4 md:pb-0 md:h-full z-50 bg-white w-full")}>
-        {links.map(({ title, subLink, link }) =>
-          link ? (
-            <li key={title} className="inline-flex items-center h-full">
-              <Link
-                href={link}
-                className={cn("text-base font-medium text-navy hover:border-b-2 border-gold px-1 pb-1", pathname === link && "border-b-2")}
-                onClick={() => handleLinkClick()}
-              >
-                {title}
-              </Link>
-            </li>
-          ) : (
-            subLink &&
-            subLink.length > 0 && (
-              <DropdownMenu
-                onOpenChange={() => setMenuOpen(!menuOpen)}
-                open={menuOpen}
-                key={title}
-              >
-                <DropdownMenuTrigger
-                  className={cn(
-                    "cursor-pointer p-0 border-none outline-none   relative flex items-center justify-center transition-all h-full"
-                  )}
-                  aria-haspopup="true"
-                  aria-expanded={menuOpen}
+      <div className="container-x flex h-20 md:h-[88px] items-center justify-between">
+        {/* Logo → home */}
+        <Link href="/" aria-label="Soft Solutions Technologies — home">
+          <span className="relative block h-[44px] w-[150px] md:h-[52px] md:w-[176px]">
+            <Image
+              src="/assets/soft-solutions.svg"
+              fill
+              sizes="176px"
+              alt="Soft Solutions Technologies logo"
+              className="object-contain object-left"
+            />
+          </span>
+        </Link>
+
+        {/* Desktop nav */}
+        <ul className="hidden items-center gap-8 md:flex">
+          {links.map(({ title, link, subLink }) =>
+            link ? (
+              <li key={title}>
+                <Link
+                  href={link}
+                  className={cn(underline, isActive(link) && "border-gold")}
                 >
-                  <div className="flex items-center justify-center flex-row gap-x-2 hover:border-b-2 border-gold px-1 pb-1">
-                    <span className="text-base font-medium text-navy inline-flex items-center">
-                      {title}
-                    </span>
+                  {title}
+                </Link>
+              </li>
+            ) : (
+              subLink && (
+                <li
+                  key={title}
+                  className="relative"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
+                >
+                  <button
+                    type="button"
+                    aria-haspopup="menu"
+                    aria-expanded={servicesOpen}
+                    onClick={() => setServicesOpen((o) => !o)}
+                    className={cn(
+                      underline,
+                      "inline-flex items-center gap-1.5",
+                      isServicesActive && "border-gold"
+                    )}
+                  >
+                    {title}
                     <ChevronDown
                       className={cn(
-                        "transition-transform duration-200 stroke-navy",
-                        menuOpen ? "rotate-180" : "rotate-0"
+                        "h-4 w-4 transition-transform duration-200",
+                        servicesOpen && "rotate-180"
                       )}
                     />
-                  </div>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[200px] rounded-t-none -mt-1 left-0 -bottom-32">
-                  {subLink.map((item) =>
-                    item.link ? ( // Check if item.link exists
-                      <DropdownMenuGroup key={item.title}>
-                        <Link href={item.link} className="w-full" onClick={() =>handleLinkClick()}>
-                          <DropdownMenuItem className="cursor-pointer group">
-                            <span className="text-[14px] font-[500] text-navy ">
+                  </button>
+                  {/* pt-3 keeps a hover bridge between trigger and panel */}
+                  <div
+                    className={cn(
+                      "absolute left-0 top-full pt-3 transition-opacity",
+                      servicesOpen
+                        ? "visible opacity-100"
+                        : "invisible opacity-0"
+                    )}
+                  >
+                    <ul className="w-56 overflow-hidden rounded-xl border border-line bg-white py-2 shadow-lg">
+                      {subLink.map((item) =>
+                        item.link ? (
+                          <li key={item.title}>
+                            <Link
+                              href={item.link}
+                              className={cn(
+                                "flex items-center border-l-2 border-transparent px-4 py-2.5 text-sm text-navy transition-colors hover:border-gold hover:bg-mist hover:text-royal",
+                                isActive(item.link) &&
+                                  "border-gold bg-mist font-semibold text-royal"
+                              )}
+                            >
                               {item.title}
-                            </span>
-                          </DropdownMenuItem>
-                        </Link>
-                        <DropdownMenuSeparator />
-                      </DropdownMenuGroup>
-                    ) : null
-                  )}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                            </Link>
+                          </li>
+                        ) : null
+                      )}
+                    </ul>
+                  </div>
+                </li>
+              )
             )
-          )
-        )}
-        <Link href="/contact-us" onClick={() => handleLinkClick()}>
-          <Button variant="primary" className="shrink-0">
-            Contact Us
-          </Button>
-        </Link>
-      </ul>
+          )}
+          <li>
+            <Link href="/contact-us">
+              <Button variant="primary" className="shrink-0">
+                Contact Us
+              </Button>
+            </Link>
+          </li>
+        </ul>
+
+        {/* Mobile toggle */}
+        <button
+          type="button"
+          className="md:hidden"
+          aria-label="Open menu"
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen(true)}
+        >
+          <Menu className="h-6 w-6 text-navy" />
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-[60] md:hidden">
+          <div
+            className="absolute inset-0 bg-navy/40 animate-in fade-in"
+            onClick={() => setMobileOpen(false)}
+          />
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site menu"
+            className="absolute right-0 top-0 flex h-screen w-[85%] max-w-sm flex-col bg-white shadow-xl animate-in slide-in-from-right duration-300"
+          >
+            <div className="flex h-20 shrink-0 items-center justify-between border-b border-line px-6">
+              <span className="relative block h-[40px] w-[150px]">
+                <Image
+                  src="/assets/soft-solutions.svg"
+                  fill
+                  sizes="150px"
+                  alt="Soft Solutions Technologies logo"
+                  className="object-contain object-left"
+                />
+              </span>
+              <button
+                type="button"
+                aria-label="Close menu"
+                onClick={() => setMobileOpen(false)}
+              >
+                <X className="h-6 w-6 text-navy" />
+              </button>
+            </div>
+
+            <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-6 py-6">
+              {links.map(({ title, link, subLink }) =>
+                link ? (
+                  <Link
+                    key={title}
+                    href={link}
+                    className={cn(
+                      "border-b border-line py-3 text-lg font-medium text-navy",
+                      isActive(link) && "text-royal"
+                    )}
+                  >
+                    {title}
+                  </Link>
+                ) : (
+                  subLink && (
+                    <div key={title} className="border-b border-line">
+                      <button
+                        type="button"
+                        aria-expanded={mobileServicesOpen}
+                        onClick={() => setMobileServicesOpen((o) => !o)}
+                        className={cn(
+                          "flex w-full items-center justify-between py-3 text-lg font-medium text-navy",
+                          isServicesActive && "text-royal"
+                        )}
+                      >
+                        {title}
+                        <ChevronDown
+                          className={cn(
+                            "h-5 w-5 transition-transform duration-200",
+                            mobileServicesOpen && "rotate-180"
+                          )}
+                        />
+                      </button>
+                      {mobileServicesOpen && (
+                        <ul className="pb-3 pl-4">
+                          {subLink.map((item) =>
+                            item.link ? (
+                              <li key={item.title}>
+                                <Link
+                                  href={item.link}
+                                  className={cn(
+                                    "block py-2.5 text-base text-brand-slate",
+                                    isActive(item.link) &&
+                                      "font-semibold text-royal"
+                                  )}
+                                >
+                                  {item.title}
+                                </Link>
+                              </li>
+                            ) : null
+                          )}
+                        </ul>
+                      )}
+                    </div>
+                  )
+                )
+              )}
+            </nav>
+
+            <div className="shrink-0 border-t border-line px-6 py-6">
+              <Link href="/contact-us">
+                <Button variant="gold" size="lg" className="w-full">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
