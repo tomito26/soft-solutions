@@ -20,6 +20,12 @@ export interface NavLink {
   subLink?: NavSubLink[];
 }
 
+// A single question/answer pair for a FAQ section (drives FAQPage JSON-LD).
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 // One alternating image/text row on a service page.
 export interface ServiceFeature {
   title: string;
