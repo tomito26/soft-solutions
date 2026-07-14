@@ -10,9 +10,9 @@ export type { ServiceRoute };
  * per deploy; the fallback is the live domain.
  */
 export const siteConfig = {
-  // TODO(client): switch the fallback to the production domain
-  // (https://softsolutions.co.ke) once it goes live. Overridable via env.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://soft-solutions-eight.vercel.app",
+  // Production domain. Overridable per-deploy via NEXT_PUBLIC_SITE_URL.
+  // No trailing slash — paths are joined with `new URL(path, url)`.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://softsolutions.co.ke",
   name: "Soft Solutions Technologies",
   shortName: "Soft Solutions",
   description:
