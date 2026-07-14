@@ -26,7 +26,7 @@ const Home = () => {
       <section className="relative flex h-[86vh] min-h-[560px] w-full items-center">
         <Image
           className="object-cover object-center"
-          src="/assets/Rectangle 2.png"
+          src="/assets/home-hero.jpg"
           fill
           priority
           sizes="100vw"
