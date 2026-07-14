@@ -1,9 +1,10 @@
 import React from "react";
-import { networkingPage as page } from "@/lib/constants";
+import { networkingPage as page, serviceFaqs } from "@/lib/constants";
 import ServiceHero from "@/components/our-services/lib/ui/service-hero";
 import ServiceFeatureRow from "@/components/our-services/lib/ui/service-feature-row";
 import ServiceIncluded from "@/components/our-services/lib/ui/service-included";
 import CtaBand from "@/components/home/lib/ui/cta-band";
+import FaqSection from "@/components/faq/faq-section";
 
 const Networking = () => {
   return (
@@ -21,6 +22,7 @@ const Networking = () => {
         </div>
       </section>
       <ServiceIncluded included={page.included} />
+      <FaqSection items={serviceFaqs["/networking"]} />
       <CtaBand title={page.cta.title} subtitle={page.cta.subtitle} />
     </div>
   );

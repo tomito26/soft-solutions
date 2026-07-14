@@ -6,6 +6,7 @@ import {
   services,
   testimonials,
   why_choose_us,
+  homeFaqs,
 } from "@/lib/constants";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -18,6 +19,7 @@ import SectionHeader from "./lib/ui/section-header";
 import Reveal from "./lib/ui/reveal";
 import Stat from "./lib/ui/stat";
 import CtaBand from "./lib/ui/cta-band";
+import FaqSection from "@/components/faq/faq-section";
 
 const Home = () => {
   return (
@@ -259,6 +261,12 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+      {/* ---------- FAQ ---------- */}
+      <FaqSection
+        items={homeFaqs}
+        subtitle="Answers to common questions about Soft Solutions Technologies and the IT services we provide across Kenya."
+      />
 
       {/* ---------- Closing CTA ---------- */}
       <CtaBand />

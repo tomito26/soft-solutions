@@ -28,7 +28,7 @@ import {
   Wifi,
   Wrench,
 } from "lucide-react";
-import { NavLink, ServicePageContent } from "@/types/types";
+import { FaqItem, NavLink, ServicePageContent } from "@/types/types";
 
 export const links: NavLink[] = [
   {
@@ -811,4 +811,126 @@ export const networkingPage: ServicePageContent = {
     subtitle:
       "Seamless connectivity is the backbone of modern business. We design, implement, and maintain robust networks tailored to your needs. Contact us to keep your business connected, secure, and efficient.",
   },
+};
+
+// ---------------------------------------------------------------------------
+// FAQs — power both the visible FAQ sections and the FAQPage JSON-LD used for
+// Answer Engine Optimization. Answers are written as concise, self-contained
+// statements so answer engines can extract and cite them directly.
+// TODO(client): confirm these answers reflect your current offering.
+// ---------------------------------------------------------------------------
+
+export const homeFaqs: FaqItem[] = [
+  {
+    question: "What is Soft Solutions Technologies?",
+    answer:
+      "Soft Solutions Technologies is a Nairobi-based IT company that provides software development, cloud services, cyber security, and networking solutions for businesses across Kenya.",
+  },
+  {
+    question: "Where is Soft Solutions Technologies located?",
+    answer:
+      "Our office is in Westlands, Nairobi, Kenya. We serve clients throughout Kenya and are open Monday to Friday, 8:00 AM to 5:00 PM EAT.",
+  },
+  {
+    question: "What services does Soft Solutions Technologies offer?",
+    answer:
+      "We offer four core services: custom software development, cloud services and migration, cyber security, and networking and IT infrastructure.",
+  },
+  {
+    question: "How do I get a quote or start a project?",
+    answer:
+      "Reach out through our contact page, by phone, or by email. We typically reply within one business day to discuss your requirements and next steps.",
+  },
+];
+
+// Keyed by service route so the FAQ source of truth matches the nav and sitemap.
+export const serviceFaqs: Record<string, FaqItem[]> = {
+  "/software-development": [
+    {
+      question: "What software development services do you offer?",
+      answer:
+        "We build custom software, web applications, and mobile apps for iOS and Android, plus API development and integration, UI/UX design, and ongoing maintenance and support.",
+    },
+    {
+      question: "What technologies do you use?",
+      answer:
+        "We build modern web and mobile applications using technologies such as React, Next.js, and Node.js, chosen to fit each project's requirements.",
+    },
+    {
+      question: "Do you build both web and mobile apps?",
+      answer:
+        "Yes. We develop responsive web applications and native mobile apps for both iOS and Android, and can deliver a mobile version of an existing web product.",
+    },
+    {
+      question: "Do you provide support after the software is delivered?",
+      answer:
+        "Yes. We provide ongoing maintenance and support, including updates, bug fixes, performance improvements, and new features as your business evolves.",
+    },
+  ],
+  "/cloud-services": [
+    {
+      question: "What cloud services do you provide?",
+      answer:
+        "We handle cloud infrastructure setup, cloud migration, backup and disaster recovery, cloud security, and fully managed cloud operations.",
+    },
+    {
+      question: "Can you migrate our existing systems to the cloud?",
+      answer:
+        "Yes. We plan and execute cloud migrations, moving your applications and data to the cloud with minimal disruption to your business.",
+    },
+    {
+      question: "Do you offer ongoing cloud management?",
+      answer:
+        "Yes. Our managed cloud services include monitoring, optimization, and security so your environment stays reliable and cost-effective.",
+    },
+    {
+      question: "How do you keep cloud environments secure?",
+      answer:
+        "We build security into every layer of your cloud setup, from access controls and encryption to continuous monitoring and backup and disaster recovery.",
+    },
+  ],
+  "/cyber-security": [
+    {
+      question: "What cyber security services do you offer?",
+      answer:
+        "We provide network security, endpoint protection, application security, cloud security, vulnerability assessments and penetration testing, and incident response and recovery.",
+    },
+    {
+      question: "Do you carry out penetration testing?",
+      answer:
+        "Yes. We run vulnerability assessments and penetration testing to identify weaknesses in your systems before attackers can exploit them.",
+    },
+    {
+      question: "How can Soft Solutions protect my business from ransomware?",
+      answer:
+        "We apply layered protection across your network, endpoints, applications, and cloud, combined with proactive testing and rapid incident response to defend against ransomware and other threats.",
+    },
+    {
+      question: "What happens after a security incident?",
+      answer:
+        "Our incident response and recovery service helps you contain, investigate, and recover from security incidents, and strengthen defenses against future attacks.",
+    },
+  ],
+  "/networking": [
+    {
+      question: "What networking services do you provide?",
+      answer:
+        "We offer network design and architecture, installation and configuration, monitoring and maintenance, optimization and troubleshooting, wireless networking, and network consultancy and auditing.",
+    },
+    {
+      question: "Do you support wireless networks?",
+      answer:
+        "Yes. We design and deploy secure, reliable wireless networks that provide fast, consistent coverage across your premises.",
+    },
+    {
+      question: "Can you audit our existing network?",
+      answer:
+        "Yes. Our network consultancy and auditing service reviews your current infrastructure and recommends improvements for performance, reliability, and security.",
+    },
+    {
+      question: "Do you provide ongoing network maintenance?",
+      answer:
+        "Yes. We monitor and maintain your network to keep it secure and optimized, and troubleshoot issues as they arise to minimize downtime.",
+    },
+  ],
 };

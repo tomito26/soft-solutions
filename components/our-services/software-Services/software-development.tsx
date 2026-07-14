@@ -1,9 +1,10 @@
 import React from "react";
-import { softwareDevelopmentPage as page } from "@/lib/constants";
+import { softwareDevelopmentPage as page, serviceFaqs } from "@/lib/constants";
 import ServiceHero from "@/components/our-services/lib/ui/service-hero";
 import ServiceFeatureRow from "@/components/our-services/lib/ui/service-feature-row";
 import ServiceIncluded from "@/components/our-services/lib/ui/service-included";
 import CtaBand from "@/components/home/lib/ui/cta-band";
+import FaqSection from "@/components/faq/faq-section";
 
 const SoftwareDevelopment = () => {
   return (
@@ -21,6 +22,7 @@ const SoftwareDevelopment = () => {
         </div>
       </section>
       <ServiceIncluded included={page.included} />
+      <FaqSection items={serviceFaqs["/software-development"]} />
       <CtaBand title={page.cta.title} subtitle={page.cta.subtitle} />
     </div>
   );
