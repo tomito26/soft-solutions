@@ -118,29 +118,54 @@ const Navbar = () => {
                   {/* pt-3 keeps a hover bridge between trigger and panel */}
                   <div
                     className={cn(
-                      "absolute left-0 top-full pt-3 transition-opacity",
-                      servicesOpen
-                        ? "visible opacity-100"
-                        : "invisible opacity-0"
+                      "absolute left-0 top-full pt-3",
+                      servicesOpen ? "visible" : "invisible"
                     )}
                   >
-                    <ul className="w-56 overflow-hidden rounded-xl border border-line bg-white py-2 shadow-lg">
-                      {subLink.map((item) =>
-                        item.link ? (
+                    <ul
+                      className={cn(
+                        "w-80 rounded-xl border border-line bg-white p-2 shadow-lg",
+                        servicesOpen &&
+                          "animate-in fade-in slide-in-from-top-1 duration-200"
+                      )}
+                    >
+                      {subLink.map((item) => {
+                        const active = isActive(item.link ?? "");
+                        const Icon = item.icon;
+                        return (
                           <li key={item.title}>
                             <Link
-                              href={item.link}
+                              href={item.link ?? "#"}
                               className={cn(
-                                "flex items-center border-l-2 border-transparent px-4 py-2.5 text-sm text-navy transition-colors hover:border-gold hover:bg-mist hover:text-royal",
-                                isActive(item.link) &&
-                                  "border-gold bg-mist font-semibold text-royal"
+                                "group flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-mist",
+                                active && "bg-mist"
                               )}
                             >
-                              {item.title}
+                              <span
+                                className={cn(
+                                  "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-mist text-royal transition-colors group-hover:bg-gold/15 group-hover:text-navy",
+                                  active && "bg-gold/15 text-navy"
+                                )}
+                              >
+                                <Icon className="h-[18px] w-[18px]" />
+                              </span>
+                              <span className="flex flex-col">
+                                <span
+                                  className={cn(
+                                    "text-sm font-medium text-navy transition-colors group-hover:text-royal",
+                                    active && "text-royal"
+                                  )}
+                                >
+                                  {item.title}
+                                </span>
+                                <span className="text-xs text-brand-slate">
+                                  {item.description}
+                                </span>
+                              </span>
                             </Link>
                           </li>
-                        ) : null
-                      )}
+                        );
+                      })}
                     </ul>
                   </div>
                 </li>
@@ -234,23 +259,32 @@ const Navbar = () => {
                         />
                       </button>
                       {mobileServicesOpen && (
-                        <ul className="pb-3 pl-4">
-                          {subLink.map((item) =>
-                            item.link ? (
+                        <ul className="pb-3 pl-2">
+                          {subLink.map((item) => {
+                            const active = isActive(item.link ?? "");
+                            const Icon = item.icon;
+                            return (
                               <li key={item.title}>
                                 <Link
-                                  href={item.link}
+                                  href={item.link ?? "#"}
                                   className={cn(
-                                    "block py-2.5 text-base text-brand-slate",
-                                    isActive(item.link) &&
-                                      "font-semibold text-royal"
+                                    "flex items-center gap-3 py-2.5 text-base text-brand-slate",
+                                    active && "font-semibold text-royal"
                                   )}
                                 >
+                                  <span
+                                    className={cn(
+                                      "flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-mist text-royal",
+                                      active && "bg-gold/15 text-navy"
+                                    )}
+                                  >
+                                    <Icon className="h-[18px] w-[18px]" />
+                                  </span>
                                   {item.title}
                                 </Link>
                               </li>
-                            ) : null
-                          )}
+                            );
+                          })}
                         </ul>
                       )}
                     </div>

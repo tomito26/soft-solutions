@@ -28,9 +28,9 @@ import {
   Wifi,
   Wrench,
 } from "lucide-react";
-import { ServicePageContent } from "@/types/types";
+import { NavLink, ServicePageContent } from "@/types/types";
 
-export const links = [
+export const links: NavLink[] = [
   {
     title: "Home",
     link: "/",
@@ -45,18 +45,26 @@ export const links = [
       {
         title: "Software Development",
         link: "/software-development",
+        icon: Code2,
+        description: "Custom web, mobile & app builds",
       },
       {
         title: "Networking",
         link: "/networking",
+        icon: Network,
+        description: "Secure, high-speed connectivity",
       },
       {
         title: "Cyber Security",
         link: "/cyber-security",
+        icon: Shield,
+        description: "Threat detection & defense",
       },
       {
         title: "Cloud Services",
         link: "/cloud-services",
+        icon: Cloud,
+        description: "Scalable, managed cloud",
       },
     ],
   },
