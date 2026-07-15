@@ -15,6 +15,8 @@ function getTransport() {
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
 
+  console.log("SMTP configuration:", { host, port, user, pass: pass ? "***" : undefined });
+
   if (!host || !user || !pass) {
     throw new Error(
       "Missing SMTP configuration. Set SMTP_HOST, SMTP_USER and SMTP_PASS."
