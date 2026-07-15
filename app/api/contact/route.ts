@@ -15,7 +15,15 @@ function getTransport() {
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
 
-  console.log("SMTP configuration:", { host, port, user, pass: pass ? "***" : undefined });
+  // Logged at error level so it surfaces in Vercel's (error-filtered) runtime logs.
+  console.error("[contact] SMTP env presence:", {
+    host: host || "MISSING",
+    port,
+    user: user || "MISSING",
+    pass: pass ? "set" : "MISSING",
+    from: process.env.SMTP_FROM || "MISSING",
+    to: process.env.CONTACT_TO || "MISSING",
+  });
 
   if (!host || !user || !pass) {
     throw new Error(
