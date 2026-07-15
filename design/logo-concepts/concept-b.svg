@@ -1,0 +1,7 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Standalone two-tone S: gold front / navy back = motion + depth, no container -->
+  <path d="M60,60 C76,68 76,80 64,88 C52,96 36,93 36,80"
+        fill="none" stroke="#00156B" stroke-width="14" stroke-linecap="round"/>
+  <path d="M84,40 C84,27 68,24 56,32 C44,40 44,52 60,60"
+        fill="none" stroke="#F5B301" stroke-width="14" stroke-linecap="round"/>
+</svg>

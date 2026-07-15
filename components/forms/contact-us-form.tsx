@@ -12,39 +12,57 @@ import {
 import FormFieldWithIcon from "@/components/ui/form-field-with-icon";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle2, Loader2, Mail, MessageSquare, User } from "lucide-react";
+import {
+  AlertCircle,
+  CheckCircle2,
+  Loader2,
+  Mail,
+  MessageSquare,
+  User,
+} from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import validator from "validator";
-import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-const ContactFormSchema = z.object({
-  name: z.string().min(2, "Please enter your name"),
-  email: z
-    .string()
-    .min(1, "Email is required")
-    .refine(validator.isEmail, "Enter a valid email address"),
-  message: z.string().min(10, "Tell us a little more (at least 10 characters)"),
-});
-
-type ContactFormValues = z.infer<typeof ContactFormSchema>;
+import {
+  ContactFormSchema,
+  type ContactFormValues,
+} from "@/lib/contact-schema";
 
 const inputClasses =
   "h-11 pl-11 text-sm focus-visible:ring-royal/40 focus-visible:ring-offset-0";
 
 export const ContactUsForm = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(ContactFormSchema),
     defaultValues: { name: "", email: "", message: "" },
   });
 
   const handleSendMessage = async (data: ContactFormValues) => {
-    // TODO(client): wire up a real email service (e.g. Formspree / API route).
-    await new Promise((resolve) => setTimeout(resolve, 900));
-    console.log(data);
-    setSubmitted(true);
+    setSendError(null);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const { error } = await response
+          .json()
+          .catch(() => ({ error: null }));
+        throw new Error(error ?? "Failed to send message.");
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      setSendError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
+    }
   };
 
   if (submitted) {
@@ -141,6 +159,16 @@ export const ContactUsForm = () => {
             )}
           />
         </div>
+
+        {sendError && (
+          <div
+            role="alert"
+            className="mt-5 flex items-start gap-2 rounded-md bg-app-destructive/10 p-3 text-sm text-app-destructive"
+          >
+            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+            <span>{sendError}</span>
+          </div>
+        )}
 
         <Button
           type="submit"

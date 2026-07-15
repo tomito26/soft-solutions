@@ -1,0 +1,8 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- App-tile: rounded navy square, two-tone S (gold front / royal back) -->
+  <rect x="2" y="2" width="116" height="116" rx="28" fill="#00156B"/>
+  <path d="M60,60 C76,68 76,80 64,88 C52,96 36,93 36,80"
+        fill="none" stroke="#0423A0" stroke-width="14" stroke-linecap="round"/>
+  <path d="M84,40 C84,27 68,24 56,32 C44,40 44,52 60,60"
+        fill="none" stroke="#F5B301" stroke-width="14" stroke-linecap="round"/>
+</svg>

@@ -136,6 +136,8 @@ const Navbar = () => {
                           <li key={item.title}>
                             <Link
                               href={item.link ?? "#"}
+                              target={item.external ? "_blank" : undefined}
+                              rel={item.external ? "noopener noreferrer" : undefined}
                               className={cn(
                                 "group flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-mist",
                                 active && "bg-mist"
@@ -267,6 +269,8 @@ const Navbar = () => {
                               <li key={item.title}>
                                 <Link
                                   href={item.link ?? "#"}
+                                  target={item.external ? "_blank" : undefined}
+                                  rel={item.external ? "noopener noreferrer" : undefined}
                                   className={cn(
                                     "flex items-center gap-3 py-2.5 text-base text-brand-slate",
                                     active && "font-semibold text-royal"
