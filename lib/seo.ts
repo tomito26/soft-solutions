@@ -18,7 +18,10 @@ export const siteConfig = {
   description:
     "Soft Solutions Technologies is a Nairobi-based IT company delivering software development, cloud, cyber security, and networking solutions tailored to your business.",
   locale: "en_KE",
-  logo: "/assets/soft-solutions.svg",
+  logo: "/assets/1.png",
+  // Representative photo for LocalBusiness `image` (Google prefers a real
+  // photo, ≥1200px wide, over the logo). Distinct from `logo` on purpose.
+  image: "/assets/home-hero.jpg",
   keywords: [
     "IT solutions Kenya",
     "software development Nairobi",
@@ -178,7 +181,7 @@ export function organizationSchema() {
     name: siteConfig.name,
     url: siteConfig.url,
     logo: absoluteUrl(siteConfig.logo),
-    image: absoluteUrl(siteConfig.logo),
+    image: absoluteUrl(siteConfig.image),
     description: siteConfig.description,
     email: contactDetails.email.value,
     telephone: contactDetails.phone.value,

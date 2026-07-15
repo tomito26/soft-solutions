@@ -65,11 +65,11 @@ const Navbar = () => {
       <div className="container-x flex h-20 md:h-[88px] items-center justify-between">
         {/* Logo → home */}
         <Link href="/" aria-label="Soft Solutions Technologies — home">
-          <span className="relative block h-[44px] w-[150px] md:h-[52px] md:w-[176px]">
+          <span className="relative block h-[52px] w-[168px] md:h-[64px] md:w-[200px]">
             <Image
-              src="/assets/soft-solutions.svg"
+              src="/assets/1.png"
               fill
-              sizes="176px"
+              sizes="200px"
               alt="Soft Solutions Technologies logo"
               className="object-contain object-left"
             />
@@ -209,9 +209,9 @@ const Navbar = () => {
             className="absolute right-0 top-0 flex h-screen w-[85%] max-w-sm flex-col bg-white shadow-xl animate-in slide-in-from-right duration-300"
           >
             <div className="flex h-20 shrink-0 items-center justify-between border-b border-line px-6">
-              <span className="relative block h-[40px] w-[150px]">
+              <span className="relative block h-[48px] w-[150px]">
                 <Image
-                  src="/assets/soft-solutions.svg"
+                  src="/assets/1.png"
                   fill
                   sizes="150px"
                   alt="Soft Solutions Technologies logo"
