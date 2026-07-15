@@ -1,4 +1,5 @@
 import tailwindcssAnimate from "tailwindcss-animate"
+import typography from "@tailwindcss/typography"
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -72,7 +73,7 @@ module.exports = {
         "body-gray": "#64696D",
         "default-black": "#25282B",
         "app-destructive": "#F40B0B",
-        "destructive-light": "##F83737",
+        "destructive-light": "#F83737",
         "inactive-error": "#FEA0A0",
         "faint-error": "#F86666",
         monochromatic: "#101828",
@@ -125,5 +126,5 @@ module.exports = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, typography],
 };

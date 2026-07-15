@@ -76,6 +76,14 @@ export const links: NavLink[] = [
       },
     ],
   },
+  {
+    title: "Insights",
+    link: "/blog",
+  },
+  {
+    title: "Case Studies",
+    link: "/case-studies",
+  },
 ];
 
 // Reusable eyebrow + heading copy for section headers
