@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { getAllPosts } from "@/lib/content";
-import { buildMetadata, FEED_TITLE } from "@/lib/seo";
+import { getAllPosts, postPath } from "@/lib/content";
+import { buildMetadata, collectionPageSchema, FEED_TITLE } from "@/lib/seo";
+import JsonLd from "@/components/seo/json-ld";
 import PostList from "@/components/blog/post-list";
 
 export const metadata: Metadata = buildMetadata({
@@ -14,12 +15,26 @@ export const metadata: Metadata = buildMetadata({
 const BlogPage = () => {
   const posts = getAllPosts("blog");
   return (
-    <PostList
-      posts={posts}
-      eyebrow="Insights"
-      title="Insights & Guides"
-      subtitle="Advice and analysis on building, securing, and scaling technology for businesses across Kenya."
-    />
+    <>
+      <JsonLd
+        data={collectionPageSchema({
+          name: "Insights & Guides",
+          description:
+            "Advice and analysis on building, securing, and scaling technology for businesses across Kenya.",
+          path: "/blog",
+          items: posts.map((post) => ({
+            name: post.frontmatter.title,
+            path: postPath(post),
+          })),
+        })}
+      />
+      <PostList
+        posts={posts}
+        eyebrow="Insights"
+        title="Insights & Guides"
+        subtitle="Advice and analysis on building, securing, and scaling technology for businesses across Kenya."
+      />
+    </>
   );
 };
 

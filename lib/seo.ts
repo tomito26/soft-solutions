@@ -139,28 +139,28 @@ export const servicePagesSeo = {
   "/software-development": {
     name: "Software Development",
     serviceType: "Software Development",
-    title: "Software Development Services in Nairobi, Kenya",
+    title: "Software Development Services",
     description:
       "Custom software, web, and mobile solutions engineered around your business — from first idea to ongoing support. Built by Soft Solutions Technologies in Nairobi.",
   },
   "/cloud-services": {
     name: "Cloud Services",
     serviceType: "Cloud Computing Services",
-    title: "Cloud Services & Migration in Nairobi, Kenya",
+    title: "Cloud Services & Migration",
     description:
       "Scalable, secure cloud solutions — from infrastructure and migration to backup, security, and fully managed operations — for businesses across Kenya.",
   },
   "/cyber-security": {
     name: "Cyber Security",
     serviceType: "Cyber Security Services",
-    title: "Cyber Security Services in Nairobi, Kenya",
+    title: "Cyber Security Services",
     description:
       "Advanced protection that safeguards your business from data breaches, ransomware, and evolving cyber threats — across every layer of your infrastructure.",
   },
   "/networking": {
     name: "Networking",
     serviceType: "Network Infrastructure Services",
-    title: "Networking & IT Infrastructure in Nairobi, Kenya",
+    title: "Networking & IT Infrastructure",
     description:
       "Secure, efficient networks designed, deployed, and maintained to keep your business connected and running at full speed — enterprise networking across Kenya.",
   },
@@ -330,5 +330,36 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
       name: item.name,
       item: absoluteUrl(item.path),
     })),
+  };
+}
+
+/** CollectionPage schema for an index page listing posts/case studies. */
+export function collectionPageSchema({
+  name,
+  description,
+  path,
+  items,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  items: { name: string; path: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url: absoluteUrl(path),
+    isPartOf: { "@id": `${siteConfig.url}/#website` },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        url: absoluteUrl(item.path),
+      })),
+    },
   };
 }
