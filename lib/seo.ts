@@ -34,38 +34,87 @@ export const siteConfig = {
 export const absoluteUrl = (path: string) =>
   new URL(path, siteConfig.url).toString();
 
+/** RSS feed of blog posts, served by `app/feed.xml/route.ts`. */
+export const FEED_PATH = "/feed.xml";
+export const FEED_TITLE = `${siteConfig.name} — Insights`;
+
 type BuildMetadataArgs = {
   title: string;
   description: string;
   /** Site-relative path, e.g. "/about". Drives the canonical + OG url. */
   path: string;
   keywords?: string[];
+  /** "article" emits article Open Graph tags (blog posts, case studies). */
+  type?: "website" | "article";
+  /** ISO date — article only. */
+  publishedTime?: string;
+  /** ISO date — article only. */
+  modifiedTime?: string;
+  /** Author names — article only. */
+  authors?: string[];
+  /** Topic tags — article only. */
+  tags?: string[];
+  /** When set, advertises the RSS feed for autodiscovery (e.g. blog listing). */
+  feed?: { title: string };
 };
 
 /**
  * Builds a consistent Next `Metadata` object for a page: canonical URL plus
  * Open Graph and Twitter tags. The root layout supplies the title template and
- * shared defaults, so pages only pass their unique values.
+ * shared defaults, so pages only pass their unique values. The per-page
+ * `opengraph-image.tsx` route supplies the share image automatically, so no
+ * image is set here.
  */
 export function buildMetadata({
   title,
   description,
   path,
   keywords,
+  type = "website",
+  publishedTime,
+  modifiedTime,
+  authors,
+  tags,
+  feed,
 }: BuildMetadataArgs): Metadata {
+  const openGraph: Metadata["openGraph"] =
+    type === "article"
+      ? {
+          type: "article",
+          url: path,
+          siteName: siteConfig.name,
+          title,
+          description,
+          locale: siteConfig.locale,
+          publishedTime,
+          modifiedTime,
+          authors,
+          tags,
+        }
+      : {
+          type: "website",
+          url: path,
+          siteName: siteConfig.name,
+          title,
+          description,
+          locale: siteConfig.locale,
+        };
+
   return {
     title,
     description,
     keywords,
-    alternates: { canonical: path },
-    openGraph: {
-      type: "website",
-      url: path,
-      siteName: siteConfig.name,
-      title,
-      description,
-      locale: siteConfig.locale,
+    alternates: {
+      canonical: path,
+      ...(feed
+        ? {
+            types: {
+              "application/rss+xml": [{ url: FEED_PATH, title: feed.title }],
+            },
+          }
+        : {}),
     },
+    openGraph,
     twitter: {
       card: "summary_large_image",
       title,
@@ -220,6 +269,46 @@ export function faqSchema(items?: FaqItem[]) {
         text: item.answer,
       },
     })),
+  };
+}
+
+/**
+ * BlogPosting schema for a blog post or case study. Feeds Google's article rich
+ * results and gives answer engines authorship/recency signals. Author defaults
+ * to the organization when no person is named.
+ */
+export function articleSchema({
+  title,
+  description,
+  url,
+  image,
+  datePublished,
+  dateModified,
+  authorName,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  image?: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    url,
+    mainEntityOfPage: url,
+    ...(image ? { image } : {}),
+    datePublished,
+    dateModified: dateModified ?? datePublished,
+    author: authorName
+      ? { "@type": "Person", name: authorName }
+      : { "@id": ORGANIZATION_ID },
+    publisher: { "@id": ORGANIZATION_ID },
+    inLanguage: "en",
   };
 }
 
