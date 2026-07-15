@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Navbar from "@/components/navigation/navbar";
@@ -28,6 +29,9 @@ const homeTitle = `${siteConfig.name} — IT Solutions in Nairobi, Kenya`;
 
 // Set from env so tokens/IDs stay out of the repo and can vary per deploy.
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
+// Secure Privacy consent-mode banner (CMP). Loaded before analytics so it can
+// set Google Consent Mode defaults ahead of the gtag config.
+const consentBannerSrc = process.env.NEXT_PUBLIC_SECURE_PRIVACY_SCRIPT_URL;
 const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 const bingVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION;
 
@@ -84,6 +88,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {consentBannerSrc ? (
+          <Script src={consentBannerSrc} strategy="beforeInteractive" />
+        ) : null}
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
         <Navbar />
