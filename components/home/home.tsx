@@ -177,7 +177,7 @@ const Home = () => {
         <Image
           src="/assets/people-office.jpg"
           fill
-          alt=""
+          alt="Team working together in a modern office"
           sizes="100vw"
           className="object-cover"
         />

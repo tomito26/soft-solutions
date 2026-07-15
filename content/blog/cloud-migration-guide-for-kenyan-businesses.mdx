@@ -2,6 +2,7 @@
 title: "A Practical Cloud Migration Guide for Kenyan Businesses"
 description: "How SMEs and enterprises in Kenya can move to the cloud without downtime or runaway costs — a step-by-step framework from planning to go-live."
 date: "2026-07-10"
+updated: "2026-07-15"
 tags: ["Cloud Services", "Migration", "Kenya"]
 coverImage: "/assets/saas-concept-collage.jpg"
 coverAlt: "Illustration of cloud computing services and connected applications"
@@ -11,40 +12,60 @@ keywords:
   - "move to the cloud"
 ---
 
-Moving to the cloud is one of the highest-impact decisions a growing business in Kenya can make. Done well, it cuts hardware costs, improves uptime, and lets your team work securely from anywhere. Done badly, it causes downtime, surprise bills, and security gaps. This guide walks through a migration approach we use with clients across Nairobi and beyond.
+Moving to the cloud is one of the highest-impact decisions a growing business in Kenya can make. Done well, it cuts hardware costs, improves uptime, and lets your team work securely from anywhere. Done badly, it causes downtime, surprise bills, and security gaps. This guide walks through a migration approach we use with clients across Nairobi and beyond — from the first inventory to the day you switch off the old servers.
 
 ## Why Kenyan businesses are moving to the cloud
 
-On-premise servers are expensive to buy, power, cool, and maintain — and power reliability adds another layer of risk. Cloud platforms let you pay only for what you use, scale up during busy periods, and recover quickly from failures. For many local businesses, the cloud also makes it far easier to support hybrid and remote teams.
+On-premise servers are expensive to buy, power, cool, and maintain — and grid reliability adds another layer of risk. When the power dips, an office server room becomes a liability, and the cost of generators, UPS units, and air conditioning quietly adds up year after year. Cloud platforms change that equation. You pay only for what you use, scale up during busy periods and back down when things are quiet, and recover far more quickly when hardware fails.
+
+There are practical local drivers too. Hybrid and remote work is now normal, and a cloud-hosted system lets staff reach the same tools securely whether they're in the office, at home, or travelling. Newer regional data-centre options also mean you can keep latency low and, where it matters, keep data closer to home. For many businesses the real win isn't just cost — it's resilience and flexibility that on-premise hardware struggles to match.
 
 ## The five phases of a safe migration
 
+A migration is a project, not a single switch you flip. Breaking it into phases keeps risk low and gives you a clear point to pause and check progress at each stage.
+
 ### 1. Assess
 
-Start with an honest inventory: which applications, databases, and files you run, how they depend on each other, and how critical each one is. This tells you what can move first and what needs special care.
+Start with an honest inventory: which applications, databases, and files you run, how they depend on each other, and how critical each one is. Note who uses each system, when, and how much downtime they could tolerate. This tells you what can move first, what needs special care, and what might be retired instead of migrated. Many businesses discover applications nobody actually uses — leaving those behind is the cheapest migration of all.
 
 ### 2. Plan
 
-Choose a target — public cloud, private, or hybrid — based on cost, data-residency needs, and compliance. Map each workload to a migration strategy: rehost ("lift and shift"), re-platform, or rebuild.
+Choose a target — public cloud, private, or hybrid — based on cost, data-residency needs, and compliance obligations. Map each workload to a migration strategy: rehost ("lift and shift") for speed, re-platform to gain some cloud benefits with modest effort, or rebuild when an application is old enough that a fresh start pays off. Decide the order of moves, define what "done" looks like for each one, and agree a rollback plan before anything moves.
 
 ### 3. Prepare
 
-Set up secure networking, identity, and access controls **before** any data moves. Getting permissions and backups right up front prevents the most common migration incidents.
+Set up secure networking, identity, and access controls **before** any data moves. Getting permissions, network segmentation, and backups right up front prevents the most common migration incidents. This is also the moment to clean up: tidy user accounts, remove stale access, and document how the new environment is structured so your team isn't guessing later.
 
 ### 4. Migrate
 
-Move in waves, starting with low-risk workloads. Validate each one before moving on. Keep the old system running until the new environment is proven.
+Move in waves, starting with low-risk workloads to prove the process. Validate each one — logins, integrations, performance, backups — before moving on to the next. Keep the old system running in parallel until the new environment is genuinely proven, and communicate each cutover to the people who depend on that system so nobody is caught off guard.
 
 ### 5. Optimise
 
-Once live, right-size your resources, turn off what you don't need, and set budgets and alerts so costs stay predictable.
+Going live is the milestone, but it isn't the finish line. Once workloads are running in the cloud, right-size your resources, turn off anything you don't need, and set budgets and alerts so costs stay predictable. Review performance and security regularly. The businesses that get the most from the cloud treat optimisation as an ongoing habit, not a one-off task.
 
 ## Avoiding the common pitfalls
 
-- **Underestimating bandwidth.** Large data transfers take time — plan the cutover window carefully.
-- **Skipping the cost model.** Model your monthly spend before committing, and set billing alerts.
-- **Forgetting security.** The cloud is secure, but configuration is your responsibility. Enforce least-privilege access and encrypt data in transit and at rest.
+Most migration problems are predictable, which means they're avoidable. Watch for these:
+
+- **Underestimating bandwidth.** Large data transfers take time, and a busy office link can slow to a crawl during a big upload. Plan the cutover window carefully — often overnight or over a weekend — and consider seeding large datasets ahead of time.
+- **Skipping the cost model.** The cloud's pay-as-you-go model is a strength, but only if you model your monthly spend before committing and set billing alerts. Unmonitored resources are the usual cause of a surprise bill.
+- **Forgetting security.** The cloud is secure, but configuration is your responsibility. Enforce least-privilege access, turn on multi-factor authentication, and encrypt data in transit and at rest.
+- **Neglecting backups.** Moving to the cloud doesn't automatically back your data up. Confirm what your provider protects, add your own backups where needed, and test a restore.
+- **Treating it as purely technical.** People need to know what's changing and when. A short heads-up and a little training prevents a flood of confused support tickets on go-live day.
+
+## What to expect after go-live
+
+The first few weeks after a migration are where good planning pays off. Expect some fine-tuning: resource sizes that were a guess become measured, and a few workflows will need small adjustments. Keep an eye on costs during this settling-in period, gather feedback from the people using the systems daily, and keep the old environment available — but read-only — until you're confident nothing was missed. Once everything is stable and verified, you can safely decommission the old hardware and stop paying to run it.
+
+## Frequently asked questions
+
+**Will we have downtime?** With a phased, parallel-run approach, most businesses see little to no visible downtime. Any brief cutover is scheduled outside working hours.
+
+**Is the cloud more expensive than our servers?** It depends on how you use it. Pay-as-you-go can be cheaper once you factor in power, cooling, maintenance, and hardware refresh cycles — but only with active cost management. Modelling this up front is part of the plan.
+
+**How long does a migration take?** Anywhere from a few weeks to a few months, depending on how many systems you run and how tightly they're connected. The assessment phase gives you a realistic timeline before you commit.
 
 ## Getting help
 
-A structured migration is far less risky with an experienced partner. If you're planning a move, [our cloud services team](/cloud-services) can assess your environment and build a migration plan that fits your budget and timeline. [Talk to us](/contact-us) to get started.
+A structured migration is far less risky with an experienced partner who has done it before. If you're planning a move, [our cloud services team](/cloud-services) can assess your environment, model the costs, and build a migration plan that fits your budget and timeline. [Talk to us](/contact-us) to get started.

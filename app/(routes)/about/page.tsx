@@ -4,7 +4,7 @@ import JsonLd from "@/components/seo/json-ld";
 import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About Us",
+  title: "About Us — Nairobi, Kenya",
   description:
     "Meet Soft Solutions Technologies — a Nairobi-based team of IT professionals delivering software, cloud, cyber security, and networking solutions that help businesses thrive.",
   path: "/about",
