@@ -11,6 +11,8 @@ export interface NavSubLink {
   link: string;
   icon: LucideIcon;
   description: string;
+  // When true, the link points off-site (e.g. the store) and opens in a new tab.
+  external?: boolean;
 }
 
 // A top-level nav entry: either a direct link or a dropdown with sub-links.

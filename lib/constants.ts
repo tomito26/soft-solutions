@@ -23,6 +23,7 @@ import {
   Smartphone,
   Sparkles,
   SquarePen,
+  Store,
   Users,
   Webhook,
   Wifi,
@@ -65,6 +66,13 @@ export const links: NavLink[] = [
         link: "/cloud-services",
         icon: Cloud,
         description: "Scalable, managed cloud",
+      },
+      {
+        title: "Soft Solutions Store",
+        link: "https://store.softsolutions.co.ke",
+        icon: Store,
+        description: "Shop hardware, software & more",
+        external: true,
       },
     ],
   },
@@ -157,7 +165,7 @@ export const contactHero = {
 // +254 796 108 651) and the exact street address.
 export const contactDetails = {
   phone: { label: "Main Support Line", value: "+254 712 070 289", href: "tel:+254712070289" },
-  email: { label: "General Enquiries", value: "info@softsolutions.com", href: "mailto:info@softsolutions.com" },
+  email: { label: "General Enquiries", value: "info@softsolutions.co.ke", href: "mailto:info@softsolutions.co.ke" },
   office: { label: "Office", value: "Westlands, Nairobi, Kenya" },
   hours: { label: "Working Hours", value: "Mon – Fri, 8:00 AM – 5:00 PM EAT" },
   // Keyless Google Maps embed query (no API key required).

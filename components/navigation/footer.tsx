@@ -88,10 +88,10 @@ const Footer = () => {
                 General Enquiries
               </h2>
               <a
-                href="mailto:info@softsolutions.com"
+                href="mailto:info@softsolutions.co.ke"
                 className="text-base text-white/80 hover:text-gold transition-colors"
               >
-                info@softsolutions.com
+                info@softsolutions.co.ke
               </a>
             </div>
           </div>

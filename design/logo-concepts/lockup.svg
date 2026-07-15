@@ -1,0 +1,11 @@
+<svg width="520" height="140" viewBox="0 0 520 140" xmlns="http://www.w3.org/2000/svg">
+  <!-- mark -->
+  <g transform="translate(10,10)">
+    <circle cx="60" cy="60" r="58" fill="#00156B"/>
+    <path d="M84,40 C84,27 68,24 56,32 C44,40 44,52 60,60 C76,68 76,80 64,88 C52,96 36,93 36,80"
+          fill="none" stroke="#F5B301" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <!-- wordmark -->
+  <text x="150" y="66" font-family="Geist, Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#00156B" letter-spacing="-1">Soft Solutions</text>
+  <text x="152" y="100" font-family="Geist, Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#5B6474" letter-spacing="7">TECHNOLOGIES</text>
+</svg>
