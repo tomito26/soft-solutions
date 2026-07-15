@@ -133,7 +133,7 @@ const About = () => {
         <Image
           src="/assets/people-office.jpg"
           fill
-          alt=""
+          alt="Soft Solutions team working in their Nairobi office"
           sizes="100vw"
           className="object-cover"
         />
