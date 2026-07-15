@@ -7,6 +7,9 @@ type SectionHeaderProps = {
   subtitle?: string;
   align?: "center" | "left";
   tone?: "dark" | "light"; // dark = for light backgrounds, light = for navy backgrounds
+  /** Heading level for the title. Use "h1" when this is the page's main
+   * heading (e.g. a listing page); defaults to "h2" for in-page sections. */
+  as?: "h1" | "h2";
   className?: string;
 };
 
@@ -16,6 +19,7 @@ const SectionHeader = ({
   subtitle,
   align = "center",
   tone = "dark",
+  as: Heading = "h2",
   className,
 }: SectionHeaderProps) => {
   const isLight = tone === "light";
@@ -30,14 +34,14 @@ const SectionHeader = ({
       <p className="text-xs md:text-sm uppercase font-bold tracking-[0.18em] text-gold mb-3">
         {eyebrow}
       </p>
-      <h2
+      <Heading
         className={cn(
           "text-2xl md:text-4xl lg:text-5xl font-bold",
           isLight ? "text-white" : "text-navy"
         )}
       >
         {title}
-      </h2>
+      </Heading>
       {subtitle && (
         <p
           className={cn(

@@ -21,7 +21,7 @@ const PostList = ({
 }: PostListProps) => {
   return (
     <div className="section">
-      <SectionHeader eyebrow={eyebrow} title={title} subtitle={subtitle} />
+      <SectionHeader as="h1" eyebrow={eyebrow} title={title} subtitle={subtitle} />
       {posts.length ? (
         <div className="mx-auto mt-14 grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (

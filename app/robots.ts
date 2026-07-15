@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/seo";
+import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 // AI answer-engine and training crawlers. Listed explicitly and allowed so the
 // site can be found and cited by AI answer engines (AEO). To keep content out
@@ -26,7 +26,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/" },
       { userAgent: aiCrawlers, allow: "/" },
     ],
-    sitemap: `${siteConfig.url}/sitemap.xml`,
+    sitemap: absoluteUrl("/sitemap.xml"),
     host: new URL(siteConfig.url).host,
   };
 }

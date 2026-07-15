@@ -11,8 +11,12 @@ export type { ServiceRoute };
  */
 export const siteConfig = {
   // Production domain. Overridable per-deploy via NEXT_PUBLIC_SITE_URL.
-  // No trailing slash — paths are joined with `new URL(path, url)`.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://softsolutions.co.ke",
+  // Any trailing slash is stripped so string-concatenated URLs (e.g. the
+  // robots.txt sitemap line and the schema `@id`s) never end up doubled.
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://softsolutions.co.ke").replace(
+    /\/+$/,
+    ""
+  ),
   name: "Soft Solutions Technologies",
   shortName: "Soft Solutions",
   description:
