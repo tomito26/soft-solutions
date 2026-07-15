@@ -6,6 +6,10 @@ import { ContactFormSchema } from "@/lib/contact-schema";
 // and must never be statically cached.
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+// SMTP handshakes to the cPanel mail host can be slow; give the function more
+// headroom than Vercel's 10s default so a slow-but-working send can complete
+// (and so our own nodemailer timeouts below fire first with a precise error).
+export const maxDuration = 60;
 
 const CONTACT_TO = process.env.CONTACT_TO;
 
@@ -43,6 +47,11 @@ function getTransport() {
     // 465 = implicit TLS; anything else (e.g. 587) upgrades via STARTTLS.
     secure: port === 465,
     auth: { user, pass },
+    // Fail fast with a specific error (ETIMEDOUT/ECONNECTION) instead of hanging
+    // until Vercel kills the function with an opaque 504.
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 20_000,
     ...(servername ? { tls: { servername } } : {}),
   });
 }
@@ -91,7 +100,15 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    console.error("Failed to send contact email:", error);
+    // Log the nodemailer error's structured fields so the real cause (timeout,
+    // connection refused, auth, etc.) is visible in Vercel's runtime logs.
+    const err = error as { code?: string; command?: string; response?: string; message?: string };
+    console.error("Failed to send contact email:", {
+      code: err.code,
+      command: err.command,
+      response: err.response,
+      message: err.message,
+    });
     return NextResponse.json(
       { error: "Something went wrong sending your message. Please try again." },
       { status: 500 }
