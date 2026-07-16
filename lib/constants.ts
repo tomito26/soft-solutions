@@ -169,10 +169,9 @@ export const contactHero = {
   breadcrumb: "Contact",
 } as const;
 
-// TODO(client): confirm the correct phone number (the old About block used
-// +254 796 108 651) and the exact street address.
+// TODO(client): confirm the exact street address.
 export const contactDetails = {
-  phone: { label: "Main Support Line", value: "+254 712 070 289", href: "tel:+254712070289" },
+  phone: { label: "Main Support Line", value: "0741842133", href: "tel:0741842133" },
   email: { label: "General Enquiries", value: "info@softsolutions.co.ke", href: "mailto:info@softsolutions.co.ke" },
   office: { label: "Office", value: "Westlands, Nairobi, Kenya" },
   hours: { label: "Working Hours", value: "Mon – Fri, 8:00 AM – 5:00 PM EAT" },
