@@ -74,10 +74,10 @@ const Footer = () => {
                 Main Support Line
               </h2>
               <a
-                href="tel:+254712070289"
+                href="tel:0741842133"
                 className="text-base text-white/80 hover:text-gold transition-colors"
               >
-                +254712070289
+                0741842133
               </a>
             </div>
           </div>
